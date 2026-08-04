@@ -138,7 +138,7 @@ async function run() {
     row("Companies:", r.companies);
   }
 
-  // Q04: Capability reuse — now uses capabilities table FK (not free-text capability_deployed)
+  // Q04: Capability reuse
   section("Q04 — Capability reuse: which capabilities unlock the most expansion");
   const q04 = await db.execute(sql`
     SELECT
@@ -167,7 +167,7 @@ async function run() {
   `) as any[];
 
   for (const r of q04) {
-    console.log(\`\n  \${r.capability} [\${r.maturity} — \${r.sectors_confirmed} sector(s)]\`);
+    console.log(`\n  ${r.capability} [${r.maturity} — ${r.sectors_confirmed} sector(s)]`);
     row("Expansion events:", r.expansion_events);
     row("Confirmed by profitable:", r.confirmed_by_profitable);
     row("Problems unlocked:", r.problems_unlocked);
