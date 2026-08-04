@@ -138,11 +138,15 @@ async function run() {
     row("Companies:", r.companies);
   }
 
-  // Q04: Capability reuse
+  // Q04: Capability reuse — now uses capabilities table FK (not free-text capability_deployed)
   section("Q04 — Capability reuse: which capabilities unlock the most expansion");
   const q04 = await db.execute(sql`
     SELECT
-      ct.capability_deployed           AS capability,
+      cap.name                         AS capability,
+      cap.status                       AS maturity,
+      (SELECT COUNT(DISTINCT sector_id)
+         FROM capability_sector_evidence
+        WHERE capability_id = cap.id)  AS sectors_confirmed,
       COUNT(*)                         AS expansion_events,
       COUNT(*) FILTER (
         WHERE c.evidence_weight = 'strong_validator') AS confirmed_by_profitable,
@@ -153,16 +157,17 @@ async function run() {
         DISTINCT c.name, ', '
         ORDER BY c.name)               AS companies
     FROM company_timeline ct
-    JOIN companies c ON c.id  = ct.company_id
-    JOIN problems p  ON p.id  = ct.problem_id
-    WHERE ct.capability_deployed IS NOT NULL
+    JOIN capabilities cap ON cap.id   = ct.capability_id
+    JOIN companies c      ON c.id     = ct.company_id
+    JOIN problems p       ON p.id     = ct.problem_id
+    WHERE ct.capability_id IS NOT NULL
       AND ct.event_type IN ('market_entry', 'product_launch', 'acquisition')
-    GROUP BY ct.capability_deployed
+    GROUP BY cap.id, cap.name, cap.status
     ORDER BY expansion_events DESC, confirmed_by_profitable DESC
   `) as any[];
 
   for (const r of q04) {
-    console.log(`\n  ${r.capability}`);
+    console.log(\`\n  \${r.capability} [\${r.maturity} — \${r.sectors_confirmed} sector(s)]\`);
     row("Expansion events:", r.expansion_events);
     row("Confirmed by profitable:", r.confirmed_by_profitable);
     row("Problems unlocked:", r.problems_unlocked);

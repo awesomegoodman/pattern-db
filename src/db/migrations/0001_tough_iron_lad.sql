@@ -1,0 +1,1 @@
+ALTER TABLE "company_timeline" ADD COLUMN "capability_label" text;

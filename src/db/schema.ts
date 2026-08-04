@@ -24,6 +24,7 @@ import {
   timestamp,
   index,
   primaryKey,
+  unique,
 } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
@@ -101,6 +102,13 @@ export const relationshipConfidenceEnum = pgEnum('relationship_confidence', [
  * MVR fields only. Enrichment fields (acquisition history, founding team,
  * detailed ICP) are added as text notes in notableFacts until Phase 2.
  */
+export const capabilityStatusEnum = pgEnum('capability_status', [
+  'candidate',    // Created. No cross-sector evidence yet.
+  'proposed',     // 1+ sectors documented. Usable in timeline entries.
+  'established',  // 3+ distinct sectors documented. Cross-industry confirmed.
+  'deprecated',   // Retired. No new references allowed.
+]);
+
 export const companies = pgTable(
   'companies',
   {
@@ -134,6 +142,9 @@ export const companies = pgTable(
 
     // ── Notes ────────────────────────────────────────────────────────────────
     notableFacts: text('notable_facts'),
+  researchQueueSource: text('research_queue_source'),
+  // Format: "QUEST_TYPE:pattern-slug[:geography]" or "OFF_QUEUE:reason"
+  // See docs/candidate-selection.md for the full specification.
     // Anything company-specific that doesn't belong on a pattern record.
     // Phase 1: also captures founding team, acquisition history, etc.
 
@@ -179,7 +190,14 @@ export const companyTimeline = pgTable(
     // FK to problems.id — set after problem record exists
 
     // ── Capability tracking ──────────────────────────────────────────────────
-    capabilityDeployed: text('capability_deployed'),
+    capabilityId: uuid('capability_id').references(() => capabilities.id),
+  // FK to capabilities.id — set alongside capability_label.
+  // Guard trigger: capability must be at least 'proposed' to be referenced.
+  capabilityLabel: text('capability_label'),
+  // Controlled vocabulary slug — enables grouping in Q04.
+  // Set alongside capability_deployed (free text detail).
+  // Valid values: see CAPABILITY_LABELS in src/db/data.ts
+  capabilityDeployed: text('capability_deployed'),
     // Which existing capability made this expansion tractable.
     // Free text in Phase 1 (e.g. "banking integrations and regulatory expertise").
     // Becomes a FK to capabilities table in Phase 2.
@@ -456,6 +474,72 @@ export const boundaryCases = pgTable(
 // Required for Drizzle's type-safe relational query API.
 // ─────────────────────────────────────────────────────────────────────────────
 
+// ─────────────────────────────────────────────────────────────────────────────
+// CAPABILITY VOCABULARY (Layer 2 — cross-cutting)
+// Governance: docs/candidate-selection.md
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const sectors = pgTable(
+  'sectors',
+  {
+    id:        uuid('id').primaryKey().defaultRandom(),
+    slug:      text('slug').notNull().unique(),
+    name:      text('name').notNull(),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+  },
+  (t) => ({
+    slugIdx: index('sectors_slug_idx').on(t.slug),
+  })
+);
+
+export const capabilities = pgTable(
+  'capabilities',
+  {
+    id:          uuid('id').primaryKey().defaultRandom(),
+    slug:        text('slug').notNull().unique(),
+    name:        text('name').notNull(),
+    description: text('description').notNull(),
+    status:      capabilityStatusEnum('status').notNull().default('candidate'),
+    createdAt:   timestamp('created_at').defaultNow().notNull(),
+  },
+  (t) => ({
+    slugIdx:   index('capabilities_slug_idx').on(t.slug),
+    statusIdx: index('capabilities_status_idx').on(t.status),
+  })
+);
+
+export const capabilitySectorEvidence = pgTable(
+  'capability_sector_evidence',
+  {
+    id:             uuid('id').primaryKey().defaultRandom(),
+    capabilityId:   uuid('capability_id')
+                      .references(() => capabilities.id, { onDelete: 'cascade' })
+                      .notNull(),
+    sectorId:       uuid('sector_id')
+                      .references(() => sectors.id)
+                      .notNull(),
+    exampleCompany: text('example_company').notNull(),
+    evidenceNote:   text('evidence_note').notNull(),
+    timelineId:     uuid('timeline_id').references(() => companyTimeline.id),
+    createdAt:      timestamp('created_at').defaultNow().notNull(),
+  },
+  (t) => ({
+    uniqCapSector: unique('cse_unique_cap_sector').on(t.capabilityId, t.sectorId),
+    capIdx:        index('cse_capability_idx').on(t.capabilityId),
+  })
+);
+
+export const capabilitySynonyms = pgTable(
+  'capability_synonyms',
+  {
+    synonymSlug:  text('synonym_slug').primaryKey(),
+    capabilityId: uuid('capability_id')
+                    .references(() => capabilities.id)
+                    .notNull(),
+    addedAt:      timestamp('added_at').defaultNow().notNull(),
+  }
+);
+
 export const companiesRelations = relations(companies, ({ many }) => ({
   timeline: many(companyTimeline),
   implementationPatterns: many(companyImplementationPatterns),
@@ -466,6 +550,10 @@ export const companyTimelineRelations = relations(companyTimeline, ({ one }) => 
   company: one(companies, {
     fields: [companyTimeline.companyId],
     references: [companies.id],
+  }),
+  capability: one(capabilities, {
+    fields: [companyTimeline.capabilityId],
+    references: [capabilities.id],
   }),
 }));
 
@@ -541,5 +629,48 @@ export type SolutionPattern = typeof solutionPatterns.$inferSelect;
 export type NewSolutionPattern = typeof solutionPatterns.$inferInsert;
 export type ImplementationPattern = typeof implementationPatterns.$inferSelect;
 export type NewImplementationPattern = typeof implementationPatterns.$inferInsert;
+export const sectorsRelations = relations(sectors, ({ many }) => ({
+  capabilityEvidence: many(capabilitySectorEvidence),
+}));
+
+export const capabilitiesRelations = relations(capabilities, ({ many }) => ({
+  sectorEvidence:  many(capabilitySectorEvidence),
+  synonyms:        many(capabilitySynonyms),
+  timelineEntries: many(companyTimeline),
+}));
+
+export const capabilitySectorEvidenceRelations = relations(
+  capabilitySectorEvidence,
+  ({ one }) => ({
+    capability: one(capabilities, {
+      fields: [capabilitySectorEvidence.capabilityId],
+      references: [capabilities.id],
+    }),
+    sector: one(sectors, {
+      fields: [capabilitySectorEvidence.sectorId],
+      references: [sectors.id],
+    }),
+    timeline: one(companyTimeline, {
+      fields: [capabilitySectorEvidence.timelineId],
+      references: [companyTimeline.id],
+    }),
+  })
+);
+
+export const capabilitySynonymsRelations = relations(capabilitySynonyms, ({ one }) => ({
+  capability: one(capabilities, {
+    fields: [capabilitySynonyms.capabilityId],
+    references: [capabilities.id],
+  }),
+}));
+
 export type BoundaryCase = typeof boundaryCases.$inferSelect;
-export type NewBoundaryCase = typeof boundaryCases.$inferInsert;
+export type NewBoundaryCase           = typeof boundaryCases.$inferInsert;
+export type Sector                      = typeof sectors.$inferSelect;
+export type NewSector                   = typeof sectors.$inferInsert;
+export type Capability                  = typeof capabilities.$inferSelect;
+export type NewCapability               = typeof capabilities.$inferInsert;
+export type CapabilitySectorEvidence    = typeof capabilitySectorEvidence.$inferSelect;
+export type NewCapabilitySectorEvidence = typeof capabilitySectorEvidence.$inferInsert;
+export type CapabilitySynonym           = typeof capabilitySynonyms.$inferSelect;
+export type NewCapabilitySynonym        = typeof capabilitySynonyms.$inferInsert;
