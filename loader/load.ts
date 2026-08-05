@@ -73,10 +73,12 @@ export async function load() {
     // ── Capabilities ─────────────────────────────────────────────────────────
     for (const c of vocab.capabilities)
       await client.unsafe(
-        "INSERT INTO capabilities (id,slug,name,description,status,created_at) VALUES (gen_random_uuid(),$1,$2,$3,$4,now()) ON CONFLICT(slug) DO UPDATE SET name=EXCLUDED.name,description=EXCLUDED.description,status=EXCLUDED.status",
-        [c.slug, c.name, c.description, c.status]
+        "INSERT INTO capabilities (id,slug,name,description,status,created_at) VALUES (gen_random_uuid(),$1,$2,$3,'candidate',now()) ON CONFLICT(slug) DO UPDATE SET name=EXCLUDED.name,description=EXCLUDED.description,status='candidate'",
+        [c.slug, c.name, c.description]
       );
     const capMap = await map("capabilities");
+
+    // Pass 2: upsert sector evidence
     for (const c of vocab.capabilities) {
       for (const e of c.sector_evidence ?? []) {
         const sid = sectorMap[e.sector];
@@ -87,6 +89,13 @@ export async function load() {
         );
       }
     }
+
+    // Pass 3: promote to final status now that evidence rows exist
+    for (const c of vocab.capabilities)
+      await client.unsafe(
+        "UPDATE capabilities SET status=$1 WHERE slug=$2",
+        [c.status, c.slug]
+      );
 
     // ── Problems ─────────────────────────────────────────────────────────────
     for (const p of vocab.problems)

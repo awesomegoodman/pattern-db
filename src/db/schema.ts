@@ -255,6 +255,8 @@ export const problems = pgTable(
     lifecycle: text('lifecycle'),
     // 'emerging' | 'growing' | 'mature' | 'declining' | 'dead'
 
+    sectorId: uuid('sector_id').references(() => sectors.id),
+
     notes: text('notes'),
     // Phase 1: capture status_quo_pattern, underlying_constraint, etc. as free text.
     // These become proper FK fields in Phase 2.
@@ -313,6 +315,8 @@ export const solutionPatterns = pgTable(
     winningConditionSupersededBy: uuid('winning_condition_superseded_by'),
     // Self-reference: link to the replacement condition pair when retiring this one.
 
+    sectorId: uuid('sector_id').references(() => sectors.id),
+
     notes: text('notes'),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
@@ -367,6 +371,8 @@ export const implementationPatterns = pgTable(
     // FILL LAST. Free text in Phase 1 (e.g. "abstraction", "delegation").
     // Estimated by default. Becomes FK to mechanisms table in Phase 2.
 
+    sectorId: uuid('sector_id').references(() => sectors.id),
+
     notes: text('notes'),
     // Phase 1: capture moat, status_quo_displaced, capabilities_required as free text.
 
@@ -395,6 +401,8 @@ export const companyImplementationPatterns = pgTable(
       .notNull(),
     confidence: relationshipConfidenceEnum('confidence').notNull().default('high'),
     source: text('source'),
+    sectorId: uuid('sector_id').references(() => sectors.id),
+
     notes: text('notes'),
     createdAt: timestamp('created_at').defaultNow().notNull(),
   },
@@ -417,6 +425,8 @@ export const companyProblems = pgTable(
       .notNull(),
     confidence: relationshipConfidenceEnum('confidence').notNull().default('high'),
     source: text('source'),
+    sectorId: uuid('sector_id').references(() => sectors.id),
+
     notes: text('notes'),
     createdAt: timestamp('created_at').defaultNow().notNull(),
   },
@@ -438,6 +448,8 @@ export const solutionPatternProblems = pgTable(
       .references(() => problems.id, { onDelete: 'cascade' })
       .notNull(),
     confidence: relationshipConfidenceEnum('confidence').notNull().default('high'),
+    sectorId: uuid('sector_id').references(() => sectors.id),
+
     notes: text('notes'),
     createdAt: timestamp('created_at').defaultNow().notNull(),
   },

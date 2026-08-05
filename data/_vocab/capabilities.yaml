@@ -66,7 +66,7 @@
     at cost) vs blended-rate aggregators who absorb interchange margin.
   status: proposed
   sector_evidence:
-    - sector: b2b-payments
+    - sector: financial-services
       example_company: Adyen
       evidence_note: Adyen built direct connections to 250+ payment methods and card
         schemes globally, enabling IC++ pricing. This infrastructure was deployed to
@@ -81,7 +81,7 @@
     relationships. Transfers directly to adjacent markets where those rails exist.
   status: proposed
   sector_evidence:
-    - sector: b2b-payments
+    - sector: financial-services
       example_company: dLocal
       evidence_note: dLocal built integrations with 700+ local payment methods across
         40+ emerging markets. Each integration required dedicated engineering plus local
@@ -96,7 +96,7 @@
     in the EOR domain.
   status: proposed
   sector_evidence:
-    - sector: b2b-payments
+    - sector: financial-services
       example_company: Wise
       evidence_note: Wise holds payment institution licences in the EU (Central Bank
         of Lithuania), UK (FCA), USA (MSB licences per state), Singapore (MAS), and

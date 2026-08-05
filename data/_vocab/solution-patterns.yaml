@@ -1,5 +1,6 @@
 - slug: payroll-processing-infrastructure
   name: Payroll processing infrastructure
+  sector: hr-and-workforce
   first_observed: 1949
   pattern_durability: decades-old
   winning_condition: Regulatory complexity creates recurring non-discretionary demand for compliance execution, and the
@@ -14,8 +15,10 @@
     reliably and cheaply than employers doing it themselves. Has produced profitable operators across three distinct
     technological eras: manual bureau, desktop/server, cloud SaaS. Winning/Failure conditions deferred — need 3+
     cross-industry observations."
+
 - slug: cloud-hcm-platform
   name: Cloud HCM platform
+  sector: hr-and-workforce
   first_observed: 2005
   pattern_durability: established
   winning_condition: Incumbent's installed-base lock-in prevents it from offering cloud delivery without cannibalising
@@ -29,8 +32,10 @@
   notes: The structural bet that a unified cloud platform can replace fragmented on-premise HR software (PeopleSoft, SAP)
     for enterprise workforce management. Founded on the insight that cloud delivery enables continuous updates,
     cross-module data sharing, and lower total cost of ownership than on-premise.
+
 - slug: global-employment-infrastructure
   name: Global employment infrastructure
+  sector: hr-and-workforce
   first_observed: 2016
   pattern_durability: emerging
   winning_condition: "The per-country cost and timeline of establishing local
@@ -47,15 +52,19 @@
   notes: "The structural bet that a technology-enabled intermediary can absorb the legal and compliance complexity of
     cross-border employment, making global hiring accessible without entity setup. Two sub-approaches: entity-ownership
     model (Deel, Remote) vs. partner model (Papaya Global). Entity-ownership model appears to be winning as of 2025."
+
 - slug: compound-workforce-management-platform
   name: Compound workforce management platform
+  sector: hr-and-workforce
   first_observed: 2016
   pattern_durability: emerging
   notes: The structural bet that HR, IT, and Finance are not separate domains but a single operational problem — managing
     the employee lifecycle — that should be served by one data model. Requires a unified employee record as the core
     primitive. Parker Conrad's explicit thesis at Rippling after diagnosing Zenefits's failure.
+
 - slug: payment-processing-infrastructure
   name: Payment processing infrastructure
+  sector: financial-services
   first_observed: 1960
   pattern_durability: decades-old
   winning_condition: "Regulatory complexity creates recurring non-discretionary demand
@@ -72,11 +81,11 @@
     themselves. Direct cross-industry confirmation of the payroll-processing-infrastructure
     winning condition: regulatory complexity (PCI-DSS, banking licences, card scheme
     membership, AML/KYC) makes in-house execution uneconomic for all but the largest
-    enterprises — the same structural mechanism operating in a different industry.
-    Winning/Failure conditions: to be filled once cross-industry confirmation is documented."
+    enterprises — the same structural mechanism operating in a different industry."
 
 - slug: cross-border-payment-network
   name: Cross-border payment network
+  sector: financial-services
   first_observed: 1973
   pattern_durability: decades-old
   winning_condition: "Correspondent banking's multi-hop settlement structure
@@ -92,16 +101,15 @@
   notes: "The structural bet that a network connecting disparate national banking systems
     can move money internationally faster and cheaper than correspondent banking (SWIFT,
     first instantiated 1973). Serves two structurally distinct demand populations under
-    one solution pattern: (1) B2B cross-border payables (b2b-cross-border-payments) —
-    Airwallex, Wise for Business, OFX, Nium; (2) C2C diaspora remittance
-    (c2c-international-remittance) — LemFi, Mukuru, Grey, NALA, Remitly, Zepz.
+    one solution pattern: (1) B2B cross-border payables — Airwallex, Wise for Business,
+    OFX, Nium; (2) C2C diaspora remittance — LemFi, Mukuru, Grey, NALA, Remitly, Zepz.
     Winning conditions, unit economics, and regulatory structures differ materially
     between segments — Q01 and Q02 must be filtered by customer_segment to return
-    valid conclusions. Problem was split in 2025 from the conflated
-    cross-border-payment-infrastructure slug."
+    valid conclusions."
 
 - slug: embedded-banking-infrastructure
   name: Embedded banking infrastructure
+  sector: financial-services
   first_observed: 2018
   pattern_durability: emerging
   notes: "The structural bet that a regulated intermediary layer can enable non-bank
