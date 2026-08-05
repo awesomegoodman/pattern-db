@@ -248,4 +248,4 @@ BRIEF.md                           # Full design document — ontology, abstract
 
 ## Design reference
 
-Full design decisions, abstraction tests, canonical relationship vocabulary, entity field definitions, and query traceability traces are in [`BRIEF.md`](./BRIEF.md).
+Full design decisions, abstraction tests, canonical relationship vocabulary, entity field definitions, and query traceability traces are in [`BRIEF.md`](./docs/BRIEF.md).
