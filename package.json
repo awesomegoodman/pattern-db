@@ -8,6 +8,7 @@
     "start": "next start",
     "load": "set -a && source .env.local && set +a && tsx loader/index.ts load",
     "validate": "tsx loader/index.ts validate",
+    "opportunities": "set -a && source .env.local && set +a && npx tsx src/db/queries/run-opportunities.ts",
     "status": "set -a && source .env.local && set +a && tsx src/db/queries/status.ts",
     "queries": "set -a && source .env.local && set +a && tsx src/db/queries/run-all.ts",
     "context": "bash scripts/context-dump.sh"
