@@ -1,0 +1,66 @@
+slug: remitly
+name: Remitly Global
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
+founded: 2011
+country: USA
+status: operating
+stage: public
+funding_history: "Founded 2011. Series A through Series F pre-IPO. IPO September
+  2021 on Nasdaq (RELY) at $6.9B valuation. Total raised pre-IPO: $490M+ (Stripes,
+  Generation Investment, QED, DN Capital, PayU among investors)."
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: high
+notable_facts: "FY2024 revenue $1.18B (Nasdaq: RELY annual report), up from $841M
+  FY2023. GAAP net loss — investing aggressively in growth; adjusted EBITDA positive.
+  Founded by Matt Oppenheimer, Josh Hug, and Shivaas Gulati in Seattle. Primary
+  product: consumer remittances from USA, Canada, UK, EU to 170+ destination countries.
+  Top corridors: USA to Philippines, Mexico, India, Guatemala, Colombia. 7M+ customers
+  globally. Remitly's structural positioning: unlike Wise (which serves larger
+  business and personal transfers at mid-market FX rates), Remitly specifically
+  targets immigrant workers sending smaller amounts frequently ($200-500 per transfer)
+  with speed guarantees (some transfers in minutes). Speed guarantee is the primary
+  differentiator — users pay more for a 'within minutes' promise vs waiting for
+  next-day bank transfer. This speed premium is the margin mechanism. GAAP loss
+  reflects heavy investment in corridor expansion and customer acquisition; underlying
+  unit economics positive at established corridor level per company disclosure.
+  Evidence weight: weak_validator — public company (high signal confidence) but GAAP
+  loss-making (unproven at aggregate economics level)."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: "Nasdaq: RELY annual report FY2024"
+problems:
+  - slug: cross-border-payment-infrastructure
+timeline:
+  - year: 2011
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded in Seattle by Matt Oppenheimer (ex-Barclays Africa), Josh
+      Hug, and Shivaas Gulati. Oppenheimer's Africa banking experience gave direct
+      insight into the friction of international transfers for immigrants. Initial
+      product: app-based money transfer from USA to Philippines — the USA-Philippines
+      corridor is one of the largest remittance flows globally ($35B+ annually)."
+    source: Remitly company history / Crunchbase
+  - year: 2021
+    event_type: funding
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "IPO on Nasdaq (RELY) September 2021 at $6.9B valuation. At this
+      point: 3.5M active customers, $9B in annual send volume. 170+ destination
+      countries, 50+ origin countries. Established as the leading consumer-focused
+      international money transfer company by send volume."
+    source: Nasdaq RELY IPO prospectus
+  - year: 2023
+    event_type: product_launch
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Launched Remitly Global Network — direct integrations with local
+      payment rails (bank APIs, mobile money networks) in key corridors, replacing
+      third-party correspondent relationships. FY2023 revenue $841M. FY2024 revenue
+      $1.18B. Improving unit economics at corridor level as direct rail access
+      eliminates third-party correspondent margin."
+    capability: local-payment-rail-integrations
+    capability_deployed: "Direct mobile money and bank API integrations in 100+
+      corridors — eliminating correspondent bank margin on the receiving side."
+    source: Remitly annual report 2023 / press materials

@@ -1,0 +1,54 @@
+slug: grey-finance
+name: Grey Finance
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Nigeria"
+founded: 2020
+country: Nigeria
+status: operating
+stage: seed
+funding_history: "Pre-seed and Seed rounds 2020-2022. Investors: Soma Capital,
+  Future Africa, Voltage Capital, Justin Kan (Twitch co-founder). Total raised:
+  approximately $2.3M. Capital-efficient growth — serving large user base with
+  minimal external funding."
+revenue_signal: "<10M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded in Lagos by Idorenyin Obong and Joseph Femi Aghedo. Core
+  product: virtual USD, GBP, and EUR accounts for African professionals — enabling
+  Nigerian freelancers, remote workers, and creators to receive international payments
+  without the friction of Nigerian bank international accounts (which require extensive
+  documentation, are frequently frozen, and have low USD transfer limits under CBN
+  regulations). Primary use case: Nigerian software developers, designers, and writers
+  working for international clients via Upwork, Toptal, Fiverr, and direct contracts
+  who need a reliable USD account to receive payment. Structurally distinct from
+  LemFi: Grey solves the receive-side problem (getting foreign currency into a stable
+  account) rather than the send-side remittance problem (sending money home). Grey
+  users hold USD and convert to NGN at official or parallel rates as needed. This
+  is a direct consequence of Nigeria's FX controls: the official exchange rate
+  creates a gap that makes holding USD preferable to immediate conversion. 200,000+
+  users. Thin data: seed-stage, minimal public disclosure — many MVR fields are Unknown."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: Future Africa / Soma Capital investment / Grey product documentation
+problems:
+  - slug: cross-border-payment-infrastructure
+timeline:
+  - year: 2020
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded in Lagos. Core insight: Nigerian professionals working
+      internationally cannot reliably receive USD into Nigerian bank accounts due
+      to CBN regulations and frequent account restrictions. Grey provides a virtual
+      US/UK bank account (held with partner institutions) enabling straightforward
+      USD/GBP receipt."
+    source: Grey product launch / Future Africa
+  - year: 2022
+    event_type: product_launch
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Expanded to EUR accounts alongside USD and GBP. Grew to 200,000+
+      users across Nigeria, Ghana, Kenya. Seed round from Soma Capital, Voltage Capital,
+      Justin Kan. The product grew primarily through word-of-mouth among Nigerian
+      tech and creative communities — no significant paid acquisition."
+    source: Grey press materials / Soma Capital

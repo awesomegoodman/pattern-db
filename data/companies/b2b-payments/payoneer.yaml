@@ -1,0 +1,67 @@
+slug: payoneer
+name: Payoneer
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:USA"
+founded: 2005
+country: USA
+status: operating
+stage: public
+funding_history: "Founded 2005. Multiple private rounds through 2020 (total ~$300M pre-SPAC).
+  SPAC merger with Foley Trasimene Acquisition Corp II, listed Nasdaq (PAYO) June
+  2021 at $3.3B valuation. No single large VC dependency — grew steadily from
+  payment processing revenue."
+revenue_signal: ">100M"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "FY2024 revenue $953M (Nasdaq: PAYO annual report). FY2023 net income
+  $18.5M — first GAAP profitable year in company history, 18 years after founding.
+  Founded in New York by Israeli entrepreneurs Yuval Tal, Arnon Tzur, and Tamir
+  Eisenberg. Core product: cross-border B2B payments for digital economy participants —
+  freelancers, marketplace sellers (Amazon, eBay, Airbnb), and small businesses
+  receiving and sending payments internationally. Amazon adopted Payoneer as the
+  primary payout mechanism for its marketplace sellers globally — this was the
+  distribution breakthrough. 5M+ customers in 200+ countries. Key structural
+  distinction from Wise: Payoneer primarily serves the receive-side of international
+  payments (freelancers and marketplace sellers receiving USD, EUR, GBP from platform
+  clients) rather than the send-side (businesses sending payments to suppliers).
+  Third strong validator for cross-border-a2a-infrastructure alongside Wise (UK)
+  and OFX (Australia) — now with USA geography confirmed."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: "Nasdaq: PAYO annual report FY2024"
+problems:
+  - slug: cross-border-payment-infrastructure
+  - slug: programmatic-payment-disbursement
+    confidence: medium
+    notes: "Payoneer enables both receiving and sending. The primary use case is
+      businesses receiving international payments; sending (disbursement) is secondary
+      but present via Payoneer for businesses product."
+timeline:
+  - year: 2005
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded in New York. Initial product: prepaid Mastercard for
+      freelancers receiving international payments — at a time when wire transfer
+      was the only alternative (high fees, days delay). Founding team Israeli,
+      with experience in payment systems."
+    source: Payoneer company history
+  - year: 2012
+    event_type: product_launch
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Partnered with Amazon, Airbnb, Upwork, and Fiverr as the primary
+      payout mechanism for marketplace sellers and freelancers globally. These platform
+      partnerships became the distribution engine — Payoneer was embedded in the
+      payout flow of the largest digital marketplaces, acquiring millions of customers
+      without direct marketing."
+    capability_deployed: "Local banking relationships and multi-currency account
+      infrastructure — used to receive USD from Amazon and deliver local currency
+      to sellers in 200+ countries."
+    source: Payoneer press materials / Amazon marketplace seller documentation
+  - year: 2021
+    event_type: funding
+    description: "SPAC merger, listed Nasdaq: PAYO at $3.3B valuation. At this point:
+      5M+ customers, $5.5B in payment volume. Revenue $346M. FY2023 net income
+      $18.5M — GAAP profitable for first time after 18 years."
+    source: Nasdaq PAYO / SEC filing

@@ -1,0 +1,81 @@
+slug: wave-west-africa
+name: Wave Mobile Money
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:local-rail-aggregation:Senegal"
+founded: 2017
+country: Senegal
+status: operating
+stage: unicorn
+funding_history: "Series A $165M 2022 (Stripe, Sequoia Heritage, Founders Fund,
+  Ribbit Capital, Partech). Total raised: $165M+. Note: Wave was founded with prior
+  funding from CoinMe (an unrelated entity) before pivoting. The $165M 2022 round
+  is the primary institutional round."
+revenue_signal: "<10M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Drew Durbin and Ben Lyon in Dakar, Senegal — both
+  ex-Google employees who had worked on Android and Google Pay. Core product: free
+  mobile money transfers for West Africa. Revenue model: charges merchants 1% on
+  payments received (vs. competitor telcos charging 4-7% for MTN Money and Orange
+  Money), earns interest on float. 7M+ users across Senegal, Côte d'Ivoire, Mali,
+  Cameroon, Uganda. Strategic insight: mobile money penetration in West Africa is
+  high but existing services (telco-operated MTN Money, Orange Money) charge high
+  fees and offer poor UX. Wave offers free consumer transfers, creating adoption
+  through the consumer side and then charging merchants a lower rate than competitors.
+  Stripe investment (2022) signals Stripe's direct interest in West African payment
+  infrastructure — consistent with the Paystack acquisition (Nigeria, 2020). Fourth
+  observation for local-rail-aggregation, first from Francophone West Africa. Distinct
+  from Flutterwave and dLocal: Wave operates at the consumer adoption layer (mobile
+  money wallet) rather than the merchant API layer — it builds the payment rail
+  itself rather than aggregating existing rails. This is closer to domestic-payment-
+  infrastructure than pure local-rail-aggregation, but the West African context
+  (aggregating across BCEAO-regulated mobile money in multiple Francophone African
+  countries) maps better to local-rail-aggregation."
+implementation_patterns:
+  - slug: local-rail-aggregation
+    source: Stripe investment announcement / TechCrunch / Wave company blog
+    notes: "Wave operates at the consumer mobile money layer — it is simultaneously
+      building the rail (own mobile money licence) and aggregating across multiple
+      West African countries. Classification as local-rail-aggregation reflects the
+      multi-country aggregation; a domestic-payment-infrastructure secondary link
+      would also be defensible."
+  - slug: domestic-payment-infrastructure
+    confidence: medium
+    source: Wave company documentation
+    notes: "Wave builds its own mobile money infrastructure per country (holds BCEAO
+      electronic money institution licences) rather than only aggregating existing
+      rails. The domestic infrastructure aspect is secondary to the cross-country
+      aggregation as the primary value proposition."
+problems:
+  - slug: programmatic-payment-acceptance
+  - slug: cross-border-payment-infrastructure
+    confidence: medium
+    notes: "Wave's multi-country Francophone West Africa presence enables cross-border
+      transfers between Senegal, Côte d'Ivoire, Mali — an emerging cross-border
+      capability alongside the domestic-payment focus."
+timeline:
+  - year: 2017
+    event_type: founding
+    implementation_pattern: local-rail-aggregation
+    problem: programmatic-payment-acceptance
+    description: "Founded in Dakar, Senegal by Drew Durbin and Ben Lyon. Initial
+      product: mobile money transfers in Senegal at zero fee for consumers. Designed
+      to undercut telco mobile money operators (Orange Money, MTN Money) who charge
+      4-7% per transfer. Obtained BCEAO (Central Bank of West African States) electronic
+      money institution licence — enabling regulated mobile money operation without
+      a telco infrastructure."
+    source: Wave company blog / TechCrunch
+  - year: 2022
+    event_type: funding
+    implementation_pattern: local-rail-aggregation
+    description: "Raised $165M from Stripe, Sequoia Heritage, Founders Fund, Ribbit
+      Capital, Partech at $1.7B valuation. At this point: 7M+ users across Senegal,
+      Côte d'Ivoire, Mali, Cameroon, Uganda. Stripe's direct investment signals
+      strategic intent in Francophone African payment infrastructure, consistent with
+      Stripe's 2020 Paystack acquisition for Anglophone Africa."
+    capability: local-payment-rail-integrations
+    capability_deployed: "BCEAO electronic money institution licence and Senegal mobile
+      money infrastructure provided the regulatory template for Côte d'Ivoire, Mali,
+      and Cameroon expansion — all governed by the same BCEAO regulatory framework."
+    source: Stripe / Sequoia Heritage investment announcement

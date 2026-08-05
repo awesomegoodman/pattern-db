@@ -1,0 +1,71 @@
+slug: yoco
+name: Yoco
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:full-stack-payment-processor:South-Africa"
+founded: 2015
+country: South Africa
+status: operating
+stage: series_c
+funding_history: "Seed 2015 (Quona Capital, Partech). Series A $16M 2017 (Velocity
+  Capital, Partech). Series B $20M 2019 (Partech, Velocity, 4Di Capital). Series C
+  $83M 2021 at approximately $400M valuation (Dragoneer Investment Group lead,
+  Breyer Capital, Tiger Global). Total raised: $120M+."
+revenue_signal: "<10M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded in Cape Town by Katlego Maphai (CEO), Bradley Wattrus,
+  Lungisa Matshoba, and Carl Wazen — the team includes black South African co-founders,
+  which is significant in the context of South African financial inclusion. Core
+  product: card payment terminals and POS software for South African SMBs. 200,000+
+  merchants. Products: Yoco Go (portable card reader), Yoco Neo (smart POS), Yoco
+  Business Account, Yoco Capital (SMB lending). Structural parallel to Moniepoint
+  (Nigeria): both are full-stack payment processors targeting SMBs in an African
+  market with low card terminal penetration. Both founded 2015 by entrepreneurs
+  with institutional payment industry backgrounds. Both raised ~$100M range. Both
+  added business banking alongside payment processing. The parallel demonstrates
+  the same structural opportunity (SMB payment terminal infrastructure) is being
+  independently addressed in South Africa and Nigeria — consistent with the geographic
+  whitespace query pattern. South Africa structural context: card acceptance among
+  SMBs significantly lower than formal retail; majority of small businesses using
+  cash or EFT (electronic funds transfer) without card terminals. Yoco addresses
+  this gap with affordable hardware and no monthly fees (revenue from transaction
+  percentage). Southern Africa geographic whitespace now filled."
+implementation_patterns:
+  - slug: full-stack-payment-processor
+    source: Dragoneer Series C announcement / Yoco product documentation
+problems:
+  - slug: programmatic-payment-acceptance
+timeline:
+  - year: 2015
+    event_type: founding
+    implementation_pattern: full-stack-payment-processor
+    problem: programmatic-payment-acceptance
+    description: "Founded in Cape Town. Initial product: affordable card reader for
+      South African SMBs — targeting the large population of small businesses that
+      could not afford or access traditional merchant acquiring (which required monthly
+      fees, credit checks, and complex applications). Same structural problem that
+      Square solved in the USA in 2009, applied to South Africa in 2015."
+    source: Yoco company history / Quona Capital
+  - year: 2021
+    event_type: funding
+    implementation_pattern: full-stack-payment-processor
+    description: "Series C $83M at ~$400M valuation (Dragoneer lead, Breyer Capital,
+      Tiger Global). At this point: 150,000+ merchants, Yoco Business Account launched
+      (neobank for SMBs), Yoco Capital launched (SMB lending using payment data for
+      underwriting). Standard expansion trajectory: payment acceptance to financial
+      services, identical to Moniepoint in Nigeria and Square in USA."
+    capability_deployed: "Merchant payment data (transaction history, volume, seasonality)
+      used as underwriting signal for Yoco Capital — same capability reuse pattern
+      seen in Square Capital and Moniepoint Capital."
+    source: Dragoneer / Breyer Capital Series C announcement
+  - year: 2023
+    event_type: product_launch
+    implementation_pattern: full-stack-payment-processor
+    description: "Expanded to 200,000+ merchants. Launched Yoco Neo (smart POS with
+      full Android capability, replacing the basic card reader). South African market
+      context: Yoco competes with traditional acquiring banks (ABSA, Standard Bank,
+      FNB) that charge higher fees and have longer onboarding, and with iKhokha (local
+      competitor) with similar positioning. Yoco's differentiation: no monthly fees,
+      instant activation, mobile-first."
+    source: Yoco press materials 2023

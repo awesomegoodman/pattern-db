@@ -1,0 +1,60 @@
+slug: nala
+name: NALA
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Tanzania"
+founded: 2017
+country: Tanzania
+status: operating
+stage: series_a
+funding_history: "Founded 2017 as feature-phone payments app. Pivoted 2021 to diaspora
+  remittances. YC S21. Series A $10M 2022 (Bessemer Venture Partners, Amplo, and
+  others). Total raised: $15M+."
+revenue_signal: "<10M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Benjamin Fernandes (Tanzanian) in Dar es Salaam. Notable
+  background: Fernandes was a Gates Foundation scholar and Stanford MBA student when
+  he started NALA. Initial product (2017-2020): feature-phone payment app for
+  Tanzanians (USSD-based mobile payments). Pivoted in 2020-2021 to diaspora remittances:
+  enabling Tanzanians and broader East Africans in the UK and Europe to send money
+  home. YC S21 admission validated the pivot. NALA is analytically interesting as
+  the only company in this dataset founded in Tanzania — geographic whitespace for
+  East Africa. The pivot story is also valuable: a feature-phone payment app (relevant
+  to domestic-payment-infrastructure) became a diaspora remittance app (cross-border-
+  a2a-infrastructure) after discovering the diaspora corridor had better unit economics
+  than the domestic feature-phone market. Bessemer Venture Partners investment —
+  a tier-1 US VC backing an East African diaspora remittance company — is a strong
+  signal of institutional conviction in the Africa remittance corridor. Expanding
+  to payments infrastructure ('NALA for Business') for businesses needing cross-
+  border B2B payments in Africa."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: YC S21 / Bessemer Venture Partners Series A / NALA product documentation
+problems:
+  - slug: cross-border-payment-infrastructure
+timeline:
+  - year: 2017
+    event_type: founding
+    problem: cross-border-payment-infrastructure
+    description: "Founded in Dar es Salaam by Benjamin Fernandes. Initial product:
+      USSD-based feature-phone payment app for Tanzanians. Tanzania had high mobile
+      money adoption (M-Pesa, Tigo Pesa) but fragmented — NALA aimed to provide
+      unified access. Gates Foundation scholarship and Stanford MBA background gave
+      Fernandes access to impact investing networks."
+    source: NALA company history / YC S21 profile
+  - year: 2021
+    event_type: pivot
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "YC S21. Pivoted from domestic feature-phone payments to diaspora
+      remittances — Tanzanians and East Africans in UK/Europe sending money home.
+      Pivot driven by unit economics discovery: diaspora remittance transfers ($200-500)
+      at 1-2% fee generated more margin than domestic feature-phone transactions.
+      Renamed product and messaging around the pivot."
+    source: YC S21 / NALA blog
+  - year: 2022
+    event_type: funding
+    description: "Series A $10M from Bessemer Venture Partners and Amplo. First
+      tier-1 US VC backing a Tanzania-founded company in payments. Expanded corridors:
+      UK, Europe, USA to Tanzania, Uganda, Ghana, Kenya, Rwanda, Ethiopia."
+    source: Bessemer Venture Partners announcement

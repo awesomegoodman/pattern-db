@@ -1,0 +1,68 @@
+slug: unit
+name: Unit
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:embedded-banking-infrastructure"
+founded: 2019
+country: USA
+status: operating
+stage: series_c
+funding_history: "Seed $4.5M 2020 (Better Tomorrow Ventures, TLV Partners). Series A
+  $18.6M 2021 (Accel lead). Series B $100M 2022 at $1.2B valuation (Insight Partners
+  lead, Accel). Total raised: $119M+."
+revenue_signal: "<10M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Itai Damti (CEO) and Doron Somech in San Francisco.
+  Damti was previously co-founder of Lemonade (insurance) and is a vocal participant
+  in post-Synapse industry discussions about BaaS architecture. Unit represents the
+  direct-bank-partnership implementation of embedded banking — explicitly designed
+  to avoid the middleware ledger architecture that caused Synapse's collapse. Core
+  structural distinction: Unit's partner banks (Thread Bank, Blue Ridge Bank) hold
+  deposits directly and maintain the authoritative ledger. Unit provides compliance
+  software, product tooling, and banking programme management as a software layer
+  without interposing a second ledger. When Mercury (a Unit customer) was affected
+  by the Evolve Bank / Synapse fallout, Mercury's transition away from Synapse was
+  cleaner precisely because their bank held the authoritative record, not a middleware
+  provider. Customers include Gusto (payroll), Freshworks (SaaS), Wave (digital
+  banking), and HoneyBook (creative businesses). Unit is the canonical instantiation
+  of direct-bank-partnership — the corrected implementation that emerged directly
+  from the BaaS middleware failure. Damti was a panelist at TechCrunch Disrupt 2024
+  discussing the Synapse collapse and advocating for the direct bank partnership
+  model as the structural replacement."
+implementation_patterns:
+  - slug: direct-bank-partnership
+    source: Insight Partners Series B announcement / Unit product documentation
+problems:
+  - slug: embedded-banking-infrastructure
+timeline:
+  - year: 2019
+    event_type: founding
+    implementation_pattern: direct-bank-partnership
+    problem: embedded-banking-infrastructure
+    description: "Founded by Itai Damti and Doron Somech. Explicit architectural
+      decision from day one: no middleware ledger. Partner banks hold deposits directly
+      with their own ledgers as the authoritative source of record. Unit provides
+      the software layer (APIs, compliance, product tooling) without the regulatory
+      liability of holding money or maintaining a parallel ledger."
+    source: Unit company history / Itai Damti interviews
+  - year: 2022
+    event_type: funding
+    implementation_pattern: direct-bank-partnership
+    description: "Series B $100M at $1.2B valuation (Insight Partners lead). At this
+      point: 100+ fintech companies using Unit's infrastructure. Customers include
+      Gusto, Freshworks, Wave. Bank partners include Thread Bank and Blue Ridge Bank.
+      The Synapse crisis (which began deteriorating in 2023) validated Unit's architectural
+      choice — fintech companies that had avoided middleware ledgers had cleaner
+      regulatory positions."
+    source: Insight Partners Series B announcement
+  - year: 2024
+    event_type: product_launch
+    implementation_pattern: direct-bank-partnership
+    description: "Synapse bankruptcy (April 2024) caused significant market shift.
+      Unit's approach — direct bank partnership without middleware ledger — became
+      the dominant industry standard. Multiple banks that had ended BaaS middleware
+      relationships (post-Synapse) began direct partnership relationships with
+      infrastructure providers like Unit. FDIC proposed Synapse Rule (October 2024)
+      codified the direct bank recordkeeping requirement Unit had always used."
+    source: TechCrunch / FDIC Synapse Rule / Unit blog

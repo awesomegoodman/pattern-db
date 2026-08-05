@@ -1,0 +1,73 @@
+slug: global-payments
+name: Global Payments Inc.
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:full-stack-payment-processor:USA"
+founded: 2001
+country: USA
+status: operating
+stage: public
+funding_history: "Spun out of National Data Corporation (NDC) in 2001. IPO on NYSE
+  (GPN) at founding. No VC dependency — grew from payment processing revenue.
+  Major acquisitions: Heartland Payment Systems $4.3B (2015), TSYS (Total System
+  Services) $21.5B (2019), EVO Payments $4.0B (2023). Total M&A: $30B+ since
+  founding."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "FY2024 adjusted net revenue $9.4B, adjusted EPS strongly profitable
+  (NYSE: GPN annual report). Processes payments for 4M+ merchant locations across
+  100+ countries. Originally spun out of National Data Corporation's payment
+  processing division — making it a direct descendant of the legacy payment
+  processing infrastructure built in the 1970s-80s. Third strong validator for
+  full-stack-payment-processor (alongside Adyen, Interswitch), now with USA
+  geography covered. Structural distinction from Adyen: Global Payments uses an
+  acquisition-led growth model (acquiring Heartland, TSYS, EVO) to build geographic
+  coverage, whereas Adyen built single-platform coverage organically. Both instantiate
+  the same pattern (full-stack payment processor) with different execution approaches —
+  a pattern-level confirmation that multiple implementations can succeed under the
+  same structural conditions. Key insight from M&A strategy: the full-stack payment
+  processor pattern in mature markets requires either organic global platform build
+  (Adyen approach, 18 years) or acquisition roll-up (Global Payments approach, $30B+).
+  Both are economically viable; the acquisition approach produces faster geographic
+  coverage but lower margin purity."
+implementation_patterns:
+  - slug: full-stack-payment-processor
+    source: "NYSE: GPN annual report FY2024 / SEC filing"
+problems:
+  - slug: programmatic-payment-acceptance
+timeline:
+  - year: 2001
+    event_type: founding
+    implementation_pattern: full-stack-payment-processor
+    problem: programmatic-payment-acceptance
+    description: "Spun out of National Data Corporation (NDC) as an independent public
+      company. Initial business: merchant payment processing for US and Canadian
+      businesses. NDC had been processing card payments since the 1970s — Global
+      Payments inherited 30 years of payment infrastructure and acquiring relationships.
+      IPO on NYSE at founding."
+    source: Global Payments company history / NYSE
+  - year: 2015
+    event_type: acquisition
+    implementation_pattern: full-stack-payment-processor
+    description: "Acquired Heartland Payment Systems for $4.3B — added 300,000+
+      US SMB merchants and software-integrated payments. Heartland was notable for
+      a 2008 data breach that exposed 130M+ card numbers — making it one of the
+      largest payment processor breaches in history and a key driver of tokenisation
+      and end-to-end encryption adoption across the industry."
+    capability_acquired: "SMB software-integrated payment infrastructure and direct
+      acquiring relationships with 300,000+ merchants via Heartland's point-of-sale
+      ecosystem."
+    source: Global Payments press release 2015
+  - year: 2019
+    event_type: acquisition
+    implementation_pattern: full-stack-payment-processor
+    description: "Merged with TSYS (Total System Services) in $21.5B all-stock deal.
+      TSYS was one of the largest card processors in the world (card issuer processing
+      for banks, plus merchant acquiring). Combined entity processed $6T+ in annual
+      payment volume, covering merchant acquiring AND card issuer processing — the
+      full payment stack."
+    capability_acquired: "Card issuer processing for banks (TSYS's primary business)
+      added to merchant acquiring — creating a combined entity that touches both
+      sides of every card transaction."
+    source: Global Payments / TSYS merger proxy 2019

@@ -1,0 +1,56 @@
+slug: lemfi
+name: LemFi (formerly Lemonade Finance)
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Nigeria"
+founded: 2020
+country: UK
+status: operating
+stage: series_a
+funding_history: "Founded 2020. YC W21. Series A $33M 2023 (Harlem Capital lead,
+  Endeavor Catalyst, Partech, Zrosk). Total raised: $38M+."
+revenue_signal: "<10M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Ridwan Olalere and Rian Cochran in London. YC W21.
+  Core product: multi-currency accounts and international transfers for African
+  diaspora — specifically enabling Nigerians, Kenyans, and Ghanaians in the UK,
+  USA, and Canada to send money home at lower cost than traditional remittance
+  channels. Three-pronged value proposition: (1) hold foreign currency (GBP, USD,
+  CAD) in a UK/US/Canadian account, (2) receive salary and payments from international
+  employers, (3) send to Africa via local mobile money and bank rails. Addresses
+  a different problem from Wise and OFX: LemFi primarily serves first-generation
+  immigrants who need to operate in two financial systems simultaneously — earning
+  in UK/USA, living across two jurisdictions. Structural gap: banks in UK charge
+  £20-25 per international transfer; LemFi charges flat fee of £2-3. User base
+  in Nigeria, Kenya, Ghana, Senegal, Uganda, Cameroon diaspora in UK/Canada/USA."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: YC W21 / Series A announcement / LemFi product documentation
+problems:
+  - slug: cross-border-payment-infrastructure
+timeline:
+  - year: 2020
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded in London by Ridwan Olalere and Rian Cochran. Initial
+      product: low-cost international transfers from UK to Nigeria, Kenya, Ghana.
+      Founding insight: African diaspora in the UK pay 4-7% of remittance value in
+      fees to banks and traditional services; mobile money infrastructure in Africa
+      had matured enough to enable near-instant delivery if the sending side was
+      simplified."
+    source: LemFi company history / YC W21
+  - year: 2021
+    event_type: funding
+    description: "YC W21 batch. Accelerator admission and initial funding enabled
+      product expansion from Nigeria corridor to Kenya and Ghana. YC network provided
+      US market entry point for the USA-to-Africa corridor expansion."
+    source: YC W21 alumni record
+  - year: 2023
+    event_type: funding
+    description: "Series A $33M (Harlem Capital lead, Endeavor Catalyst, Partech).
+      Expanded to USA and Canada operations alongside UK. At this point: serving
+      Nigerian, Kenyan, Ghanaian, Senegalese diaspora across three destination markets.
+      Launched multi-currency accounts enabling users to hold GBP, USD, EUR."
+    source: Harlem Capital / Partech Series A announcement

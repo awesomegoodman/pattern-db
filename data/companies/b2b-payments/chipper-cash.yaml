@@ -1,0 +1,64 @@
+slug: chipper-cash
+name: Chipper Cash
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Uganda"
+founded: 2018
+country: USA
+status: operating
+stage: series_c
+funding_history: "Series A $13.8M 2020. Series B $30M 2020 (same year). Series B
+  extension $100M November 2020 (Bezos Expeditions, Ribbit Capital, SVB Capital).
+  Series C $250M November 2021 at $2B valuation — FTX Ventures as strategic investor
+  alongside Bezos Expeditions, Ribbit Capital. Total raised: $305M."
+revenue_signal: "<10M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Ham Serunjogi and Maijid Moujaled — both Ugandan, met
+  at Grinnell College (Iowa). Core product: fee-free peer-to-peer cross-border money
+  transfers within Africa (Ghana, Uganda, Nigeria, Kenya, South Africa, Tanzania,
+  Rwanda) and from USA/UK to Africa. Had significant challenges in 2022-2023.
+  FTX DOUBLE IMPACT: FTX was simultaneously a Chipper Cash investor (Series C) AND
+  a partner (Chipper Cash added crypto trading via FTX partnership). When FTX
+  collapsed in November 2022, Chipper Cash lost both its most recent strategic
+  investor AND its primary crypto revenue stream simultaneously. June 2022: laid off
+  50% of workforce (before FTX collapse — suggesting pre-existing financial stress).
+  2023: additional layoffs, significantly reduced scale. Still operating as of 2025
+  but dramatically smaller than 2021 peak. Evidence weight: weak_validator — company
+  still operating but with severe distress signals. Not cleanly disconfirming (not
+  shut down, no acquisition) but not a success case either. The FTX investment is
+  the most analytically interesting fact: strategic investors who are themselves
+  financially unsound create downstream instability in the companies they invest in —
+  a tail risk not captured by standard funding history metrics."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: TechCrunch / Chipper Cash press materials
+problems:
+  - slug: cross-border-payment-infrastructure
+timeline:
+  - year: 2018
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded in San Francisco by Ham Serunjogi and Maijid Moujaled.
+      Core insight: Africans in different countries cannot easily send money to each
+      other — there is no pan-African payment network. SWIFT is expensive and slow;
+      mobile money networks (MTN, Airtel) are country-specific. Chipper Cash built
+      an app enabling free P2P transfers across 7 African countries using local
+      mobile money and bank rails per country."
+    source: TechCrunch / Chipper Cash company history
+  - year: 2021
+    event_type: funding
+    description: "Series C $250M at $2B valuation. FTX Ventures invested as strategic
+      partner — Chipper Cash planned to integrate crypto trading and cross-border
+      crypto payments via FTX infrastructure. At this point: 5M+ registered users,
+      intra-Africa transfers in 7 countries, USA-to-Africa launched."
+    source: TechCrunch Series C announcement
+  - year: 2022
+    event_type: pivot
+    description: "June 2022: laid off 50% of workforce. November 2022: FTX collapsed.
+      Chipper Cash lost FTX as both investor and crypto infrastructure partner.
+      Additional layoffs in 2023. Company continued operating with significantly
+      reduced scale and team. The FTX connection created dual exposure: investor
+      collapse + product partner collapse simultaneously."
+    source: TechCrunch / Axios

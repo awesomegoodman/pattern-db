@@ -1,0 +1,59 @@
+slug: verto-fx
+name: Verto
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Nigeria"
+founded: 2019
+country: UK
+status: operating
+stage: seed
+funding_history: "Seed round $10M 2021 (Quona Capital, Target Global). Total raised:
+  $10M+. Capital-efficient growth — B2B model with high-value transactions per
+  customer means revenue per customer is higher than consumer alternatives."
+revenue_signal: "<10M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded in London and Lagos by Ola Oyetayo and Anthony Oduu — both
+  Nigerian, with backgrounds in financial services. Core product: B2B FX and
+  cross-border payment platform for African businesses trading internationally.
+  Primary customers: African importers, exporters, and businesses that regularly
+  need to convert between NGN, GHS, KES, ZAR and USD, EUR, GBP for trade purposes.
+  Structural distinction from every other company in this batch: Verto is purely
+  B2B, not consumer. The problem Verto solves: a Nigerian importer buying goods from
+  China needs to convert NGN to USD reliably at a competitive rate — neither Nigerian
+  banks (slow, high spread, capital controls) nor consumer apps (wrong customer,
+  wrong volume) serve this well. Verto provides FX execution, multi-currency accounts,
+  and international transfers specifically for businesses with regular FX needs in
+  the $10k-$5M transaction range. The B2B FX market in Africa is significantly
+  underserved: most African businesses rely on correspondent banking or the parallel
+  FX market. Verto provides a regulated, transparent alternative."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: Quona Capital investment announcement / Verto product documentation
+problems:
+  - slug: cross-border-payment-infrastructure
+  - slug: programmatic-payment-disbursement
+    confidence: medium
+    notes: "Verto's primary customer is an African business converting FX for trade
+      payments — the disbursement problem (paying international suppliers) is equally
+      relevant alongside the FX conversion problem."
+timeline:
+  - year: 2019
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded in London and Lagos by Ola Oyetayo and Anthony Oduu. Both
+      had prior careers at large financial institutions (Deutsche Bank, Standard
+      Chartered) which gave them deep knowledge of B2B FX operations in Africa.
+      Initial product: FX execution and multi-currency accounts for African businesses
+      needing regular USD, EUR, GBP for trade."
+    source: Verto company history / Quona Capital
+  - year: 2021
+    event_type: funding
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Seed round $10M from Quona Capital and Target Global. At this point:
+      established B2B FX product for Nigerian and Ghanaian importers and exporters.
+      Corridors: NGN/GHS/KES/ZAR ↔ USD/EUR/GBP. Customer profile: businesses with
+      $50k-$5M monthly FX needs — a segment completely underserved by consumer apps
+      and poorly served by correspondent banks."
+    source: Quona Capital announcement

@@ -1,0 +1,69 @@
+slug: azimo
+name: Azimo (acquired by Papaya Global 2022)
+domain: b2b-payments
+research_queue_source: "FAILURE_CASE_NEEDED:cross-border-a2a-infrastructure"
+founded: 2012
+country: UK
+status: acquired
+stage: series_c
+funding_history: "Founded 2012. Series A through Series C. Investors: Frog Capital,
+  Quona Capital, e.ventures, Greycroft, Rakuten. Total raised: $100M+. Acquired by
+  Papaya Global in February 2022 at an undisclosed price — multiple sources describe
+  the acquisition price as well below the capital invested, indicating a distressed
+  exit."
+revenue_signal: "<10M"
+profitability_signal: known_unprofitable
+evidence_weight: disconfirming
+signal_confidence: high
+notable_facts: "DISCONFIRMING CASE. Failure attribution confidence: Medium. Founded
+  by Michael Kent and Boris Druppel in London. 10 years of operation, $100M+ raised,
+  never achieved sustainable unit economics. Acquired by Papaya Global in February
+  2022 at a price that multiple sources (TechCrunch, Sifted) described as a distressed
+  acquisition well below invested capital. Structural failure analysis: Azimo reached
+  approximately 1M customers and 200+ corridors by acquisition — suggesting the product
+  worked technically and had demand, but the economics did not close at its achieved
+  scale. Cross-border A2A requires reaching critical volume per corridor to cover
+  the fixed costs of: (1) per-country regulatory licensing, (2) per-corridor local
+  banking relationships, (3) FX liquidity management, (4) compliance team. Azimo
+  never reached sufficient scale in enough corridors to amortise these costs. Failure
+  attribution confidence: Medium — the failure is partially pattern-structural (volume
+  threshold requirement) and partially execution (Azimo failed to achieve the scale
+  that Wise, Remitly, and WorldRemit did with similar products and similar capital).
+  Azimo's failure does not disprove the cross-border A2A pattern — Wise succeeded
+  with similar approach. It establishes a lower bound: the pattern requires reaching
+  scale that $100M of capital alone cannot guarantee."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: TechCrunch / Sifted / Papaya Global acquisition announcement
+    notes: "DISCONFIRMING. Medium failure attribution confidence. Azimo failed after
+      10 years and $100M raised — not a catastrophic shutdown but a distressed
+      acquisition well below invested capital. Pattern-structural partially: the
+      cross-border A2A model requires scale Azimo did not achieve."
+problems:
+  - slug: cross-border-payment-infrastructure
+timeline:
+  - year: 2012
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded in London by Michael Kent and Boris Druppel. Initial product:
+      low-cost international money transfers from Europe to 200+ countries. Direct
+      competitor to Wise (then TransferWise), launched in same year. Both targeted
+      the same problem: bank international transfer fees averaging 4-6% of transaction."
+    source: Azimo company history / TechCrunch
+  - year: 2017
+    event_type: product_launch
+    description: "Expanded to 200+ destination countries. Business transfer product
+      launched alongside consumer. $100M+ in monthly transfer volume claimed. Series B
+      and C raised. Despite scale, unit economics remained challenging — regulatory
+      compliance costs and corridor banking relationships consumed margin."
+    source: Azimo press releases 2017
+  - year: 2022
+    event_type: acquisition
+    description: "Acquired by Papaya Global in February 2022 at undisclosed price.
+      Sources: well below the $100M+ invested capital. Papaya Global (global payroll
+      EOR company) acquired Azimo for its payment infrastructure and licences rather
+      than its consumer brand — shuttered the consumer-facing Azimo brand and integrated
+      payment rails into Papaya's payroll disbursement infrastructure. 10 years of
+      operation ended without achieving sustainable profitability."
+    source: TechCrunch / Sifted / Papaya Global press release

@@ -1,0 +1,63 @@
+slug: zepz
+name: Zepz (WorldRemit + Sendwave)
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
+founded: 2010
+country: UK
+status: operating
+stage: series_e
+funding_history: "WorldRemit founded 2010 by Ismail Ahmed (Somali-British). Raised
+  $400M+ (Accel, TCV, Leapfrog Investments). Sendwave founded 2014, raised $25M.
+  WorldRemit acquired Sendwave for $500M in 2021. Combined entity Zepz raised
+  $292M in 2021 at $5B valuation (Leapfrog Investments, TCV, Accel). Total raised:
+  $700M+ combined. Significant layoffs: 420 staff (26%) December 2021, additional
+  rounds 2022-2023."
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "WorldRemit founded by Ismail Ahmed in London — a Somali-British
+  entrepreneur who had direct personal experience of the high cost of international
+  remittances (his family in Somaliland depended on diaspora remittances). Initial
+  product: low-cost international transfers from UK to Africa and Asia. Sendwave
+  (acquired 2021, $500M) was focused specifically on Sub-Saharan Africa corridors.
+  Combined entity Zepz processes $5B+ in annual transfer volume, 5M+ customers,
+  140+ countries. The 420-person layoff (26% of workforce) in December 2021 — the
+  same month the Zepz rebrand and $292M raise were announced — is an unusual signal
+  of financial stress at peak funding. Additional layoffs in 2022 and 2023. Evidence
+  weight: weak_validator — large scale and well-documented, but GAAP profitability
+  unconfirmed and significant workforce reductions suggest unit economics remain
+  challenging. Structural insight: the WorldRemit/Sendwave merger reflects the same
+  consolidation dynamic seen across the cross-border payment space — scale is required
+  for economics to work, driving M&A as an alternative to organic scale."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: Zepz press materials / WorldRemit / Sendwave acquisition announcement
+problems:
+  - slug: cross-border-payment-infrastructure
+timeline:
+  - year: 2010
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded in London by Ismail Ahmed. Personal motivation: as a Somali
+      immigrant whose family in Somaliland depended on diaspora remittances, Ahmed
+      had direct experience paying 7-10% fees to hawk operators and money transfer
+      shops. WorldRemit built a digital alternative at 1-3% total cost."
+    source: WorldRemit company history / Ismail Ahmed interviews
+  - year: 2021
+    event_type: acquisition
+    description: "WorldRemit acquired Sendwave for $500M. Combined entity renamed
+      Zepz. Raised $292M at $5B valuation the same month. Sendwave had focused on
+      Sub-Saharan Africa corridors (USA/UK to Uganda, Kenya, Ghana, Tanzania, Senegal)
+      using mobile money delivery — a complementary corridor focus to WorldRemit's
+      broader geographic coverage."
+    capability_acquired: "Sendwave's Sub-Saharan Africa mobile money delivery network
+      and corridors — deepening Zepz's Africa coverage."
+    source: Zepz / WorldRemit press releases
+  - year: 2022
+    event_type: pivot
+    description: "Additional layoffs following the December 2021 workforce reduction.
+      Restructuring to reach profitability. Scale: $5B+ annual transfer volume,
+      5M+ customers, 140+ destination countries. Exact profitability status unknown."
+    source: TechCrunch / Sifted

@@ -1,0 +1,69 @@
+slug: xendit
+name: Xendit
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:developer-first-payment-api:Indonesia"
+founded: 2015
+country: Indonesia
+status: operating
+stage: unicorn
+funding_history: "Founded 2015, YC W15. Series A $14.5M 2018 (Accel, Amasia,
+  Y Combinator). Series B $64.6M 2020 (Accel lead). Series C $150M 2021 at $1B
+  valuation (Tiger Global, Kleiner Perkins lead). Series D $300M 2022 at $1.5B
+  valuation. Total raised: $538M+."
+revenue_signal: "10-100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded in Jakarta by Moses Lo, Juan Gonzalez, Tessa Wijaya, and
+  Bo Chen — all University of California Berkeley and Stanford alumni who met at YC.
+  Core product: payment API for Southeast Asian businesses covering Indonesia,
+  Philippines, Thailand, Malaysia, Vietnam. Known as 'the Stripe of Southeast Asia'
+  — developer-first API, instant account activation, unified API for local payment
+  methods (bank transfers, e-wallets, QRIS, virtual accounts, retail outlets) that
+  card-only APIs like early Stripe did not serve. SE Asia structural context: credit
+  card penetration below 5% in Indonesia; dominant payment methods are bank transfer,
+  e-wallets (GoPay, OVO, ShopeePay), and QRIS (QR code standard). Xendit natively
+  integrates all. 3,000+ businesses including Grab, Lazada, Traveloka. Claimed
+  profitability in 2023 (unconfirmed from external sources). Geographic whitespace
+  confirmation: the developer-first payment API pattern has now been independently
+  reinvented in five geographies (USA/Stripe 2010, Netherlands/Mollie 2004,
+  Nigeria/Paystack 2016, UK/Checkout.com 2012, SE Asia/Xendit 2015) — all founding
+  on the same structural insight that incumbent payment acceptance required weeks-long
+  applications and complex technical integrations that a developer-first API could
+  replace."
+implementation_patterns:
+  - slug: developer-first-payment-api
+    source: Xendit Series D announcement / YC W15 profile / TechCrunch
+problems:
+  - slug: programmatic-payment-acceptance
+timeline:
+  - year: 2015
+    event_type: founding
+    implementation_pattern: developer-first-payment-api
+    problem: programmatic-payment-acceptance
+    description: "Founded in Jakarta by four Berkeley/Stanford alumni. YC W15. Initial
+      insight: Indonesian and SE Asian businesses accepting online payments faced even
+      greater complexity than Western markets — not just weeks-long merchant account
+      applications, but a fragmented landscape of 50+ local payment methods with no
+      unified API. Xendit built the unified API for the SE Asian payment method mix."
+    source: YC W15 profile / Xendit company history
+  - year: 2021
+    event_type: market_entry
+    implementation_pattern: developer-first-payment-api
+    description: "Series C $150M at $1B valuation (Tiger Global, Kleiner Perkins).
+      Expanded from Indonesia to Philippines, Thailand, Malaysia, Vietnam. Launched
+      Xendit disbursements (mass payout to contractors and suppliers) alongside
+      payment acceptance. At this point: 2,000+ business customers, $6.5B+ in annual
+      payment volume."
+    capability: local-payment-rail-integrations
+    capability_deployed: "Indonesian local payment rail integrations (Bank Mandiri,
+      BCA, BNI, GoPay, OVO, QRIS) provided the technical and compliance template for
+      Philippines, Thailand, and Malaysia expansion — same integration architecture,
+      different local rails per country."
+    source: Xendit Series C announcement / TechCrunch
+  - year: 2022
+    event_type: funding
+    description: "Series D $300M at $1.5B valuation. Claimed profitability in 2023.
+      3,000+ business customers across SE Asia. Payment volume growing rapidly with
+      SE Asian e-commerce expansion post-COVID."
+    source: Xendit Series D announcement

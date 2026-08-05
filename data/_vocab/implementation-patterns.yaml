@@ -213,3 +213,25 @@
     Pattern replaced by: direct bank partnership (eliminating middleware ledger), or
     direct bank charter acquisition. Status quo displaced: direct banking licence
     application, which takes 2-5 years."
+
+- slug: direct-bank-partnership
+  name: Direct bank partnership for embedded finance
+  solution_pattern: embedded-banking-infrastructure
+  first_observed: 2019
+  status: live
+  business_model: Per-account monthly fee plus interchange on card spend
+  pricing_signal: enterprise
+  notes: "The corrected implementation of embedded banking following the BaaS
+    middleware failures (Synapse April 2024, Railsr October 2023). Structural
+    distinction from baas-middleware: no middleware ledger. The fintech connects
+    directly to a partner bank; the bank holds deposits and maintains the
+    authoritative ledger. The infrastructure company (Unit, Treasury Prime,
+    Synctera) provides compliance software, product tooling, and regulatory
+    programme management without interposing its own ledger between fintech
+    and bank. Eliminating the middleware ledger eliminates the reconciliation
+    risk that destroyed Synapse. Synapse's bankruptcy directly accelerated market
+    adoption: banks and fintechs refused three-party middleware architectures
+    after 2024, shifting to this model. Mechanism: abstraction — same as
+    baas-middleware, but the abstraction layer is software-only, not a ledger.
+    Status quo displaced: direct banking licence application (2-5 years) and
+    baas-middleware (now dead)."
