@@ -5,7 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "load": "set -a && source .env.local && set +a && tsx loader/index.ts load",
+    "validate": "tsx loader/index.ts validate",
+    "status": "set -a && source .env.local && set +a && tsx src/db/queries/status.ts",
+    "queries": "set -a && source .env.local && set +a && tsx src/db/queries/run-all.ts",
+    "context": "bash scripts/context-dump.sh"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
