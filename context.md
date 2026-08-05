@@ -212,29 +212,29 @@ Full doc: docs/interpretation-across-layers.md
        Pattern: Domestic payment infrastructure platform
        Find:    Find a company that attempted [Domestic payment infrastructure platform] and failed. Search: Crunchbase shutdowns, TechCrunch graveyard, YC dark.
 
-  #5   [20] IMPLEMENTATION_FILL
+  #5   [22] CONTRADICTORY_EVIDENCE_NEEDED
+       Pattern: Cross-border payment network
+       Find:    Find a company that SUCCEEDED while apparently violating: Correspondent banking's multi-hop settlement structure creates a cost floor and settlement delay exploitable while a bilateral network can establish local currency liquidity in origin and destination markets, eliminating correspondent margins on each intermediate hop. — OR confirm via exhaustive search that no such company exists.
+
+  #6   [22] CONTRADICTORY_EVIDENCE_NEEDED
+       Pattern: Payment processing infrastructure
+       Find:    Find a company that SUCCEEDED while apparently violating: Regulatory complexity creates recurring non-discretionary demand for compliance execution, and the rate of regulatory change keeps that complexity high enough that specialist knowledge cannot be cost-effectively replicated in-house. — OR confirm via exhaustive search that no such company exists.
+
+  #7   [22] CONTRADICTORY_EVIDENCE_NEEDED
+       Pattern: Payroll processing infrastructure
+       Find:    Find a company that SUCCEEDED while apparently violating: Regulatory complexity creates recurring non-discretionary demand for compliance execution, and the rate of regulatory change keeps that complexity high enough that specialist knowledge cannot be cost-effectively replicated in-house. — OR confirm via exhaustive search that no such company exists.
+
+  #8   [20] IMPLEMENTATION_FILL
        Pattern: Compound HR + IT + Finance platform
        Find:    Find any company using [Compound HR + IT + Finance platform]. Prioritise strong validators.
 
-  #6   [20] IMPLEMENTATION_FILL
+  #9   [20] IMPLEMENTATION_FILL
        Pattern: Direct bank partnership for embedded finance
        Find:    Find any company using [Direct bank partnership for embedded finance]. Prioritise strong validators.
 
-  #7   [20] STRONG_VALIDATOR_NEEDED
+  #10  [20] STRONG_VALIDATOR_NEEDED
        Pattern: Global payroll / Employer of Record platform
        Find:    Find a self-funded (5+ yrs) or public company using [Global payroll / Employer of Record platform]. Search: Indie Hackers, public 10-K filings.
-
-  #8   [12] GEOGRAPHIC_WHITESPACE
-       Pattern: Accounts payable automation
-       Find:    Find a company in [Nigeria] using [Accounts payable automation].
-
-  #8   [12] GEOGRAPHIC_WHITESPACE
-       Pattern: Accounts payable automation
-       Find:    Find a company in [Philippines] using [Accounts payable automation].
-
-  #8   [12] GEOGRAPHIC_WHITESPACE
-       Pattern: Accounts payable automation
-       Find:    Find a company in [Senegal] using [Accounts payable automation].
 
 ── Open opportunities ───────────────────────────
   [open] Standalone IT lifecycle platform for mid-market companies (derived · ✓ · 2 predictions)
@@ -417,6 +417,7 @@ Full doc: docs/interpretation-across-layers.md
 ./src/db/migrations
 ./src/db/queries
 ./src/db/queries/run-all.ts
+./src/db/queries/run-opportunities.ts
 ./src/db/queries/status.ts
 ./src/db/raw-sql
 ./src/db/raw-sql/triggers-and-views.sql
