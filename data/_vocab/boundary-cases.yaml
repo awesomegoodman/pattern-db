@@ -34,3 +34,17 @@
     separate pattern record. If entity-ownership dominance is confirmed across 3+ more observations, split warranted in
     Phase 2.
   resolved_at: 2026-08-04
+
+- company: Interswitch Group
+  option_a: domestic-payment-infrastructure only
+  option_b: both domestic-payment-infrastructure (primary) and full-stack-payment-processor
+    (medium confidence secondary)
+  chosen: both — domestic-payment-infrastructure primary, full-stack-payment-processor
+    medium confidence secondary
+  reason: Interswitch's primary business is operating Nigerian switching infrastructure
+    for all banks (domestic-payment-infrastructure). It also owns and processes the
+    Verve card scheme directly (full-stack-payment-processor). Both are genuine
+    instantiations. Medium confidence on the secondary pattern signals its supporting
+    role. Cross-border payment results showing Interswitch are expected from the
+    secondary linkage — not a data error, a classification nuance to track.
+  resolved_at: "2025-08-05"
