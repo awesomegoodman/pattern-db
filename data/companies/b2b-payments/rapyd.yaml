@@ -1,0 +1,65 @@
+slug: rapyd
+name: Rapyd
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:local-rail-aggregation"
+founded: 2016
+country: UK
+status: operating
+stage: unicorn
+funding_history: "Founded 2016. Series A $40M 2019 (Target Global lead). Series B
+  $100M 2020. Series C $300M March 2021 at $2.5B valuation. Series D $610M July 2021
+  at $8.75B valuation (Coatue, Tiger Global lead). Series E $300M 2022 at $15B
+  valuation (peak). Total raised: $770M+. Valuation significantly compressed by 2024
+  — reports of ~$5B internal valuation, reflecting 2021 era overpricing."
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded in London by Arik Shtilman (CEO), Arkady Karpman (CTO),
+  and Omer Priel — all ex-PayPal employees. Core product: Fintech-as-a-Service
+  (FaaS) — a single API aggregating 900+ local payment methods across 100+ countries
+  for collect, disburse, issue, and wallet capabilities. B2B2B model: Rapyd sells
+  to businesses that embed its payment capabilities into their own products. Primary
+  distinction from Stripe/Checkout.com: Rapyd focuses on the long tail of local
+  payment methods in emerging markets (mobile money, bank transfers, cash networks,
+  local wallets) rather than card-first markets. Secondary distinction from dLocal:
+  Rapyd targets the broadest possible geographic coverage (100+ countries) rather
+  than deep local expertise in a smaller set of emerging markets. Valuation trajectory
+  ($2.5B March 2021 → $15B July 2022 → ~$5B 2024) is an illustrative case of
+  2021-era fintech overpricing and subsequent correction — the business is still
+  operating and growing, but investor expectations were set at peak multiples. Third
+  observation for local-rail-aggregation pattern (with dLocal and Flutterwave)."
+implementation_patterns:
+  - slug: local-rail-aggregation
+    source: Rapyd Series E announcement / company documentation
+problems:
+  - slug: programmatic-payment-acceptance
+  - slug: cross-border-payment-infrastructure
+    confidence: medium
+    notes: "Rapyd enables both local collection (acceptance) and cross-border disbursement.
+      The aggregation of 900+ local payment methods addresses both problems simultaneously."
+timeline:
+  - year: 2016
+    event_type: founding
+    implementation_pattern: local-rail-aggregation
+    problem: programmatic-payment-acceptance
+    description: "Founded in London by three ex-PayPal employees. Core thesis: most
+      of global commerce happens outside card-first markets, but existing global payment
+      infrastructure (Stripe, Adyen) treats local payment methods as edge cases. Rapyd
+      built a single API treating local payment methods as primary, cards as secondary."
+    source: Rapyd company history / PayPal alumni background
+  - year: 2021
+    event_type: product_launch
+    implementation_pattern: local-rail-aggregation
+    description: "Series C $300M (March) and Series D $610M (July) in 2021. At this
+      point: 100+ countries, 900+ payment methods, covering mobile money, bank
+      transfers, cash networks, local wallets, and cards. B2B2B model established:
+      Rapyd as infrastructure that other platforms embed."
+    source: Rapyd Series C and D announcements
+  - year: 2022
+    event_type: funding
+    description: "Series E $300M at $15B valuation — peak. Launched Rapyd Checkout
+      (hosted payment pages) alongside API. By 2024, internal valuation compressed
+      to approximately $5B range reflecting post-2021 multiple contraction. Revenue
+      still growing."
+    source: Rapyd Series E announcement / Bloomberg

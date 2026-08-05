@@ -1,0 +1,55 @@
+slug: primer
+name: Primer
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:payment-orchestration-layer"
+founded: 2020
+country: UK
+status: operating
+stage: series_b
+funding_history: "Seed $8.4M 2020 (Balderton Capital). Series A $21M 2021 (Balderton
+  Capital, Accel). Series B $50M June 2022 (Accel, ICONIQ Growth). Total raised:
+  $79.4M."
+revenue_signal: "<10M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Gabriel Le Roux and Paul Anthony — both ex-PayPal
+  (Le Roux ran PayPal's merchant partnerships in Europe; Anthony was a PayPal
+  engineer). Core product: visual payment workflow automation ('the payment canvas')
+  — merchants connect multiple PSPs, fraud tools, and payment services through a
+  drag-and-drop interface, creating payment flows without code. Primary distinction
+  from Spreedly and Modern Treasury: Primer emphasises visual no-code workflow
+  building over developer API access. A merchant can create a rule like 'if card
+  payment fails on Stripe, retry on Adyen; if both fail, offer PayPal as fallback'
+  without writing code. Customers include Farfetch, Grab, Universal Music Group,
+  Skyscanner. Second UK company in payment-orchestration-layer (Spreedly is USA,
+  Primer adds UK and European angle). Founded 2020 — the same year Synapse's BaaS
+  middleware problems were beginning to compound — timing suggests the market was
+  moving toward software-above-rails (orchestration) rather than software-as-rails
+  (middleware) models."
+implementation_patterns:
+  - slug: payment-orchestration-layer
+    source: Accel / ICONIQ Growth Series B announcement / Primer product documentation
+problems:
+  - slug: programmatic-payment-acceptance
+timeline:
+  - year: 2020
+    event_type: founding
+    implementation_pattern: payment-orchestration-layer
+    problem: programmatic-payment-acceptance
+    description: "Founded by Gabriel Le Roux and Paul Anthony in London. Both ex-PayPal
+      with deep payment merchant experience. Core insight: merchants using multiple
+      PSPs (for redundancy, regional coverage, or better rates) have no unified way
+      to manage routing logic. Each PSP has its own dashboard; routing decisions
+      require engineering work. Primer creates a single canvas where payment logic
+      is visual and configurable."
+    source: Primer launch / Balderton Capital
+  - year: 2022
+    event_type: funding
+    implementation_pattern: payment-orchestration-layer
+    description: "Series B $50M from Accel and ICONIQ Growth. At this point: 100+
+      connected payment services, visual workflow builder established, enterprise
+      customers signed including Farfetch and Grab. Accel's participation — same
+      firm backing Checkout.com and Adyen — signals institutional conviction in the
+      orchestration layer as a distinct category from execution PSPs."
+    source: Accel / ICONIQ Growth Series B announcement

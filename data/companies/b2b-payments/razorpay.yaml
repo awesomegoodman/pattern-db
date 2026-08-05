@@ -1,0 +1,71 @@
+slug: razorpay
+name: Razorpay
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:developer-first-payment-api"
+founded: 2014
+country: India
+status: operating
+stage: unicorn
+funding_history: "YC W15 (2015). Series A through Series F. Series F $375M August
+  2021 at $7.5B valuation (Lone Pine Capital, Alkeon Capital, TCV lead). Total
+  raised: $741.5M. By 2024, internal valuation significantly compressed from 2021
+  peak — consistent with broad fintech multiple contraction."
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Harshil Mathur and Shashank Kumar, both IIT Roorkee
+  graduates who met at college. YC W15. Razorpay is the dominant developer-first
+  payment API in India: 8M+ businesses, $90B+ in annual payment volume processed.
+  India-specific structural advantage: Unified Payments Interface (UPI) — India's
+  real-time interbank payment system — made the Indian payment landscape radically
+  different from the US/Europe (card-dominated) model. Razorpay built native UPI
+  integration from the start, which Stripe did not offer in India. Company claimed
+  profitability in FY2023 (Indian financial year ending March 2023) but this is
+  unconfirmed from external sources — private company, GAAP profitability not
+  independently verified. Products expanded beyond payment acceptance into: Razorpay
+  Capital (MSME lending), Razorpay Payroll (competitor to Gusto in India), and
+  neobanking. The payroll expansion mirrors the trajectory of US payroll companies
+  (payment acceptance -> financial services -> payroll) — a direct cross-domain
+  confirmation of the payroll-from-payments expansion path observed in the HR tech
+  domain. Geographic whitespace signal: the developer-first payment API pattern has
+  been independently reinvented in India (Razorpay, 2014), Nigeria (Paystack, 2016),
+  Netherlands (Mollie, 2004), and UK (Checkout.com, 2012) — confirming the pattern
+  is not US-specific."
+implementation_patterns:
+  - slug: developer-first-payment-api
+    source: YC W15 alumni record / Razorpay press materials / TechCrunch
+problems:
+  - slug: programmatic-payment-acceptance
+  - slug: programmatic-payment-disbursement
+    confidence: medium
+    notes: "Razorpay Payroll and Razorpay Capital expanded into disbursement use cases
+      following the standard payment-acceptance-to-disbursement expansion trajectory."
+timeline:
+  - year: 2014
+    event_type: founding
+    implementation_pattern: developer-first-payment-api
+    problem: programmatic-payment-acceptance
+    description: "Founded by Harshil Mathur and Shashank Kumar in Bangalore. YC W15.
+      Core insight: Indian businesses accepting online payments faced the same complexity
+      Stripe solved in the US, plus additional Indian-specific payment methods (NetBanking,
+      UPI, wallets). Built native API for all Indian payment methods at a time when
+      no equivalent existed."
+    source: YC W15 profile / TechCrunch
+  - year: 2020
+    event_type: product_launch
+    implementation_pattern: developer-first-payment-api
+    problem: programmatic-payment-disbursement
+    description: "Launched Razorpay Capital (MSME lending) and Razorpay Payroll —
+      expanding from payment acceptance into financial services and payroll. Direct
+      parallel to the US payroll expansion trajectory: payment infrastructure company
+      enters financial services using existing employer and banking relationships."
+    capability_deployed: "Existing merchant database and payment flow data — used
+      as underwriting signal for MSME lending and as distribution for payroll product."
+    source: Razorpay product launches 2020
+  - year: 2021
+    event_type: funding
+    description: "Series F $375M at $7.5B valuation. At this point: 8M+ businesses,
+      $60B+ in annual payment volume. Claimed profitability in FY2023 (March year-end)
+      — unconfirmed from external sources."
+    source: Razorpay Series F announcement / Economic Times India

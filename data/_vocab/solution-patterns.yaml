@@ -33,6 +33,17 @@
   name: Global employment infrastructure
   first_observed: 2016
   pattern_durability: emerging
+  winning_condition: "The per-country cost and timeline of establishing local
+    legal entities creates a threshold below which a company holding pre-existing
+    entity infrastructure across those jurisdictions can price the capability
+    more cheaply than self-build — making EOR economically rational for any
+    employer below that headcount-per-country threshold."
+  failure_condition: "A hiring company's geographic footprint and per-country
+    headcount grows large enough that annualised EOR fees exceed the amortised
+    cost of its own local entity, making self-build economically rational and
+    eliminating the EOR cost advantage at that scale."
+  winning_condition_maturity: proposed
+  winning_condition_valid_from: 2016
   notes: "The structural bet that a technology-enabled intermediary can absorb the legal and compliance complexity of
     cross-border employment, making global hiring accessible without entity setup. Two sub-approaches: entity-ownership
     model (Deel, Remote) vs. partner model (Papaya Global). Entity-ownership model appears to be winning as of 2025."
@@ -68,6 +79,16 @@
   name: Cross-border payment network
   first_observed: 1973
   pattern_durability: decades-old
+  winning_condition: "Correspondent banking's multi-hop settlement structure
+    creates a cost floor and settlement delay exploitable while a bilateral
+    network can establish local currency liquidity in origin and destination
+    markets, eliminating correspondent margins on each intermediate hop."
+  failure_condition: "Real-time gross settlement interoperability between
+    national banking systems — via central bank collaboration, ISO 20022
+    adoption, or CBDC infrastructure — eliminates the correspondent banking
+    overhead that made the bilateral network cost advantage possible."
+  winning_condition_maturity: proposed
+  winning_condition_valid_from: 2011
   notes: "The structural bet that a network connecting disparate national banking systems
     can move money internationally faster and cheaper than correspondent banking (SWIFT,
     first instantiated 1973). The modern iteration: a technology layer that replicates

@@ -1,0 +1,80 @@
+slug: railsr
+name: Railsr (formerly Railsbank)
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:baas-middleware"
+founded: 2016
+country: UK
+status: dead
+stage: series_c
+funding_history: "Founded 2016 as Railsbank. Series A undisclosed 2017. Series B
+  GBP 70M 2021 (Anthos Capital lead). Series C GBP 37M 2022 (Moneta VC lead).
+  Total raised: GBP 116M+. Entered administration October 2023. Assets sold to
+  Embedded Finance Limited (EFL) for undisclosed sum."
+revenue_signal: "<10M"
+profitability_signal: known_unprofitable
+evidence_weight: disconfirming
+signal_confidence: high
+notable_facts: "DISCONFIRMING CASE — High failure attribution confidence. Second
+  confirmed failure of the baas-middleware implementation pattern (Synapse being
+  the first). Entered administration October 2023 after failing to raise Series D
+  capital and losing key regulatory standing. Founded by Nigel Verdon (ex-Visa,
+  ex-Royal Bank of Scotland) and Clive Mitchell. Provided BIN sponsorship, card
+  issuing APIs, and banking-as-a-service to UK fintechs including Tide Business
+  Banking, Freetrade (investment app), and others. Rebranded from Railsbank to
+  Railsr in 2022 — a signal of the company attempting to reposition during a period
+  of financial stress. Failure mode is structurally DISTINCT from Synapse: Synapse
+  failed due to ledger reconciliation failure between middleware and sponsor bank.
+  Railsr failed due to the cost of maintaining FCA e-money institution compliance
+  and BIN sponsorship agreements exceeding the revenue generated at its scale —
+  the regulatory cost structure of BaaS middleware is fixed and high; the revenue
+  is variable and per-transaction. At Railsr's scale, these did not meet.
+  Failure attribution confidence: High — failure is directly attributable to the
+  BaaS middleware pattern's structural economics: middleware companies bear the full
+  cost of regulatory compliance (FCA licensing, compliance team, audit costs) but
+  capture only a thin spread per transaction from fintechs who themselves take
+  margin from end customers. Two independent disconfirming cases (Synapse USA 2024,
+  Railsr UK 2023) with different failure modes confirm the BaaS middleware pattern
+  is structurally challenged rather than a single company execution failure."
+implementation_patterns:
+  - slug: baas-middleware
+    source: FCA register / administrator filing / TechCrunch
+    notes: "DISCONFIRMING. Railsr's failure mode differs from Synapse: not ledger
+      reconciliation failure, but regulatory compliance cost failure. The middleware
+      layer must bear FCA e-money institution compliance costs (fixed, high) while
+      earning variable per-transaction revenue insufficient to cover them at Railsr's
+      scale. Pattern-attributable with High confidence."
+problems:
+  - slug: embedded-banking-infrastructure
+timeline:
+  - year: 2016
+    event_type: founding
+    implementation_pattern: baas-middleware
+    problem: embedded-banking-infrastructure
+    description: "Founded as Railsbank by Nigel Verdon and Clive Mitchell in London.
+      Both had institutional banking backgrounds (Visa, RBS). Initial product: API
+      layer enabling fintechs to embed banking features (card issuing, BIN sponsorship,
+      compliance) without obtaining their own FCA e-money licence. Operated as a
+      licensed e-money institution, providing the regulatory umbrella for fintech
+      customers."
+    source: Railsbank founding / FCA e-money register
+  - year: 2021
+    event_type: funding
+    implementation_pattern: baas-middleware
+    description: "Series B GBP 70M (Anthos Capital lead). Rebranded positioning toward
+      embedded finance. Customers at this point included Tide (UK business banking),
+      Freetrade (investment app), and other UK fintechs. Revenue insufficient to
+      cover compliance costs at scale — the structural economics that would later
+      cause administration were present but masked by growth capital."
+    source: Anthos Capital / TechCrunch Series B
+  - year: 2023
+    event_type: shutdown
+    implementation_pattern: baas-middleware
+    description: "Entered administration October 2023. Immediate causes: (1) failed
+      to raise Series D capital after multiple attempts, (2) FCA scrutiny of BaaS
+      models following industry-wide concerns, (3) compliance costs exceeding revenue
+      at Railsr's transaction volume. Administrator Alvarez & Marsal appointed.
+      Assets acquired by Embedded Finance Limited (EFL). Customers including Tide
+      had to migrate to alternative providers. Confirms: the BaaS middleware pattern
+      requires a scale of transaction volume that most BaaS providers cannot reach
+      while maintaining full regulatory compliance costs."
+    source: TechCrunch / Alvarez & Marsal administrator filing / FCA public register

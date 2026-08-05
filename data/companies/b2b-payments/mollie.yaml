@@ -1,0 +1,64 @@
+slug: mollie
+name: Mollie
+domain: b2b-payments
+research_queue_source: "STRONG_VALIDATOR_NEEDED:developer-first-payment-api"
+founded: 2004
+country: Netherlands
+status: operating
+stage: unicorn
+funding_history: "Self-funded from founding (2004) through 2021 — 17 years of
+  zero external capital. First external funding: EUR 665M from General Atlantic,
+  Blackstone, EQT Growth in 2021 at EUR 6.5B valuation. The 17-year self-funded
+  period is the primary economic signal. Total external raised: EUR 665M."
+revenue_signal: ">100M"
+profitability_signal: estimated_profitable_proxy
+profitability_proxy_applied: true
+evidence_weight: strong_validator
+signal_confidence: low
+notable_facts: "Founded by Adriaan Mol in Amsterdam. 17 years of self-funded
+  operation before raising external capital — the same economic signal as Spreedly
+  in the payment-orchestration-layer pattern. Dutch KvK (Chamber of Commerce)
+  filings, which are mandatory for Netherlands companies, show revenue growth from
+  EUR 32M (2019) to EUR 192M (2022), with consistent profitability before the 2021
+  growth round. EUR 6.5B valuation likely compressed significantly by 2024 given
+  broad fintech multiple contraction. 250,000+ business customers across Netherlands,
+  Belgium, Germany, France, UK. Processes EUR 40B+ in annual payments. Core
+  differentiation: developer-first API with European-native payment method support
+  (iDEAL, Bancontact, SEPA Direct Debit, Klarna, Sofort) that Stripe did not
+  support natively in Europe for many years. Customers include Trivago, Deliveroo,
+  UNICEF, Hubspot. Founding team background: Adriaan Mol was a serial entrepreneur
+  who had built several Dutch internet companies before Mollie. The 17-year
+  bootstrapped period confirms the developer-first payment API model produces
+  sustainable economics without external capital — the primary strong validator
+  signal for this pattern in Europe."
+implementation_patterns:
+  - slug: developer-first-payment-api
+    source: Dutch KvK filings / Mollie press materials / General Atlantic announcement
+problems:
+  - slug: programmatic-payment-acceptance
+timeline:
+  - year: 2004
+    event_type: founding
+    implementation_pattern: developer-first-payment-api
+    problem: programmatic-payment-acceptance
+    description: "Founded by Adriaan Mol in Amsterdam. Initial product: simple payment
+      API for Dutch e-commerce businesses. Core insight: European businesses accepting
+      online payments needed iDEAL (Netherlands bank transfer), Bancontact (Belgium),
+      and SEPA Direct Debit alongside cards — no single API handled all European
+      payment methods. Mollie built this from the start."
+    source: Mollie company history / Dutch KvK
+  - year: 2019
+    event_type: product_launch
+    implementation_pattern: developer-first-payment-api
+    description: "Dutch KvK filings show EUR 32M revenue, profitable operation after
+      15 years of self-funded growth. Expanded across Netherlands, Belgium, Germany,
+      France, UK. 100,000+ businesses on platform at this stage."
+    source: Dutch KvK (Chamber of Commerce) mandatory filing 2019
+  - year: 2021
+    event_type: funding
+    description: "Raised EUR 665M from General Atlantic, Blackstone, EQT Growth at
+      EUR 6.5B valuation — first external capital after 17 years of self-funding.
+      Dutch KvK filing 2022 shows EUR 192M revenue. Used capital for geographic
+      expansion and product investment rather than covering losses. At 2021 raise:
+      120,000+ businesses, EUR 20B+ in annual payment volume."
+    source: General Atlantic / Blackstone press releases / Dutch KvK 2022
