@@ -1,0 +1,77 @@
+slug: stripe
+name: Stripe
+domain: b2b-payments
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2010
+country: USA
+status: operating
+stage: unicorn
+funding_history: "YC W10 (2010). Sequoia, Andreessen Horowitz, PayPal co-founders
+  (early rounds). Series B $18M 2012 (Sequoia, A16Z, Peter Thiel). $6.5B Series I
+  in March 2023 at $50B valuation (down from $95B peak in March 2021). Total raised:
+  $8.7B+. Investors include Sequoia, Andreessen Horowitz, Tiger Global, Baillie Gifford,
+  Fidelity, Ireland Strategic Investment Fund."
+revenue_signal: ">1B"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Patrick Collison (CEO) and John Collison (President) in
+  Palo Alto. Launched 2011 with 7-line integration — vs weeks-long merchant account
+  applications from incumbents. $50B valuation (2023 Series I); was $95B peak 2021.
+  Acquired Paystack (Nigeria) October 2020 for approximately $200M — primary Africa
+  entry. Revenue estimated at $15B+ for 2024 by multiple analyst sources but unconfirmed
+  (private). Processes hundreds of billions in payment volume annually. Products beyond
+  payment processing: Stripe Connect (marketplace payments, 2012), Stripe Atlas (company
+  formation, 2016), Stripe Radar (fraud detection), Stripe Capital (lending), Stripe
+  Treasury (embedded banking via direct bank partnerships). Deferred from slot 1 of
+  foundation records in favour of Adyen: same implementation pattern but Adyen has
+  verified public profitability; Stripe's economics are unconfirmed private."
+implementation_patterns:
+  - slug: developer-first-payment-api
+    source: Stripe documentation / YC alumni record
+problems:
+  - slug: programmatic-payment-acceptance
+  - slug: embedded-banking-infrastructure
+    confidence: medium
+    notes: "Stripe Treasury (2020) entered embedded banking via direct bank partnerships
+      rather than BaaS middleware — a structurally sound implementation that contrasts
+      with the failed Synapse middleware model."
+timeline:
+  - year: 2010
+    event_type: founding
+    implementation_pattern: developer-first-payment-api
+    problem: programmatic-payment-acceptance
+    description: "Founded by Patrick and John Collison in Palo Alto. YC W10. Initial
+      insight: accepting payments online required weeks-long merchant account applications,
+      opaque pricing, and technical complexity. Stripe reduced this to 7 lines of
+      code and instant activation. Initial target: developers and startups who could
+      not access or did not want to deal with traditional merchant acquiring."
+    source: Stripe company history / YC alumni
+  - year: 2012
+    event_type: product_launch
+    implementation_pattern: developer-first-payment-api
+    description: "Launched Stripe Connect — marketplace and platform payment splitting.
+      Same problem as Adyen for Platforms (launched 2013) but targeting SMB marketplaces
+      rather than enterprises. First major expansion beyond simple payment acceptance."
+    capability: employer-database-and-relationships
+    capability_deployed: "Existing developer relationships and API infrastructure
+      enabled Connect as a natural extension — same developers who used Stripe for
+      acceptance now used it to build marketplaces."
+    source: Stripe Connect launch documentation
+  - year: 2020
+    event_type: acquisition
+    problem: programmatic-payment-acceptance
+    description: "Acquired Paystack (Nigeria, YC S16) for approximately $200M —
+      primary Africa market entry. Paystack had 60,000+ businesses on its platform
+      and $10B in annualised payment volume. Stripe gained Nigerian CBN licence and
+      local market relationships."
+    capability_acquired: "Local payment rail integrations in Nigeria (Paystack's bank
+      integrations and CBN licence) and Africa distribution."
+    source: TechCrunch / Paystack blog
+  - year: 2023
+    event_type: funding
+    description: "Series I $6.5B at $50B valuation — down from $95B peak in March
+      2021. Conducted employee share buyback. First Stripe leadership publicly discussed
+      path to IPO. Revenue estimated at $8B-15B range by analysts; profitability
+      status unconfirmed."
+    source: Wall Street Journal / Bloomberg

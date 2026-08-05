@@ -1,0 +1,78 @@
+slug: wirecard
+name: Wirecard AG
+domain: b2b-payments
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 1999
+country: Germany
+status: dead
+stage: public
+funding_history: "Founded 1999 as e-Commerce & Internet Trust AG. Became Wirecard AG
+  through renaming and pivots. Acquired Wirecard Bank 2006 (banking licence). Listed
+  on Frankfurt Stock Exchange 2005. Joined DAX 30 index September 2018, replacing
+  Commerzbank — first fintech in DAX. Filed for insolvency June 25 2020. At peak:
+  EUR 24B market cap."
+revenue_signal: ">100M"
+profitability_signal: known_unprofitable
+evidence_weight: disconfirming
+signal_confidence: high
+notable_facts: "DISCONFIRMING CASE — High failure attribution confidence. Filed for
+  insolvency June 25 2020 after announcing EUR 1.9B in cash on its balance sheet
+  'likely does not exist' (company statement, June 22 2020). CEO Markus Braun arrested
+  on fraud and market manipulation charges. COO Jan Marsalek fled, still at large.
+  German government described as biggest financial scandal ever to hit the country.
+  Banks lost estimated EUR 3.1B in loans. PwC auditors had failed to detect fraud
+  for years despite FT investigative reporting from 2015. Failure attribution confidence:
+  High — failure is directly attributable to fraudulent inflation of the payment
+  processing business, not to external market conditions or execution failures.
+  Structural lesson: payment processors without transparent third-party settlement
+  verification can inflate transaction volumes undetected. The Wirecard failure
+  directly caused tightening of payment processor audit requirements in Germany and EU."
+implementation_patterns:
+  - slug: full-stack-payment-processor
+    source: Wirecard annual reports (pre-insolvency) / German insolvency filings
+    notes: "DISCONFIRMING. Wirecard attempted full-stack payment processing at global
+      scale. The failure mode was accounting fraud in the payment processing layer —
+      reported revenues and cash balances were inflated through fictitious transactions
+      in trustee accounts in Asia. Pattern-attributable failure: the opaque structure
+      of third-party acquiring arrangements was the mechanism that enabled the fraud
+      to persist undetected."
+problems:
+  - slug: programmatic-payment-acceptance
+timeline:
+  - year: 1999
+    event_type: founding
+    description: "Founded in Munich as e-Commerce & Internet Trust AG, initially providing
+      payment processing for online gambling and adult content sites — sectors that
+      established processors declined. Renamed to Wirecard AG and pivoted toward
+      mainstream digital payments."
+    source: Wikipedia / German insolvency court filings
+  - year: 2006
+    event_type: acquisition
+    implementation_pattern: full-stack-payment-processor
+    description: "Acquired Wirecard Bank AG — obtained banking licence, enabling direct
+      card issuing and merchant acquiring without a sponsor bank. This acquisition
+      gave Wirecard the regulatory standing required for full-stack operation and
+      became the structure through which fraudulent cash balances were later claimed
+      to be held in trustee accounts."
+    capability_acquired: "Banking licence and regulated entity status — the same
+      structural asset that all full-stack processors require."
+    source: Wirecard annual report 2006
+  - year: 2018
+    event_type: product_launch
+    implementation_pattern: full-stack-payment-processor
+    description: "Joined DAX 30 index replacing Commerzbank — first fintech company
+      in Germany's blue-chip index. Market cap peaked at EUR 24B. Financial Times
+      had begun investigative reporting on accounting irregularities in 2015; BaFin
+      (German regulator) opened investigation against FT journalists rather than
+      Wirecard. Regulatory failure enabled fraud to continue 2 years after credible
+      press reporting."
+    source: Financial Times / Deutsche Boerse
+  - year: 2020
+    event_type: shutdown
+    implementation_pattern: full-stack-payment-processor
+    description: "June 18: announced EUR 1.9B in trustee accounts 'cannot be located.'
+      June 22: announced cash 'likely does not exist.' CEO Markus Braun resigned and
+      was arrested. June 25: filed for insolvency with Munich court. Banks called EUR
+      1.3B in loans. 5,800 employees. COO Jan Marsalek fled Germany and remains at
+      large. Auditor EY had signed off on accounts for 10 years."
+    source: CNBC / Financial Times / Munich insolvency court

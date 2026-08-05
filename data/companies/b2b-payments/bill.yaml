@@ -1,0 +1,67 @@
+slug: bill
+name: BILL (formerly Bill.com)
+domain: b2b-payments
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2006
+country: USA
+status: operating
+stage: public
+funding_history: "VC-backed pre-IPO (Battery Ventures, Emergence Capital, DCM Ventures,
+  others). IPO December 2019 on NYSE (BILL) at ~$1.6B market cap. Acquired Divvy
+  (spend management) for $2.5B in 2021. Acquired Invoice2go for $625M in 2021."
+revenue_signal: ">1B"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: high
+notable_facts: "FY2024 (ending June 2024): total revenue $1,327M (+19% YoY). GAAP
+  net loss $339M — primarily driven by $243M in goodwill impairment and D&A from
+  Divvy and Invoice2go acquisitions. Non-GAAP operating income positive. 470,000+
+  SMB customers. $287B in payment volume facilitated FY2024. Founded by Rene Lacerte,
+  whose family had run a payroll company (he was motivated by watching his parents
+  struggle with AP). Serves the SMB AP automation market (companies with 10-200
+  employees). Evidence weight: weak_validator — public company but GAAP loss-making
+  primarily due to acquisition-related charges; underlying payment operations business
+  appears cash-flow positive but core profitability unconfirmed without disclosure
+  of segment economics. Canonical instantiation of accounts-payable-automation
+  implementation pattern."
+implementation_patterns:
+  - slug: accounts-payable-automation
+    source: BILL annual report FY2024 / NYSE filing
+problems:
+  - slug: programmatic-payment-disbursement
+timeline:
+  - year: 2006
+    event_type: founding
+    implementation_pattern: accounts-payable-automation
+    problem: programmatic-payment-disbursement
+    description: "Founded by Rene Lacerte in San Jose, CA. Initial product: cloud-based
+      accounts payable and receivable automation for SMBs. Lacerte's motivation: watched
+      his parents struggle with manual invoice processing at their payroll business.
+      First target market: accounting firms that could resell BILL to their SMB clients."
+    source: BILL company history / founder interviews
+  - year: 2019
+    event_type: funding
+    implementation_pattern: accounts-payable-automation
+    description: "IPO on NYSE (BILL) at $22/share, market cap ~$1.6B. At IPO:
+      81,000 customers, $47B in payment volume in trailing 12 months. Accounting firm
+      channel (Intuit QuickBooks partnership) was primary distribution."
+    source: BILL S-1 / NYSE listing
+  - year: 2021
+    event_type: acquisition
+    implementation_pattern: accounts-payable-automation
+    description: "Acquired Divvy (corporate spend management + cards) for $2.5B and
+      Invoice2go (invoicing for freelancers) for $625M. Attempted to expand from pure
+      AP automation into full spend management. Both acquisitions resulted in significant
+      goodwill impairment by 2023-2024 as the combined business underperformed
+      acquisition-price expectations."
+    capability_acquired: "Corporate card issuing capability and spend management
+      workflow via Divvy."
+    source: BILL press releases / FY2024 annual report (goodwill impairment)
+  - year: 2024
+    event_type: product_launch
+    implementation_pattern: accounts-payable-automation
+    description: "FY2024: $1.327B revenue, 470,000+ customers, $287B payment volume.
+      Refocused on core AP/AR product after Divvy integration challenges. Market cap
+      compressed from $30B peak (2021) to ~$3B (2024) — reflects acquisition overpayment
+      rather than core business failure."
+    source: BILL FY2024 annual report / earnings call

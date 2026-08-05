@@ -1,0 +1,84 @@
+slug: interswitch
+name: Interswitch Group
+domain: b2b-payments
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2002
+country: Nigeria
+status: operating
+stage: unicorn
+funding_history: "Bootstrapped from 2002. TA Associates and IFC invested (private equity,
+  undisclosed). Helios Investment Partners took a stake. Visa acquired 20% for $200M
+  in November 2019 at $1B valuation. IPO on London Stock Exchange planned for 2020,
+  deferred due to market conditions. Still private as of 2025."
+revenue_signal: ">100M"
+profitability_signal: estimated_profitable_proxy
+profitability_proxy_applied: true
+evidence_weight: strong_validator
+signal_confidence: low
+notable_facts: "Founded by Mitchell Elegbe in Lagos. Processes approximately 90% of
+  Nigeria's electronic transactions (Moody's, 2019). Moody's B2 corporate family
+  rating noted average net revenue growth of 17% 2017-2019 and average EBITDA margin
+  of 40% over same period — strongest profitability signal available for a private
+  African tech company. Operates Verve card scheme (Nigeria's domestic card network),
+  Quickteller consumer payment platform, and interbank switching infrastructure.
+  Present in 23 African countries, physical offices in Uganda, Gambia, Kenya. Pioneer
+  of electronic payments in Nigeria: founded to replace manual interbank clearing
+  that took days. Africa's first confirmed tech unicorn ($1B+ valuation, 2019).
+  Primary strong validator for payment-processing-infrastructure in Africa."
+implementation_patterns:
+  - slug: domestic-payment-infrastructure
+    source: Moody's B2 rating report 2019 / TechCrunch unicorn confirmation
+  - slug: full-stack-payment-processor
+    confidence: medium
+    source: Interswitch product documentation
+    notes: "Interswitch operates as both domestic switching infrastructure and a
+      payment processor. domestic-payment-infrastructure is the primary pattern
+      (switching focus, national rail operator); full-stack-payment-processor
+      secondary (direct scheme via Verve)."
+problems:
+  - slug: programmatic-payment-acceptance
+  - slug: cross-border-payment-infrastructure
+    confidence: medium
+    notes: "Secondary expansion — 23 African countries. Primary problem is domestic
+      Nigerian payment acceptance."
+timeline:
+  - year: 2002
+    event_type: founding
+    implementation_pattern: domestic-payment-infrastructure
+    problem: programmatic-payment-acceptance
+    description: "Founded by Mitchell Elegbe in Lagos with backing from a group of
+      Nigerian banks. Initial mission: build electronic switching infrastructure to
+      connect Nigerian banks that could not interoperate. Prior to Interswitch, interbank
+      transfers required physical cheques and took days. First product: Interswitch
+      switching platform connecting bank ATM networks."
+    source: TechCrunch / Mitchell Elegbe interviews
+  - year: 2004
+    event_type: product_launch
+    implementation_pattern: domestic-payment-infrastructure
+    description: "Launched Quickteller — consumer-facing payment portal for bills,
+      airtime, and e-commerce. First move beyond bank-to-bank infrastructure into
+      consumer payment acceptance. Built on top of the existing bank switching infrastructure."
+    capability: local-payment-rail-integrations
+    capability_deployed: "Existing bank switching infrastructure enabled Quickteller
+      to accept payments from any Nigerian bank account without a new integration
+      per bank."
+    source: Interswitch product history
+  - year: 2008
+    event_type: product_launch
+    implementation_pattern: full-stack-payment-processor
+    description: "Launched Verve — Nigeria's first domestic card scheme. Enabled card
+      issuance and acceptance without Visa or Mastercard scheme membership, reducing
+      per-transaction cost for domestic transactions. Verve now has 40M+ cards in
+      circulation."
+    capability: local-payment-rail-integrations
+    capability_deployed: "Existing bank relationships and switching infrastructure
+      enabled Verve card scheme launch — banks already integrated with Interswitch
+      for switching, adding card issuance was an incremental capability."
+    source: Verve product documentation / Moody's rating report
+  - year: 2019
+    event_type: funding
+    description: "Visa acquired 20% stake for $200M at $1B valuation — Africa's first
+      confirmed tech unicorn. Moody's B2 rating assigned simultaneously, documenting
+      40% EBITDA margin and 17% average net revenue growth 2017-2019. IPO on London
+      Stock Exchange announced for 2020 (subsequently deferred)."
+    source: TechCrunch / Moody's / CNBC

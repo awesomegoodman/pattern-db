@@ -1,0 +1,66 @@
+slug: dlocal
+name: dLocal
+domain: b2b-payments
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2016
+country: Uruguay
+status: operating
+stage: public
+funding_history: "General Atlantic invested pre-IPO. Alkeon Capital, Tiger Global.
+  IPO June 2021 on Nasdaq (DLO) at $6.5B valuation — first Uruguayan company to
+  list on Nasdaq. No significant early-stage VC."
+revenue_signal: ">100M"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "Founded in Montevideo, Uruguay. Single API connecting global enterprise
+  merchants to 700+ local payment methods across 40+ emerging markets (LatAm, Africa,
+  Asia). FY2024 total payment volume $25.6B. FY2023 net income positive (public filings).
+  Customers include Amazon, Nike, Uber, Spotify, Shopify, Microsoft. Core structural
+  insight: global enterprises cannot individually integrate with each local payment
+  rail in 40 countries — dLocal provides one commercial relationship for all. Gross
+  profit margins strong for an aggregator model (~45%+ gross margin). Two revenue
+  streams: transaction processing fee + FX spread. Profitable from early stage.
+  Cross-industry confirmation: dLocal's profitability as a regulatory-complexity
+  aggregator confirms the payroll-processing-infrastructure winning condition
+  cross-industry — the same structural mechanism (regulatory complexity per jurisdiction
+  makes in-house integration uneconomic) drives outsourcing in both domains."
+implementation_patterns:
+  - slug: local-rail-aggregation
+    source: dLocal S-1 filing / Nasdaq IPO prospectus
+problems:
+  - slug: programmatic-payment-acceptance
+  - slug: cross-border-payment-infrastructure
+    confidence: medium
+    notes: "dLocal enables cross-border payment acceptance (global merchants collecting
+      from local customers) rather than pure cross-border transfers — the problem is
+      payment acceptance by international merchants in local markets."
+timeline:
+  - year: 2016
+    event_type: founding
+    implementation_pattern: local-rail-aggregation
+    problem: programmatic-payment-acceptance
+    description: "Founded in Montevideo, Uruguay by Sergio Fogel, Jacobo Singer, and
+      Andrés Bzurovski. Initial focus: enable global enterprises to accept local payment
+      methods in Latin America — specifically targeting the problem that credit card
+      penetration in LatAm averages below 30%, making card-only acceptance insufficient."
+    source: dLocal S-1 / founder interviews
+  - year: 2021
+    event_type: funding
+    implementation_pattern: local-rail-aggregation
+    description: "IPO on Nasdaq (DLO) June 2021 at $6.5B market cap — first Uruguayan
+      tech company to list on Nasdaq. Processed $6.5B in total payment volume in 2020.
+      At IPO: 27 countries, 350+ payment methods, $8.2B annualised TPV."
+    source: dLocal S-1 / Nasdaq listing documents
+  - year: 2023
+    event_type: market_entry
+    implementation_pattern: local-rail-aggregation
+    problem: cross-border-payment-infrastructure
+    description: "Expanded to 40+ markets including significant Africa presence (Nigeria,
+      Kenya, South Africa, Egypt, Ghana). $14.1B total payment volume FY2023. Launched
+      dLocal Go (simplified onboarding for smaller merchants) alongside enterprise product."
+    capability: local-payment-rail-integrations
+    capability_deployed: "Existing LatAm local rail integrations provided the architectural
+      template and compliance playbook for Africa and Asia expansion — same integration
+      pattern applied to new geographies."
+    source: dLocal annual report 2023 / investor relations

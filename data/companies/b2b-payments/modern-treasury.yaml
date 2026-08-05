@@ -1,0 +1,74 @@
+slug: modern-treasury
+name: Modern Treasury
+domain: b2b-payments
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2018
+country: USA
+status: operating
+stage: series_c
+funding_history: "Seed 2018 (Benchmark). Series A $18M 2020 (Benchmark lead).
+  Series B $38M 2021 (General Catalyst lead). Series C $85M November 2022 (Altimeter
+  Capital lead) at $2B valuation. Total: $187M+."
+revenue_signal: "10-100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Dimitri Dadiomov, Matt Marcus, and Sam Aarons — all
+  previously at Braintree (PayPal). Core product: payment operations software that
+  sits above the payment rails. Critical distinction from BaaS middleware: Modern
+  Treasury does not hold or move money. All fund movement happens via the customer's
+  existing bank integrations. This architectural choice eliminates the ledger
+  reconciliation risk that destroyed Synapse. Customers include Brex, Gusto, Marqeta,
+  Mercury, and others — notably, many BaaS providers use Modern Treasury for their
+  own ledger management. Expansion to UK 2023. At $2B valuation with $85M Series C,
+  implied revenue $50M-100M range. Founding team's Braintree experience directly
+  informed the architectural choice to avoid holding money."
+implementation_patterns:
+  - slug: payment-orchestration-layer
+    source: Modern Treasury product documentation / TechCrunch funding coverage
+problems:
+  - slug: programmatic-payment-disbursement
+  - slug: programmatic-payment-acceptance
+    confidence: medium
+    notes: "Modern Treasury handles both inbound and outbound payment operations,
+      but the primary pain point it solves is the operational complexity of managing
+      payment workflows and reconciliation — more disbursement/treasury than acceptance."
+timeline:
+  - year: 2018
+    event_type: founding
+    implementation_pattern: payment-orchestration-layer
+    problem: programmatic-payment-disbursement
+    description: "Founded by Dimitri Dadiomov, Matt Marcus, and Sam Aarons — all
+      previously at Braintree/PayPal. Initial product: payment operations platform
+      providing ledger management, reconciliation, and workflow automation on top of
+      existing bank integrations. Explicit architectural choice to not hold money:
+      all actual fund movement occurs via customer bank accounts, not Modern Treasury
+      accounts."
+    source: Modern Treasury launch blog / TechCrunch
+  - year: 2021
+    event_type: product_launch
+    implementation_pattern: payment-orchestration-layer
+    description: "Series B $38M. Launched Modern Treasury Ledgers — real-time double-entry
+      accounting system embedded into payment workflows. Addressed the reconciliation
+      problem that was destroying BaaS middleware companies: by maintaining a real-time
+      ledger that reconciles continuously rather than in batches, Modern Treasury
+      avoids the fatal flaw in the Synapse architecture."
+    source: Modern Treasury blog / Series B announcement
+  - year: 2022
+    event_type: funding
+    description: "Series C $85M led by Altimeter Capital at $2B valuation. At this
+      point, several BaaS middleware providers (including companies that would later
+      be affected by Synapse's collapse) were using Modern Treasury for ledger management
+      — a signal that the orchestration-without-holding-money model was attracting
+      operators who had learned from BaaS middleware risks."
+    source: TechCrunch / Altimeter Capital
+  - year: 2023
+    event_type: market_entry
+    implementation_pattern: payment-orchestration-layer
+    description: "Expanded to UK market. FCA payment services registration obtained.
+      Synapse filed Chapter 11 in April 2024 — industry shifted toward Modern Treasury's
+      architectural approach (software above rails, no money held)."
+    capability: banking-licence-portfolio
+    capability_deployed: "Existing US bank integrations provided architectural template
+      for UK expansion via Open Banking rails and Faster Payments."
+    source: Modern Treasury blog

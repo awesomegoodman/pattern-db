@@ -1,0 +1,78 @@
+slug: wise
+name: Wise (formerly TransferWise)
+domain: b2b-payments
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2011
+country: UK
+status: operating
+stage: public
+funding_history: "Seed $1.3M 2012 (IA Ventures, Index Ventures, others). Series A
+  $6M 2013. Series E $58M 2017. IPO July 2021 on London Stock Exchange (WISE) via
+  direct listing at GBP 8B valuation — no capital raised at IPO. Andreessen Horowitz,
+  Baillie Gifford, IVP investors."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "FY2024 (ending March 2024): revenue GBP 1.05B (+24% YoY), profit
+  before tax GBP 481M (45% margin). FY2025: revenue GBP 1.28B. Founded by Kristo
+  Kaaarmann and Taavet Hinrikus (Skype's first employee) in London. Core mechanism:
+  holds currency pools in multiple countries, so international transfers become two
+  domestic transactions plus a real exchange rate conversion — eliminating correspondent
+  bank margin on each hop. Wise Platform (B2B API, launched 2022): enables banks and
+  fintechs to embed Wise infrastructure. Customers: 12.8M personal users + 550,000+
+  business customers. Launched with consumer cross-border transfers; business product
+  added 2015. Renamed from TransferWise to Wise in 2021 to reflect expansion beyond
+  transfers. Primary strong validator for cross-border-a2a-infrastructure pattern."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: Wise annual report FY2024 / LSE listing prospectus
+problems:
+  - slug: cross-border-payment-infrastructure
+  - slug: programmatic-payment-disbursement
+    confidence: medium
+    notes: "Wise Business enables mass international payouts to contractors and suppliers
+      — a payment disbursement use case alongside the core cross-border transfer use case."
+timeline:
+  - year: 2011
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded as TransferWise by Kristo Kaaarmann and Taavet Hinrikus in
+      London. Both were Estonian expats frustrated by bank FX fees. Core insight: rather
+      than moving money across borders, hold local currency pools in multiple countries
+      and match senders/receivers of opposite currency pairs. UK-to-EU transfer becomes
+      UK domestic transfer + EU domestic transfer + real exchange rate — no correspondent
+      bank margin."
+    source: Wise company history / founder interviews
+  - year: 2015
+    event_type: product_launch
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: programmatic-payment-disbursement
+    description: "Launched TransferWise for Business — batch international payments
+      for SMBs paying international suppliers and contractors. Extended the same A2A
+      mechanism to business use cases. First direct competition with bank wire transfers
+      for B2B payments."
+    capability: banking-licence-portfolio
+    capability_deployed: "FCA payment institution licence obtained 2012 enabled direct
+      access to UK Faster Payments and SEPA — the local rail integrations that make
+      the A2A mechanism work."
+    source: Wise product history
+  - year: 2021
+    event_type: funding
+    description: "Direct listing on London Stock Exchange at GBP 8B valuation — chose
+      direct listing over IPO to avoid diluting existing shareholders. Renamed from
+      TransferWise to Wise. FY2021: GBP 421M revenue, first year of consistent
+      full-year profitability."
+    source: LSE direct listing prospectus
+  - year: 2022
+    event_type: product_launch
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Launched Wise Platform API — enables banks and fintechs to embed
+      Wise infrastructure. Monzo, N26, Morgan Stanley among early Platform customers.
+      Expansion from end-user product to infrastructure provider."
+    capability: banking-licence-portfolio
+    capability_deployed: "Portfolio of payment institution licences across UK, EU, USA,
+      Singapore, and others made Platform commercially viable — banks and fintechs
+      use Wise's licence portfolio rather than obtaining their own."
+    source: Wise Platform launch / annual report FY2022

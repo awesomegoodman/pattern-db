@@ -1,0 +1,75 @@
+slug: flutterwave
+name: Flutterwave
+domain: b2b-payments
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2016
+country: Nigeria
+status: operating
+stage: unicorn
+funding_history: "YC S17 (2017). Series A $10M 2018 (Greycroft, Green Visor Capital).
+  Series B $35M 2020 (Tiger Global lead). Series C $170M July 2021 at $1B valuation
+  (unicorn). Series D $250M February 2022 at $3B valuation (B Capital Group lead).
+  Total raised: $474M+. Visa and Mastercard are strategic investors."
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Olugbenga (GB) Agboola and Iyinoluwa Aboyeji in San Francisco
+  with Nigerian operations base. YC S17. Processes payments across 34 African countries
+  + global. 900,000+ businesses, $26B in annualised payment volume (2022 claim).
+  Customers include Uber, Facebook, Flutterwave Store, AirtelTigo. Products: Rave
+  (payment gateway), Barter (consumer wallet), Flutterwave Store (e-commerce). Founded
+  by former UBA bank executive (Agboola) and first Africa country manager of Andela
+  (Aboyeji). Both co-founded Andela previously. Strategic distinction from Interswitch:
+  Interswitch built domestic Nigerian rails first then expanded regionally; Flutterwave
+  built pan-African cross-border connectivity first. Together they represent two distinct
+  structural approaches to the African payment infrastructure problem. Regulatory
+  challenges: CBN licence suspended in 2022 (restored 2023); ongoing regulatory
+  navigation across multiple African jurisdictions."
+implementation_patterns:
+  - slug: local-rail-aggregation
+    source: Flutterwave S-series funding announcements / CBN regulatory filings
+problems:
+  - slug: programmatic-payment-acceptance
+  - slug: cross-border-payment-infrastructure
+    confidence: medium
+    notes: "Flutterwave enables cross-border payments within Africa and between Africa
+      and global markets — both acceptance (money in from global platforms) and
+      cross-border transfer (money moving across African countries)."
+timeline:
+  - year: 2016
+    event_type: founding
+    implementation_pattern: local-rail-aggregation
+    problem: programmatic-payment-acceptance
+    description: "Founded by GB Agboola and Iyinoluwa Aboyeji. Initial product: payment
+      infrastructure enabling African businesses to accept payments from global platforms
+      (Facebook, Uber) and enabling global platforms to pay African users. Core insight:
+      Uber needed to pay Nigerian drivers; Nigerian drivers needed to receive money
+      from Uber. No simple API existed for either side."
+    source: Flutterwave company history / YC S17 profile
+  - year: 2017
+    event_type: funding
+    implementation_pattern: local-rail-aggregation
+    description: "YC S17 batch. First institutional funding. YC accelerator provided
+      access to US investor network and the credibility that enabled subsequent VC
+      rounds from global funds."
+    source: YC alumni directory
+  - year: 2021
+    event_type: funding
+    implementation_pattern: local-rail-aggregation
+    description: "Series C $170M at $1B valuation — Africa's first payments unicorn
+      by VC valuation (Interswitch reached unicorn status via strategic Visa investment
+      rather than VC round). Processed $9B in payment volume in 2020. 290,000 businesses.
+      Visa and Mastercard took strategic positions."
+    source: TechCrunch Series C announcement
+  - year: 2022
+    event_type: market_entry
+    implementation_pattern: local-rail-aggregation
+    problem: cross-border-payment-infrastructure
+    description: "Series D $250M at $3B valuation. Expanded to 34 African countries.
+      CBN licence suspended August 2022 (restored 2023 after compliance improvements).
+      Regulatory episode illustrates the challenge of maintaining licences across
+      multiple African jurisdictions simultaneously — the capability that the domestic-
+      payment-infrastructure pattern (Interswitch) built deliberately vs Flutterwave's
+      expansion-first approach."
+    source: TechCrunch Series D / CBN regulatory notices

@@ -43,3 +43,37 @@
   notes: The structural bet that HR, IT, and Finance are not separate domains but a single operational problem — managing
     the employee lifecycle — that should be served by one data model. Requires a unified employee record as the core
     primitive. Parker Conrad's explicit thesis at Rippling after diagnosing Zenefits's failure.
+- slug: payment-processing-infrastructure
+  name: Payment processing infrastructure
+  first_observed: 1960
+  pattern_durability: decades-old
+  notes: "The structural bet that a specialist third party can handle payment acceptance
+    and processing more reliably and cheaply than businesses building the infrastructure
+    themselves. Direct cross-industry confirmation of the payroll-processing-infrastructure
+    winning condition: regulatory complexity (PCI-DSS, banking licences, card scheme
+    membership, AML/KYC) makes in-house execution uneconomic for all but the largest
+    enterprises — the same structural mechanism operating in a different industry.
+    Winning/Failure conditions: to be filled once cross-industry confirmation is documented."
+
+- slug: cross-border-payment-network
+  name: Cross-border payment network
+  first_observed: 1973
+  pattern_durability: decades-old
+  notes: "The structural bet that a network connecting disparate national banking systems
+    can move money internationally faster and cheaper than correspondent banking (SWIFT,
+    first instantiated 1973). The modern iteration: a technology layer that replicates
+    correspondent banking outcomes without legacy overhead. Wise (A2A matching), dLocal
+    (local rail aggregation), and Flutterwave (pan-African switching) are three distinct
+    implementations of the same structural approach to the same underlying problem."
+
+- slug: embedded-banking-infrastructure
+  name: Embedded banking infrastructure
+  first_observed: 2018
+  pattern_durability: emerging
+  notes: "The structural bet that a regulated intermediary layer can enable non-bank
+    businesses to offer financial services without obtaining banking licences themselves.
+    Two implementation sub-models: (1) BaaS middleware (Synapse — dead 2024) which
+    sat between sponsor banks and fintechs, creating ledger reconciliation risk;
+    (2) direct bank partnership which eliminates the middleware layer. Synapse's 2024
+    bankruptcy is the canonical disconfirming case establishing that the three-party
+    middleware structure carries unacceptable ledger reconciliation risk at scale."

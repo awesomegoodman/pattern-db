@@ -58,3 +58,47 @@
       example_company: Rippling People Center Inc
       evidence_note: "Rippling built the Employee Graph: one record powering HR IT and Finance simultaneously. Each new module
         reached 1M ARR within 5-6 months because data was already structured."
+- slug: direct-scheme-access
+  name: Direct card scheme access
+  description: Direct technical and commercial membership in Visa, Mastercard, and
+    domestic card schemes, enabling settlement without an intermediary acquiring bank.
+    Reduces per-transaction cost and latency. Enables IC++ pricing (passing interchange
+    at cost) vs blended-rate aggregators who absorb interchange margin.
+  status: proposed
+  sector_evidence:
+    - sector: b2b-payments
+      example_company: Adyen
+      evidence_note: Adyen built direct connections to 250+ payment methods and card
+        schemes globally, enabling IC++ pricing. This infrastructure was deployed to
+        launch Adyen Financial Services (embedded banking products) in 2022 at low
+        marginal cost.
+
+- slug: local-payment-rail-integrations
+  name: Local payment rail integrations
+  description: Technical integrations with country-specific payment networks (SEPA,
+    Faster Payments, PIX, UPI, M-Pesa, local card schemes) enabling local currency
+    settlement. Each integration requires dedicated engineering and local banking
+    relationships. Transfers directly to adjacent markets where those rails exist.
+  status: proposed
+  sector_evidence:
+    - sector: b2b-payments
+      example_company: dLocal
+      evidence_note: dLocal built integrations with 700+ local payment methods across
+        40+ emerging markets. Each integration required dedicated engineering plus local
+        banking relationships. This capability enabled expansion into each additional
+        market at low marginal cost.
+
+- slug: banking-licence-portfolio
+  name: Banking licence and regulatory approval portfolio
+  description: Held payment institution licences, e-money licences, or banking licences
+    in multiple jurisdictions, enabling direct operation as a regulated financial entity
+    without a sponsor bank. Payments equivalent of global-compliance-and-entity-infrastructure
+    in the EOR domain.
+  status: proposed
+  sector_evidence:
+    - sector: b2b-payments
+      example_company: Wise
+      evidence_note: Wise holds payment institution licences in the EU (Central Bank
+        of Lithuania), UK (FCA), USA (MSB licences per state), Singapore (MAS), and
+        others. Together these enable direct local currency settlement without correspondent
+        banking intermediaries in each jurisdiction.

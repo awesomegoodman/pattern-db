@@ -1,0 +1,75 @@
+slug: synapse-financial
+name: Synapse Financial Technologies
+domain: b2b-payments
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2014
+country: USA
+status: dead
+stage: series_b
+funding_history: "Seed and Series A undisclosed. Series B $33M led by Andreessen Horowitz
+  (Angela Strange) in 2019. Total raised: ~$50M. Failed asset sale to TabaPay ($9.7M)
+  in April 2024 fell through. Converted to Chapter 7 liquidation."
+revenue_signal: "<10M"
+profitability_signal: known_unprofitable
+evidence_weight: disconfirming
+signal_confidence: high
+notable_facts: "DISCONFIRMING CASE — High failure attribution confidence. Filed Chapter
+  11 bankruptcy April 2024. At peak (Fall 2023): 120 fintech clients, 2M active users,
+  $60B annualised money movement, $3B card-based spending. $85-160M in customer funds
+  frozen due to ledger reconciliation failure between Synapse ledger and partner bank
+  ledgers (Evolve Bank, AMG National Trust, American Bank, Lineage Bank). Former FDIC
+  Chair Jelena McWilliams appointed as bankruptcy trustee. FDIC proposed the Synapse
+  Rule in October 2024 requiring banks to maintain direct recordkeeping of beneficial
+  owners in custodial accounts. Failure attribution confidence: High — failure is
+  structurally attributable to BaaS middleware pattern: the three-party architecture
+  (fintech / middleware / sponsor bank) created a ledger reconciliation problem that
+  cannot be resolved when the middleware fails. Distinct from Wirecard: Wirecard was
+  fraud in the payment processing layer; Synapse was an architecture flaw in the
+  BaaS middleware layer. Both are High attribution confidence but different failure modes."
+implementation_patterns:
+  - slug: baas-middleware
+    source: TechCrunch / American Banker / bankruptcy filings
+    notes: "DISCONFIRMING. The only verified failure case for the baas-middleware
+      implementation pattern. Failure mode: middleware ledger diverged from sponsor
+      bank ledgers through batch (not real-time) reconciliation. When Mercury and
+      Evolve Bank ended their Synapse relationship in 2023, the reconciliation gap
+      became unresolvable without a bankruptcy court."
+problems:
+  - slug: embedded-banking-infrastructure
+timeline:
+  - year: 2014
+    event_type: founding
+    implementation_pattern: baas-middleware
+    problem: embedded-banking-infrastructure
+    description: "Founded by Sankaet Pathak in San Francisco. Initial product: APIs
+      enabling fintechs to embed banking services (deposits, cards, payments) by
+      connecting them with FDIC-insured sponsor banks. Thesis: most fintechs cannot
+      obtain banking licences, but all can use APIs to offer banking products."
+    source: TechCrunch / American Banker
+  - year: 2019
+    event_type: funding
+    implementation_pattern: baas-middleware
+    description: "Series B $33M led by Andreessen Horowitz (Angela Strange). At this
+      point: 2M active users, growing fintech client base including Yotta, Copper,
+      and others. Mercury (business banking) also used Synapse/Evolve Bank partnership
+      at this stage."
+    source: TechCrunch / SEC filings
+  - year: 2023
+    event_type: pivot
+    implementation_pattern: baas-middleware
+    description: "Mercury ended its Synapse/Evolve relationship and moved to direct
+      bank partnership with Evolve — cutting Synapse out. Synapse began layoffs. The
+      structural fragility became apparent: when a major client removes the middleware,
+      ledger reconciliation between middleware and bank becomes unresolvable. Multiple
+      fintech clients began exiting."
+    source: American Banker / PYMNTS
+  - year: 2024
+    event_type: shutdown
+    implementation_pattern: baas-middleware
+    description: "April 2024: filed Chapter 11 bankruptcy. $85-160M in customer funds
+      frozen — irreconcilable gap between Synapse ledger and four partner bank ledgers.
+      Proposed $9.7M asset sale to TabaPay collapsed. Converted to Chapter 7 liquidation.
+      Former FDIC Chair appointed trustee. 100,000+ consumers locked out of accounts.
+      FDIC proposed Synapse Rule (October 2024) requiring direct bank recordkeeping,
+      eliminating the middleware ledger model."
+    source: TechCrunch / NCRC / Yale Journal of International Affairs

@@ -1,0 +1,81 @@
+slug: adyen
+name: Adyen
+domain: b2b-payments
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2006
+country: Netherlands
+status: operating
+stage: public
+funding_history: "Self-funded from 2006 through IPO. IPO June 2018 on Euronext Amsterdam
+  (ADYEN) at EUR 7.1B market cap. No external VC funding — scaled entirely from processing
+  revenue. First-day close at EUR 551/share implying EUR 16B market cap."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "FY2024 net revenue EUR 1,996.1M (+23% YoY), EBITDA EUR 992.3M, EBITDA
+  margin 50% (annual report). FY2025 EBITDA margin 53%. Processes EUR 1.29 trillion
+  in payment volume annually (FY2024). Direct connections to 250+ payment methods
+  and card schemes across 40+ markets. Founded by Pieter van der Does and Arnout Schuijff,
+  previously co-founders of Bibit (payment processor acquired by RBS 2004). Single
+  global platform: same codebase processes in-store and online in every market. Customers
+  include Spotify, Uber, eBay, McDonald's, Microsoft, Starbucks. Profitable since 2011.
+  Primary strong validator for payment-processing-infrastructure solution pattern."
+implementation_patterns:
+  - slug: full-stack-payment-processor
+    source: Adyen Annual Report 2024
+problems:
+  - slug: programmatic-payment-acceptance
+timeline:
+  - year: 2006
+    event_type: founding
+    implementation_pattern: full-stack-payment-processor
+    problem: programmatic-payment-acceptance
+    description: "Founded in Amsterdam by Pieter van der Does and Arnout Schuijff, both
+      previously at Bibit (Dutch payment processor acquired by RBS 2004). Initial thesis:
+      build a single global platform that owns the full acquiring stack — scheme connections,
+      processing, settlement — without intermediary acquiring banks. First clients: digital
+      media companies seeking online payment acceptance."
+    source: Adyen company history / IPO prospectus
+  - year: 2011
+    event_type: product_launch
+    implementation_pattern: full-stack-payment-processor
+    description: "Reached profitability for the first time. Established direct Visa
+      and Mastercard scheme membership, enabling IC++ pricing model — passing interchange
+      at cost rather than blending margin. This structural choice defined Adyen's
+      enterprise positioning: transparent pricing for sophisticated buyers, lower
+      gross margin but higher retention."
+    capability: direct-scheme-access
+    capability_deployed: "Direct card scheme connections enabled IC++ pricing and the
+      enterprise go-to-market motion that would define Adyen's expansion."
+    source: Adyen Annual Report 2018 (IPO prospectus historical data)
+  - year: 2013
+    event_type: product_launch
+    implementation_pattern: full-stack-payment-processor
+    problem: programmatic-payment-acceptance
+    description: "Launched Adyen for Platforms — marketplace and platform payment
+      infrastructure enabling companies like Airbnb and eBay to split payments between
+      buyers and sellers within a single transaction. Extended full-stack model to
+      multi-party transactions."
+    capability: direct-scheme-access
+    capability_deployed: "Direct scheme membership enabled marketplace payment splitting
+      without an intermediary acquiring bank taking margin on each leg of the split."
+    source: Adyen press materials 2013
+  - year: 2018
+    event_type: funding
+    description: "IPO on Euronext Amsterdam at EUR 240 per share; first-day close
+      EUR 551/share. No external VC had ever invested — company went public entirely
+      from operational cash flow growth. Demonstrated that profitable payment infrastructure
+      can scale without venture capital dependency."
+    source: Adyen IPO prospectus / Financial Times
+  - year: 2022
+    event_type: product_launch
+    implementation_pattern: full-stack-payment-processor
+    description: "Launched Adyen Financial Services — embedded financial products
+      (business accounts, cards, capital) on top of existing payment infrastructure.
+      Used direct scheme access and enterprise relationships as the expansion capability."
+    capability: direct-scheme-access
+    capability_deployed: "Direct scheme membership and existing enterprise relationships
+      made financial services expansion tractable — same infrastructure that processes
+      payments now issues cards and provides working capital."
+    source: Adyen Annual Report 2022
