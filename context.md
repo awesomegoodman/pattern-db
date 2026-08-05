@@ -1,6 +1,6 @@
 # Economic Pattern Database — Agent Context
 
-Paste this file into a new AI chat session to give full working context.
+Paste this into a new AI chat session for full working context.
 Generated dynamically — includes live DB state.
 
 ---
@@ -38,19 +38,19 @@ customers persist. Companies are evidence, not the object of study.
 
 ```bash
 # Load all YAML into database (idempotent — safe to re-run)
-set -a && source .env.local && set +a
-npx tsx loader/index.ts load
+npm run load
 
 # Validate YAML without touching database
-npx tsx loader/index.ts validate
+npm run validate
 
 # Project status (companies, patterns, queue, opportunities)
-set -a && source .env.local && set +a
-npx tsx src/db/queries/status.ts
+npm run status
 
 # Full analytical query suite
-set -a && source .env.local && set +a
-npx tsx src/db/queries/run-all.ts
+npm run queries
+
+# Regenerate this context file
+npm run context
 
 # Schema changes
 npx drizzle-kit push    # push schema.ts changes to Supabase
@@ -70,7 +70,7 @@ Then push, then re-run src/db/raw-sql/triggers-and-views.sql in Supabase.
 
 ---
 
-## How to add a company (the daily workflow)
+## How to add a company (daily workflow)
 
 ```bash
 # 1. Copy the template
@@ -78,11 +78,11 @@ cp data/companies/hr-payroll/gusto.yaml data/companies/<domain>/<slug>.yaml
 
 # 2. Edit — fill all MVR fields (see template for required fields)
 
-# 3. Validate first
-npx tsx loader/index.ts validate
+# 3. Validate
+npm run validate
 
 # 4. Load
-set -a && source .env.local && set +a && npx tsx loader/index.ts load
+npm run load
 ```
 
 ---
@@ -93,26 +93,24 @@ set -a && source .env.local && set +a && npx tsx loader/index.ts load
 # 1. Create the domain directory
 mkdir -p data/companies/<new-domain>
 
-# 2. Add vocab entries as needed (problems, patterns, capabilities)
+# 2. Add vocab entries as needed
 # Edit data/_vocab/problems.yaml, solution-patterns.yaml,
 # implementation-patterns.yaml, capabilities.yaml
 
-# 3. Add 10 foundation companies (see candidate-selection.md for slot protocol)
+# 3. Add 10 foundation companies (see docs/candidate-selection.md)
 # Use research_queue_source: "OFF_QUEUE:foundation-record" for first 10
 
-# 4. Load
-npx tsx loader/index.ts load
-
-# 5. Run status to see the new domain
-npx tsx src/db/queries/status.ts
+# 4. Load and check
+npm run load
+npm run status
 ```
 
-Foundation record slot requirements (per candidate-selection.md):
+Foundation record slot requirements:
 - At least 1 strong validator (public financials preferred)
 - At least 1 disconfirming case (documented failure)
 - At least 2 geographies
 - At least 2 distinct implementation patterns
-- Do not use all 10 slots on the most prominent companies in one pattern
+- Do not fill all 10 slots with the most prominent companies in one pattern
 
 ---
 
@@ -121,50 +119,141 @@ Foundation record slot requirements (per candidate-selection.md):
 ```bash
 cp data/opportunities/_template.yaml data/opportunities/<slug>.yaml
 # Edit, then:
-npx tsx loader/index.ts load
+npm run load
 ```
 
 The loader computes well_formed automatically. A record missing lens,
 winning/failure condition pair, predictions (>=1), or open questions (>=1)
-is stored as draft and flagged with the specific reasons.
+is stored as draft and flagged with specific reasons.
 
 ---
 
-## Research queue
+## Research queue scoring
 
-The research queue (Q09 in run-all.ts, also in status.ts) tells you which
-company type to find next, scored and ranked. Scoring:
-- FAILURE_CASE_NEEDED: 25 (3+ strong validators, 0 disconfirming — survivor bias active)
-- STRONG_VALIDATOR_NEEDED: 20 (2+ companies, 0 known-profitable)
-- IMPLEMENTATION_FILL: 10 × (3 - count) (fewer than 3 companies in pattern)
-- GEOGRAPHIC_WHITESPACE: 12 (strong validator in A, nothing in B)
-- PATTERN_PROMOTION: 15 × observations_needed (winning condition needs cross-industry confirmation)
+The research queue (visible in npm run status) tells you which company type
+to find next. Scoring weights:
+- FAILURE_CASE_NEEDED:           25  (3+ strong validators, 0 disconfirming)
+- STRONG_VALIDATOR_NEEDED:       20  (2+ companies, 0 known-profitable)
+- PATTERN_PROMOTION:             15x (winning condition needs cross-industry confirmation)
+- GEOGRAPHIC_WHITESPACE:         12  (strong validator in A, nothing in B)
+- IMPLEMENTATION_FILL:           10x (fewer than 3 companies in pattern)
 
 Set research_queue_source on every company file to the queue item it satisfies.
-This is the audit trail for reproducibility.
 
 ---
 
-## Interpretation philosophy (critical — read before contributing)
+## Interpretation philosophy
 
 Three kinds of uncertainty, three different responses:
 1. Observational (Layer 1): fact genuinely unknown → store raw source + bucket + reasoning
-2. Interpretive (Layer 2): experts may legitimately disagree → make reasoning visible
+2. Interpretive (Layer 2): experts may disagree → make reasoning visible in notable_facts
 3. Predictive (Layer 3): nobody knows → make claim falsifiable, record predictions
 
 The Boundary Case Catalog (data/_vocab/boundary-cases.yaml) is the primary
-calibration reference — more useful than the abstraction tests for hard cases.
-Search it before creating any new pattern.
-
-When a field required judgment: write what you thought in notable_facts.
-The record is both data and reasoning log simultaneously.
+calibration reference. Search it before creating any new pattern.
+Full doc: docs/interpretation-across-layers.md
 
 ---
 
 ## Current project status
 
 ```
-(status query failed — check .env.local)
+
+══════════════════════════════════════════════════
+  Economic Pattern Database — Status
+══════════════════════════════════════════════════
+
+  Companies:               79
+  Timeline entries:        282
+  Implementation patterns: 18
+  Solution patterns:       7
+  Problems:                10
+  Capabilities:            9
+  Opportunities:           1
+  
+── Companies by solution pattern ────────────────
+  Payment processing infrastructure        ████████████████████ 24 (✓9 ·1✗)
+  Cross-border payment network             ███████████████████░ 23 (✓10 ·2✗)
+  Payroll processing infrastructure        █████████████████░░░ 20 (✓6 ·3✗)
+  Cloud HCM platform                       ████░░░░░░░░░░░░░░░░ 5 (✓3 ·1✗)
+  Global employment infrastructure         ███░░░░░░░░░░░░░░░░░ 4 (✓0 ·0✗)
+  Embedded banking infrastructure          ███░░░░░░░░░░░░░░░░░ 3 (✓0 ·2✗)
+  Compound workforce management platform   █░░░░░░░░░░░░░░░░░░░ 1 (✓0 ·0✗)
+
+── Implementation patterns ──────────────────────
+  ████████████ 19  Established  Cross-border account-to-account infrastructure
+  ███████████░ 17  Established  Cloud-native SMB payroll SaaS
+  ████░░░░░░░░  6  Strong       Developer-first payment API
+  ████░░░░░░░░  6  Strong       Full-stack payment processor
+  ███░░░░░░░░░  5  Strong       Domestic payment infrastructure platform
+  ███░░░░░░░░░  4  Emerging     Agent network remittance
+  ███░░░░░░░░░  4  Emerging     Cloud enterprise HCM platform
+  ███░░░░░░░░░  4  Emerging     Global payroll / Employer of Record platform
+  ███░░░░░░░░░  4  Emerging     Local payment rail aggregation
+  ██░░░░░░░░░░  3  Emerging     Accounts payable automation
+  ██░░░░░░░░░░  3  Emerging     Payment orchestration and ledger layer
+  █░░░░░░░░░░░  2  Emerging     Banking-as-a-Service middleware [dead]
+  █░░░░░░░░░░░  2  Emerging     Manual payroll bureau
+  █░░░░░░░░░░░  2  Emerging     Telco-owned mobile money network
+  █░░░░░░░░░░░  1  Anecdotal    Compliance-led free HR SaaS (broker revenue model) [dead]
+  █░░░░░░░░░░░  1  Anecdotal    Compound HR + IT + Finance platform
+  █░░░░░░░░░░░  1  Anecdotal    Direct bank partnership for embedded finance
+  █░░░░░░░░░░░  1  Anecdotal    On-premise enterprise HCM platform [dead]
+
+── Research queue (top 10) ──────────────────────
+  #1   [30] PATTERN_PROMOTION
+       Pattern: Compound workforce management platform
+       Find:    Find a company using the same structural approach as [Compound workforce management platform] in an unrepresented industry.
+
+  #2   [30] PATTERN_PROMOTION
+       Pattern: Embedded banking infrastructure
+       Find:    Find a company using the same structural approach as [Embedded banking infrastructure] in an unrepresented industry.
+
+  #3   [25] FAILURE_CASE_NEEDED
+       Pattern: Cloud enterprise HCM platform
+       Find:    Find a company that attempted [Cloud enterprise HCM platform] and failed. Search: Crunchbase shutdowns, TechCrunch graveyard, YC dark.
+
+  #4   [25] FAILURE_CASE_NEEDED
+       Pattern: Domestic payment infrastructure platform
+       Find:    Find a company that attempted [Domestic payment infrastructure platform] and failed. Search: Crunchbase shutdowns, TechCrunch graveyard, YC dark.
+
+  #5   [20] IMPLEMENTATION_FILL
+       Pattern: Compound HR + IT + Finance platform
+       Find:    Find any company using [Compound HR + IT + Finance platform]. Prioritise strong validators.
+
+  #6   [20] IMPLEMENTATION_FILL
+       Pattern: Direct bank partnership for embedded finance
+       Find:    Find any company using [Direct bank partnership for embedded finance]. Prioritise strong validators.
+
+  #7   [20] STRONG_VALIDATOR_NEEDED
+       Pattern: Global payroll / Employer of Record platform
+       Find:    Find a self-funded (5+ yrs) or public company using [Global payroll / Employer of Record platform]. Search: Indie Hackers, public 10-K filings.
+
+  #8   [12] GEOGRAPHIC_WHITESPACE
+       Pattern: Accounts payable automation
+       Find:    Find a company in [Nigeria] using [Accounts payable automation].
+
+  #8   [12] GEOGRAPHIC_WHITESPACE
+       Pattern: Accounts payable automation
+       Find:    Find a company in [Philippines] using [Accounts payable automation].
+
+  #8   [12] GEOGRAPHIC_WHITESPACE
+       Pattern: Accounts payable automation
+       Find:    Find a company in [Senegal] using [Accounts payable automation].
+
+── Open opportunities ───────────────────────────
+  [open] Standalone IT lifecycle platform for mid-market companies (derived · ✓ · 2 predictions)
+          Problem: Businesses cannot provision or deprovision employee access to software, hardware, and corporate systems as a single coordinated action.
+
+── Recent boundary cases (last 5) ───────────────
+  Interswitch Group: chose "both — domestic-payment-infrastructure primary, full-stack-payment-processor medium confidence secondary" — Interswitch's primary business is operating Nigerian switching infrastructure for all banks (domestic-payment-infrastructure). It also owns and processes the Verve card scheme directly (full-stack-payment-processor). Both are genuine instantiations. Medium confidence on the secondary pattern signals its supporting role. Cross-border payment results showing Interswitch are expected from the secondary linkage — not a data error, a classification nuance to track.
+  Rippling: chose "IP-005 (compound HR+IT+Finance platform)" — Rippling's core value proposition is the unified Employee Graph enabling cross-functional automation — payroll is the wedge, not the thesis. Gusto is the canonical IP-002 instantiation.
+  Zenefits: chose "IP-004 (compliance-led free HR SaaS, broker revenue)" — Zenefits's mechanism was insurance broker commissions funding free software — structurally distinct from standard PEPM SaaS subscription. The revenue model difference is the analytically important fact.
+  Justworks: chose "IP-002 (cloud-native SMB payroll SaaS, PEO variant)" — Justworks's PEO model is co-employment within the US, not cross-border employment. Conceptually closer to domestic outsourcing than international EOR. Recorded as a variant note on the IP-002 relationship.
+  Deel (US payroll launch 2024): chose "Keep as IP-006 only, with note on company record and timeline" — US payroll is a new expansion move for Deel, not its primary instantiation. Adding IP-002 would imply equivalence with Gusto — Deel's US payroll is a secondary product, not its founding pattern.
+
+══════════════════════════════════════════════════
+
 ```
 
 ---
@@ -305,6 +394,7 @@ The record is both data and reasoning log simultaneously.
 ./public/vercel.svg
 ./public/window.svg
 ./scripts
+./scripts/context-dump.sh
 ./src
 ./src/app
 ./src/app/companies
@@ -1473,7 +1563,7 @@ notes: |
 
 ---
 
-## Sample company file (gusto.yaml)
+## Sample company (gusto.yaml)
 
 ```yaml
 slug: gusto
@@ -1540,9 +1630,9 @@ timeline:
 
 ---
 
-## Sample vocab files (first 30 lines each)
+## Vocab snapshots
 
-### problems.yaml
+### problems.yaml (first 40 lines)
 ```yaml
 - slug: wage-compliance
   statement: Businesses cannot calculate, withhold, and disburse employee wages while remaining compliant with tax and
@@ -1586,7 +1676,7 @@ timeline:
 
 ```
 
-### implementation-patterns.yaml (first pattern only)
+### implementation-patterns.yaml (first 30 lines)
 ```yaml
 - slug: manual-payroll-bureau
   name: Manual payroll bureau
@@ -1620,7 +1710,7 @@ timeline:
   first_observed: 1998
 ```
 
-### capabilities.yaml (first capability only)
+### capabilities.yaml (first 25 lines)
 ```yaml
 - slug: direct-banking-relationships
   name: Direct banking relationships
@@ -1705,4 +1795,3 @@ timeline:
     secondary linkage — not a data error, a classification nuance to track.
   resolved_at: "2025-08-05"
 ```
-
