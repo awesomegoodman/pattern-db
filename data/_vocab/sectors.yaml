@@ -14,3 +14,6 @@
   name: Real Estate
 - slug: retail-and-ecommerce
   name: Retail and E-commerce
+
+- slug: b2b-payments
+  name: B2B Payments Infrastructure
