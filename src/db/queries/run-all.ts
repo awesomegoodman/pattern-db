@@ -324,6 +324,85 @@ async function run() {
     row("Companies:", r.companies);
   }
 
+  // Q09: Research queue
+  section("Q09 — Research queue: what to find next and why (scored)");
+  const q09 = await db.execute(sql`
+    SELECT
+      priority_rank,
+      quest_type,
+      pattern_name,
+      score,
+      brief,
+      search_directive
+    FROM research_queue
+    LIMIT 20
+  `) as any[];
+
+  for (const r of q09) {
+    console.log(`\n  #${r.priority_rank}  [score: ${r.score}]  ${r.quest_type}`);
+    row("Pattern:", r.pattern_name);
+    row("Why:", r.brief);
+    row("How to find:", r.search_directive);
+  }
+
+  // Q10: Opportunity assessment
+  section("Q10 — Opportunities: Hypotheses with evidence base");
+  const q10 = await db.execute(sql`
+    SELECT
+      o.slug,
+      o.name,
+      o.status,
+      o.evidence_strength,
+      p.statement                                                         AS problem,
+      STRING_AGG(DISTINCT CASE WHEN op.role = 'existing'
+        THEN ip.name END, ' | ')                                          AS existing_patterns,
+      STRING_AGG(DISTINCT CASE WHEN op.role = 'recombined'
+        THEN ip.name END, ' | ')                                          AS recombined_patterns,
+      STRING_AGG(DISTINCT
+        cap.name || CASE WHEN oc.available_to_new_entrant
+          THEN ' [available]' ELSE ' [moat]' END,
+        ', ')                                                             AS capabilities_required,
+      o.observed_gap,
+      o.hypothesis,
+      o.winning_condition_required,
+      o.failure_condition_to_avoid,
+      o.open_questions
+    FROM opportunities o
+    JOIN problems p ON p.id = o.problem_id
+    LEFT JOIN opportunity_patterns op ON op.opportunity_id = o.id
+    LEFT JOIN implementation_patterns ip ON ip.id = op.implementation_pattern_id
+    LEFT JOIN opportunity_capabilities oc ON oc.opportunity_id = o.id
+    LEFT JOIN capabilities cap ON cap.id = oc.capability_id
+    WHERE o.status NOT IN ('rejected')
+    GROUP BY o.id, o.slug, o.name, o.status, o.evidence_strength,
+             p.statement, o.observed_gap, o.hypothesis,
+             o.winning_condition_required, o.failure_condition_to_avoid, o.open_questions
+    ORDER BY
+      CASE o.evidence_strength WHEN 'strong' THEN 1 WHEN 'moderate' THEN 2 ELSE 3 END,
+      CASE o.status WHEN 'validated' THEN 1 WHEN 'investigating' THEN 2
+                    WHEN 'open' THEN 3 WHEN 'building' THEN 4 END
+  `) as any[];
+
+  for (const r of q10) {
+    console.log(`\n  ${r.name}  [${r.status} · ${r.evidence_strength}]`);
+    row("Problem:", r.problem);
+    row("Existing patterns:", r.existing_patterns);
+    row("Recombined from:", r.recombined_patterns);
+    row("Capabilities needed:", r.capabilities_required);
+    console.log(`\n  Gap:`);
+    console.log(`    ${r.observed_gap?.replace(/\n/g, '\n    ')}`);
+    console.log(`\n  Hypothesis:`);
+    console.log(`    ${r.hypothesis?.replace(/\n/g, '\n    ')}`);
+    console.log(`\n  Winning condition required:`);
+    console.log(`    ${r.winning_condition_required}`);
+    console.log(`\n  Failure condition to avoid:`);
+    console.log(`    ${r.failure_condition_to_avoid}`);
+    console.log(`\n  Open questions:`);
+    for (const q of (r.open_questions ?? '').split('\n').filter(Boolean)) {
+      console.log(`    · ${q}`);
+    }
+  }
+
   console.log("\n");
   await client.end();
 }

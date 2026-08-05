@@ -1,0 +1,111 @@
+slug: it-provisioning-standalone
+name: Standalone IT lifecycle platform for mid-market companies
+status: open
+
+# ── Layer 2 references ────────────────────────────────────────────────────────
+problem: it-provisioning
+
+# What currently exists addressing this problem
+existing_patterns:
+  - compound-hr-it-finance-platform
+
+# The specific implementation patterns being recombined or extracted
+recombined_patterns:
+  - compound-hr-it-finance-platform
+
+# ── The gap ───────────────────────────────────────────────────────────────────
+observed_gap: |
+  IT lifecycle management — device provisioning, app access, offboarding
+  automation — is only available as a module inside Rippling's compound
+  platform. No standalone solution handles the full employee IT lifecycle
+  (device + app + identity + asset tracking) as a single coordinated action
+  without requiring adoption of an HR and payroll stack. Jamf covers devices.
+  Okta covers identity. Neither closes the coordination gap between them, and
+  neither is triggered by HR events (hire, transfer, termination) automatically.
+
+gap_evidence:
+  - "Q06 structural gap query: 1 implementation pattern, 1 company, 0 profitable
+    confirmations on it-provisioning problem — lowest ratio in dataset"
+  - "No standalone IT lifecycle company found in hr-payroll or b2b-payments sweeps
+    despite both domains being near-exhaustively seeded"
+  - "Rippling 99.5% annual retention and NRR approaching 200% signals the underlying
+    problem is real and sticky — but the solution requires the full compound stack"
+  - "Q04 capability reuse: unified-employee-data-model required by compound-hr-it-finance-platform
+    is possessed by Rippling and BambooHR only — high barrier for new entrants"
+
+evidence_strength: moderate
+
+# ── The hypothesis ────────────────────────────────────────────────────────────
+hypothesis: |
+  A standalone IT lifecycle platform targeting mid-market companies (50-500 employees)
+  that have accumulated best-of-breed SaaS stacks and experience acute IT pain on
+  onboarding and offboarding, but have not adopted a compound workforce platform.
+  Product scope: device management, SaaS app provisioning and deprovisioning, access
+  control, and IT asset tracking — triggered by HR events via lightweight integration
+  (HRIS webhook, SCIM) rather than native HR module. Monetised as per-seat-per-month
+  subscription. Displaces: Jamf + Okta + manual spreadsheet combination.
+  Key structural bet: IT provisioning pain is severe enough to justify a point solution
+  purchase rather than adopting a full compound platform — testable by checking whether
+  Rippling offers its IT module as a genuine standalone product.
+
+# ── Required capabilities ─────────────────────────────────────────────────────
+capabilities_required:
+  - slug: unified-employee-data-model
+    possessed_by:
+      - rippling
+      - bamboohr
+    available_to_new_entrant: false
+    note: |
+      Rippling's moat. The Employee Graph is a founding-architecture decision —
+      a new entrant cannot bolt it on. However, a standalone IT product requires
+      only a lightweight version: one canonical employee record with HR system
+      integration via SCIM/webhooks, not a full payroll data model. This is
+      tractable as a new entrant if scope is bounded to IT lifecycle only.
+
+# ── Structural conditions ─────────────────────────────────────────────────────
+winning_condition_required: |
+  IT provisioning pain is severe and frequent enough at the 50-500 employee segment
+  that companies will pay for a point solution before they are ready to adopt a full
+  compound workforce platform. This holds if: (a) Rippling does not offer IT
+  provisioning as a genuine standalone product, and (b) the Jamf + Okta combination
+  leaves a documented coordination gap that companies are actively trying to solve.
+
+failure_condition_to_avoid: |
+  Rippling offers IT provisioning as a genuine standalone module (no HR or payroll
+  required), or extends down-market with simplified pricing to the 10-50 employee
+  segment, closing the gap before a new entrant reaches switching-cost parity.
+  Alternatively: Okta or Jamf acquires a lightweight HR integration layer, solving
+  the coordination problem without a new entrant.
+
+# ── Status quo being displaced ────────────────────────────────────────────────
+status_quo:
+  - "Manual IT tickets via email and Jira (no automation on hire or termination)"
+  - "Jamf MDM (device management only — no app provisioning or HR event trigger)"
+  - "Okta (identity and SSO only — no device management or asset tracking)"
+  - "Combination: Jamf + Okta + manual spreadsheet for asset tracking + IT ticket for each"
+
+# ── Open questions ────────────────────────────────────────────────────────────
+open_questions:
+  - "Does Rippling offer its IT module as a genuine standalone product (without HR/payroll)?
+    If yes, this gap is materially smaller. Check Rippling pricing page directly."
+  - "What is the actual onboarding and offboarding workflow at a 150-person company
+    with no dedicated IT staff — who handles it, how long does it take, what breaks?"
+  - "Do companies running Jamf + Okta experience the coordination gap as a distinct
+    pain, or do they consider it solved? Primary research required."
+  - "Is the lightweight SCIM/webhook integration approach sufficient to trigger IT
+    actions from HR events, or does the Employee Graph advantage compound in ways
+    that make a point solution structurally inferior?"
+  - "What is Rippling's minimum contract size and implementation timeline? If it is
+    accessible to 50-person companies, the gap may be smaller than Q06 suggests."
+  - "Are there bootstrapped or lightly-funded companies in this space not captured in
+    the dataset? FAILURE_CASE_NEEDED score is 0 — no failures documented."
+
+notes: |
+  Generated from Q06 structural gap query: lowest companies-per-pattern ratio in dataset
+  (1.0). Opportunity strength is moderate rather than strong because:
+  (1) zero profitable confirmations means economic viability of the problem is unproven
+      independent of the compound platform context, and
+  (2) the moat (Employee Graph) is real but may be replicable in narrower form for
+      a point solution.
+  Priority research action: verify Rippling standalone IT pricing before any further
+  investment in this opportunity.

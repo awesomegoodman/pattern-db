@@ -70,6 +70,17 @@ CREATE TRIGGER trg_guard_capability_deployment
 BEFORE INSERT OR UPDATE ON company_timeline
 FOR EACH ROW EXECUTE FUNCTION guard_capability_deployment();
 
+-- ── VIEW TEARDOWN (dependency order) ────────────────────────────────────────
+-- Required for idempotency. CREATE OR REPLACE VIEW cannot replace a view
+-- when a dependent view exists. Drop in reverse dependency order first.
+
+DROP VIEW IF EXISTS research_queue            CASCADE;
+DROP VIEW IF EXISTS gap_failure_case          CASCADE;
+DROP VIEW IF EXISTS gap_strong_validator      CASCADE;
+DROP VIEW IF EXISTS gap_pattern_promotion     CASCADE;
+DROP VIEW IF EXISTS gap_implementation_fill   CASCADE;
+DROP VIEW IF EXISTS gap_geographic_whitespace CASCADE;
+
 -- ── RESEARCH QUEUE VIEWS ──────────────────────────────────────────────────────
 -- Scoring weights documented in docs/candidate-selection.md.
 -- Do not change weights without updating that document.

@@ -2,7 +2,7 @@ import postgres from "postgres";
 import * as fs from "fs";
 import * as path from "path";
 import { parse } from "yaml";
-import { CompanySchema, VocabSchema, type Company, type Vocab } from "./validate";
+import { CompanySchema, VocabSchema, OpportunitySchema, type Company, type Vocab } from "./validate";
 
 const client = postgres(process.env.DATABASE_URL!, { prepare: false, max: 1 });
 
@@ -126,6 +126,91 @@ export async function load() {
     await client.unsafe("UPDATE problems p SET evidence_count=(SELECT COUNT(DISTINCT cp.company_id) FROM company_problems cp WHERE cp.problem_id=p.id)");
     await client.unsafe("UPDATE implementation_patterns ip SET evidence_count=(SELECT COUNT(DISTINCT cip.company_id) FROM company_implementation_patterns cip WHERE cip.implementation_pattern_id=ip.id)");
     await client.unsafe("UPDATE solution_patterns sp SET evidence_count=(SELECT COUNT(DISTINCT cip.company_id) FROM implementation_patterns ip JOIN company_implementation_patterns cip ON cip.implementation_pattern_id=ip.id WHERE ip.solution_pattern_id=sp.id)");
+
+
+  // ── Layer 3: Opportunities ─────────────────────────────────────────────────
+  const oppsDir = 'data/opportunities';
+  if (fs.existsSync(oppsDir)) {
+    const oppFiles = fs.readdirSync(oppsDir).filter((f: string) => f.endsWith('.yaml'));
+    let oppInserted = 0, oppUpdated = 0;
+
+    for (const file of oppFiles) {
+      const raw = readYaml(path.join(oppsDir, file));
+      const r   = OpportunitySchema.safeParse(raw);
+      if (!r.success) {
+        console.error(`\nInvalid opportunity: ${file}`);
+        console.error(JSON.stringify(r.error.format(), null, 2));
+        process.exit(1);
+      }
+      const o = r.data;
+
+      const problemId     = need(problemMap, o.problem, `${o.slug} → problem`);
+      const gapEvidence   = o.gap_evidence.join('\n');
+      const statusQuo     = o.status_quo.join('\n');
+      const openQuestions = o.open_questions.join('\n');
+
+      const ex = await client.unsafe('SELECT id FROM opportunities WHERE slug=$1', [o.slug]);
+      let oid: string;
+
+      if (ex.length === 0) {
+        const rows = await client.unsafe(
+          'INSERT INTO opportunities' +
+          ' (id,slug,name,status,problem_id,' +
+          '  observed_gap,gap_evidence,evidence_strength,hypothesis,' +
+          '  winning_condition_required,failure_condition_to_avoid,' +
+          '  status_quo_to_displace,open_questions,notes,created_at,updated_at)' +
+          ' VALUES (gen_random_uuid(),$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,now(),now())' +
+          ' RETURNING id',
+          [o.slug, o.name, o.status, problemId,
+           o.observed_gap, gapEvidence, o.evidence_strength, o.hypothesis,
+           o.winning_condition_required ?? null, o.failure_condition_to_avoid ?? null,
+           statusQuo, openQuestions, o.notes ?? null]
+        );
+        oid = rows[0].id; oppInserted++;
+      } else {
+        oid = ex[0].id;
+        await client.unsafe(
+          'UPDATE opportunities SET' +
+          ' name=$1,status=$2,problem_id=$3,' +
+          ' observed_gap=$4,gap_evidence=$5,evidence_strength=$6,hypothesis=$7,' +
+          ' winning_condition_required=$8,failure_condition_to_avoid=$9,' +
+          ' status_quo_to_displace=$10,open_questions=$11,notes=$12,updated_at=now()' +
+          ' WHERE id=$13',
+          [o.name, o.status, problemId,
+           o.observed_gap, gapEvidence, o.evidence_strength, o.hypothesis,
+           o.winning_condition_required ?? null, o.failure_condition_to_avoid ?? null,
+           statusQuo, openQuestions, o.notes ?? null, oid]
+        );
+        oppUpdated++;
+      }
+
+      await client.unsafe('DELETE FROM opportunity_patterns WHERE opportunity_id=$1', [oid]);
+      for (const s of o.existing_patterns) {
+        const pid = need(ipMap, s, `${o.slug} → existing_patterns`);
+        await client.unsafe(
+          "INSERT INTO opportunity_patterns (opportunity_id,implementation_pattern_id,role,created_at) VALUES ($1,$2,'existing',now()) ON CONFLICT DO NOTHING",
+          [oid, pid]
+        );
+      }
+      for (const s of o.recombined_patterns) {
+        const pid = need(ipMap, s, `${o.slug} → recombined_patterns`);
+        await client.unsafe(
+          "INSERT INTO opportunity_patterns (opportunity_id,implementation_pattern_id,role,created_at) VALUES ($1,$2,'recombined',now()) ON CONFLICT DO NOTHING",
+          [oid, pid]
+        );
+      }
+
+      await client.unsafe('DELETE FROM opportunity_capabilities WHERE opportunity_id=$1', [oid]);
+      for (const cap of o.capabilities_required) {
+        const cid = need(capMap, cap.slug, `${o.slug} → capabilities_required`);
+        await client.unsafe(
+          'INSERT INTO opportunity_capabilities (opportunity_id,capability_id,possessed_by,available_to_new_entrant,note,created_at) VALUES ($1,$2,$3,$4,$5,now()) ON CONFLICT DO NOTHING',
+          [oid, cid, cap.possessed_by.join(',') || null, cap.available_to_new_entrant, cap.note ?? null]
+        );
+      }
+    }
+    console.log(`  opportunities: ${oppInserted} inserted  ${oppUpdated} updated`);
+  }
 
     await client.unsafe("COMMIT");
 

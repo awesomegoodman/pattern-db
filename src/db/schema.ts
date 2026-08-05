@@ -287,6 +287,7 @@ export const solutionPatterns = pgTable(
   'solution_patterns',
   {
     id: uuid('id').primaryKey().defaultRandom(),
+    slug: text('slug').unique(),
     name: text('name').notNull().unique(),
 
     evidenceCount: integer('evidence_count').notNull().default(0),
@@ -677,3 +678,119 @@ export type CapabilitySectorEvidence    = typeof capabilitySectorEvidence.$infer
 export type NewCapabilitySectorEvidence = typeof capabilitySectorEvidence.$inferInsert;
 export type CapabilitySynonym           = typeof capabilitySynonyms.$inferSelect;
 export type NewCapabilitySynonym        = typeof capabilitySynonyms.$inferInsert;
+
+// ─────────────────────────────────────────────────────────────────────────────
+// LAYER 3 — OPPORTUNITIES (hypotheses linked to Layer 1 + 2 evidence)
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const opportunityStatusEnum = pgEnum('opportunity_status', [
+  'open',
+  'investigating',
+  'validated',
+  'rejected',
+  'building',
+]);
+
+export const evidenceStrengthEnum = pgEnum('evidence_strength', [
+  'strong',
+  'moderate',
+  'weak',
+]);
+
+export const opportunities = pgTable(
+  'opportunities',
+  {
+    id:     uuid('id').primaryKey().defaultRandom(),
+    slug:   text('slug').notNull().unique(),
+    name:   text('name').notNull(),
+    status: opportunityStatusEnum('status').notNull().default('open'),
+    problemId: uuid('problem_id').references(() => problems.id),
+    observedGap:      text('observed_gap'),
+    gapEvidence:      text('gap_evidence'),
+    evidenceStrength: evidenceStrengthEnum('evidence_strength'),
+    hypothesis:       text('hypothesis'),
+    winningConditionRequired: text('winning_condition_required'),
+    failureConditionToAvoid:  text('failure_condition_to_avoid'),
+    statusQuoToDisplace:      text('status_quo_to_displace'),
+    openQuestions: text('open_questions'),
+    notes:         text('notes'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().notNull(),
+  },
+  (t) => ({
+    slugIdx:   index('opportunities_slug_idx').on(t.slug),
+    statusIdx: index('opportunities_status_idx').on(t.status),
+  })
+);
+
+export const opportunityPatterns = pgTable(
+  'opportunity_patterns',
+  {
+    opportunityId:           uuid('opportunity_id')
+                               .references(() => opportunities.id, { onDelete: 'cascade' })
+                               .notNull(),
+    implementationPatternId: uuid('implementation_pattern_id')
+                               .references(() => implementationPatterns.id)
+                               .notNull(),
+    role:      text('role').notNull(),
+    notes:     text('notes'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+  },
+  (t) => ({
+    pk:             primaryKey({ columns: [t.opportunityId, t.implementationPatternId, t.role] }),
+    opportunityIdx: index('op_opportunity_idx').on(t.opportunityId),
+    patternIdx:     index('op_pattern_idx').on(t.implementationPatternId),
+  })
+);
+
+export const opportunityCapabilities = pgTable(
+  'opportunity_capabilities',
+  {
+    opportunityId:         uuid('opportunity_id')
+                             .references(() => opportunities.id, { onDelete: 'cascade' })
+                             .notNull(),
+    capabilityId:          uuid('capability_id')
+                             .references(() => capabilities.id)
+                             .notNull(),
+    possessedBy:           text('possessed_by'),
+    availableToNewEntrant: boolean('available_to_new_entrant').default(false),
+    note:                  text('note'),
+    createdAt:             timestamp('created_at').defaultNow().notNull(),
+  },
+  (t) => ({
+    pk:             primaryKey({ columns: [t.opportunityId, t.capabilityId] }),
+    opportunityIdx: index('oc_opportunity_idx').on(t.opportunityId),
+    capabilityIdx:  index('oc_capability_idx').on(t.capabilityId),
+  })
+);
+
+export const opportunitiesRelations = relations(opportunities, ({ one, many }) => ({
+  problem:      one(problems, { fields: [opportunities.problemId], references: [problems.id] }),
+  patterns:     many(opportunityPatterns),
+  capabilities: many(opportunityCapabilities),
+}));
+
+export const opportunityPatternsRelations = relations(opportunityPatterns, ({ one }) => ({
+  opportunity: one(opportunities, {
+    fields: [opportunityPatterns.opportunityId], references: [opportunities.id],
+  }),
+  implementationPattern: one(implementationPatterns, {
+    fields: [opportunityPatterns.implementationPatternId], references: [implementationPatterns.id],
+  }),
+}));
+
+export const opportunityCapabilitiesRelations = relations(opportunityCapabilities, ({ one }) => ({
+  opportunity: one(opportunities, {
+    fields: [opportunityCapabilities.opportunityId], references: [opportunities.id],
+  }),
+  capability: one(capabilities, {
+    fields: [opportunityCapabilities.capabilityId], references: [capabilities.id],
+  }),
+}));
+
+export type Opportunity              = typeof opportunities.$inferSelect;
+export type NewOpportunity           = typeof opportunities.$inferInsert;
+export type OpportunityPattern       = typeof opportunityPatterns.$inferSelect;
+export type NewOpportunityPattern    = typeof opportunityPatterns.$inferInsert;
+export type OpportunityCapability    = typeof opportunityCapabilities.$inferSelect;
+export type NewOpportunityCapability = typeof opportunityCapabilities.$inferInsert;

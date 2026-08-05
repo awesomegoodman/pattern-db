@@ -95,3 +95,29 @@ export const VocabSchema = z.object({
 
 export type Company = z.infer<typeof CompanySchema>;
 export type Vocab   = z.infer<typeof VocabSchema>;
+
+export const OpportunitySchema = z.object({
+  slug,
+  name:   z.string().min(1),
+  status: z.enum(['open', 'investigating', 'validated', 'rejected', 'building']).default('open'),
+  problem: slug,
+  existing_patterns:   z.array(slug).default([]),
+  recombined_patterns: z.array(slug).default([]),
+  observed_gap:      z.string().min(1),
+  gap_evidence:      z.array(z.string()).default([]),
+  evidence_strength: z.enum(['strong', 'moderate', 'weak']),
+  hypothesis:        z.string().min(1),
+  capabilities_required: z.array(z.object({
+    slug,
+    possessed_by:             z.array(z.string()).default([]),
+    available_to_new_entrant: z.boolean().default(false),
+    note:                     z.string().optional(),
+  })).default([]),
+  winning_condition_required: z.string().optional(),
+  failure_condition_to_avoid: z.string().optional(),
+  status_quo:     z.array(z.string()).default([]),
+  open_questions: z.array(z.string()).default([]),
+  notes:          z.string().optional(),
+});
+
+export type Opportunity = z.infer<typeof OpportunitySchema>;
