@@ -1,0 +1,63 @@
+# ── VOCAB TEMPLATE REFERENCE ─────────────────────────────────────────────────
+# This file documents the structure of each vocab file.
+# Do not load this file — it is reference only (starts with _).
+#
+# IMPORTANT: Before adding any new vocab entry, check the existing files for
+# near-duplicates. The loader will fail on duplicate slugs.
+# Slugs: lowercase, alphanumeric, hyphens only. e.g. my-new-slug
+
+# ── problems.yaml entry ───────────────────────────────────────────────────────
+# - slug: wage-compliance
+#   statement: "Businesses cannot calculate, withhold, and disburse employee
+#     wages while remaining compliant with tax and labour regulations."
+#   lifecycle: mature    # emerging | growing | mature | declining | dead
+#   notes: "Status quo, underlying constraint, urgency, etc."
+
+# ── solution-patterns.yaml entry ─────────────────────────────────────────────
+# - slug: payroll-processing-infrastructure
+#   name: Payroll processing infrastructure
+#   first_observed: 1949
+#   pattern_durability: decades-old  # emerging | established | decades-old | declining
+#   winning_condition: "One transferable sentence. No industry-specific language."
+#   failure_condition: "Direct logical inverse of winning_condition."
+#   winning_condition_maturity: established  # draft | proposed | established
+#   winning_condition_valid_from: 1949
+#   # winning_condition_valid_through: 2020   # only if superseded
+#   notes: "Why this pattern keeps reappearing."
+#
+# winning_condition + failure_condition: fill both or neither.
+
+# ── implementation-patterns.yaml entry ───────────────────────────────────────
+# - slug: cloud-native-smb-payroll-saas
+#   name: Cloud-native SMB payroll SaaS
+#   solution_pattern: payroll-processing-infrastructure
+#   first_observed: 1998
+#   status: live         # live | dead | niche
+#   business_model: "Per-employee-per-month subscription"
+#   pricing_signal: "<100/mo"   # free | <100/mo | 1k+/mo | enterprise
+#   mechanism: abstraction
+#   notes: "Moat, status quo displaced, capabilities required, etc."
+
+# ── capabilities.yaml entry ──────────────────────────────────────────────────
+# - slug: payroll-compliance-infrastructure
+#   name: Payroll compliance infrastructure
+#   description: "What this capability is and why it is hard to replicate quickly."
+#   status: proposed   # candidate | proposed | established | deprecated
+#   sector_evidence:
+#     - sector: hr-and-workforce
+#       example_company: Automatic Data Processing ADP
+#       evidence_note: "ADP built payroll compliance over 40+ years, transferred
+#         to international markets in 1990."
+
+# ── sectors.yaml entry ───────────────────────────────────────────────────────
+# - slug: hr-and-workforce
+#   name: HR and Workforce
+
+# ── boundary-cases.yaml entry ────────────────────────────────────────────────
+# - company: Rippling
+#   option_a: cloud-native-smb-payroll-saas
+#   option_b: compound-hr-it-finance-platform
+#   chosen: compound-hr-it-finance-platform
+#   reason: "Rippling's core value is the unified Employee Graph enabling
+#     cross-functional automation — not payroll per se."
+#   resolved_at: "2024-01-01"

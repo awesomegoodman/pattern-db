@@ -1,0 +1,86 @@
+# ── COMPANY TEMPLATE ─────────────────────────────────────────────────────────
+# Copy to data/companies/<domain>/<slug>.yaml
+# Minimum required fields (MVR): slug, name, domain, founded, country, status,
+# stage, funding_history, revenue_signal, profitability_signal, evidence_weight,
+# signal_confidence, research_queue_source, implementation_patterns (>=1),
+# problems (>=1), timeline (>=2 entries)
+#
+# research_queue_source format:
+#   FAILURE_CASE_NEEDED:pattern-slug
+#   STRONG_VALIDATOR_NEEDED:pattern-slug
+#   CONTRADICTORY_EVIDENCE_NEEDED:solution-pattern-slug
+#   PATTERN_PROMOTION:solution-pattern-slug:sector
+#   GEOGRAPHIC_WHITESPACE:pattern-slug:Country
+#   IMPLEMENTATION_FILL:pattern-slug
+#   OFF_QUEUE:foundation-record
+#   OFF_QUEUE:boundary-case-resolution
+#
+# evidence_weight:
+#   strong_validator  — known profitable, sustained, self-funded or unit-economics positive
+#   weak_validator    — operating but externally funded, unproven economics
+#   disconfirming     — attempted the pattern and failed; failure mode recorded
+#   unknown           — insufficient information
+#
+# profitability proxy: if no external funding AND 5+ years operating,
+# use profitability_signal: estimated_profitable_proxy
+# and set profitability_proxy_applied: true
+
+slug: company-slug
+name: Company Name
+domain: hr-payroll           # hr-payroll | b2b-payments | c2c-payments | <new-domain>
+research_queue_source: "OFF_QUEUE:foundation-record"
+
+founded: 2015                # year of first revenue under current mission
+# founded_legal: 2013        # incorporation year if different from founded
+
+country: USA
+status: operating            # operating | acquired | dead | pivoted | merged
+stage: series_b              # public | unicorn | series_[a-g] | bootstrapped | yc | seed
+
+funding_history: "Series A $10M 2016, Series B $40M 2018. Total: $50M."
+# "none" is valid and significant — triggers profitability proxy if 5+ years old
+
+revenue_signal: "10-100M"    # <10M | 10-100M | 100M-1B | >1B | null
+# revenue_raw: "Sacra estimates $75M 2024"   # verbatim source before bucketing
+
+profitability_signal: unknown
+# known_profitable | known_unprofitable | estimated_profitable_proxy | unknown
+# profitability_proxy_applied: true   # set if proxy rule applied
+
+evidence_weight: weak_validator
+signal_confidence: low       # high (public financials) | low (inference or proxy)
+
+notable_facts: |
+  Key facts that don't belong on the pattern record.
+  If any field required judgment to fill, record the reasoning here.
+  e.g. "Founded year is 2015 (product launch), not 2013 (incorporation),
+  because the pre-2015 entity had no customers and different product."
+
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: "Company website / Crunchbase"
+    # confidence: high | medium | low (default: high)
+    # notes: "Optional clarification"
+
+problems:
+  - slug: wage-compliance
+  - slug: employee-benefits
+    confidence: medium
+    notes: "Added benefits in 2019, secondary to core payroll"
+
+timeline:
+  - year: 2015
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Founded by X and Y. Initial product: cloud payroll for SMBs."
+    source: "Company website / LinkedIn"
+
+  - year: 2019
+    event_type: product_launch
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: employee-benefits
+    capability: employer-database-and-relationships
+    capability_deployed: "Existing employer database and payroll compliance infrastructure."
+    description: "Launched benefits administration. First move beyond core payroll."
+    source: "Press release / TechCrunch"
