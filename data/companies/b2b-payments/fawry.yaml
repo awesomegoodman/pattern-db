@@ -1,0 +1,70 @@
+slug: fawry
+name: Fawry for Banking and Payment Technology Services
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:domestic-payment-infrastructure:Egypt"
+founded: 2008
+country: Egypt
+status: operating
+stage: public
+funding_history: "Founded 2008 with Egyptian government support and bank consortium
+  backing. IPO on Egyptian Exchange (EGX: FAWRY) August 2019 — first Egyptian
+  tech company to list on EGX. No significant VC dependency — grew from transaction
+  fee revenue for 11 years before listing."
+revenue_signal: "10-100M"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "EGP revenue FY2023: EGP 1.6B (~$33M USD at prevailing rates) per
+  EGX annual report. Profitable and listed. Founded by Ashraf Sabry in Cairo with
+  consortium backing from Egyptian banks and the Egyptian government. Core product:
+  bill payment network — consumers and businesses can pay utility bills, mobile
+  top-ups, insurance premiums, and e-commerce purchases through 300,000+ Fawry
+  service points (bank branches, kiosks, pharmacies, supermarkets) and digital
+  channels. 40M+ monthly transactions. 44M registered users (out of 104M Egyptian
+  population). Fawry solved a fundamental infrastructure problem in Egypt: most
+  Egyptians lacked bank accounts and cards, but all had utility bills to pay.
+  By building a payment acceptance network that worked with cash, Fawry created
+  the first mass-market payment infrastructure layer in Egypt. Second confirmed
+  observation for domestic-payment-infrastructure pattern (Interswitch is first from
+  Nigeria). Second African strong validator for payments domain. Note on revenue
+  scale: EGP 1.6B sounds large but ~$33M USD due to Egyptian Pound depreciation —
+  revenue_signal set to 10-100M in USD terms. Profitable and growing in local currency;
+  USD value impacted by FX."
+implementation_patterns:
+  - slug: domestic-payment-infrastructure
+    source: EGX annual report 2023 / Fawry investor relations
+problems:
+  - slug: programmatic-payment-acceptance
+timeline:
+  - year: 2008
+    event_type: founding
+    implementation_pattern: domestic-payment-infrastructure
+    problem: programmatic-payment-acceptance
+    description: "Founded by Ashraf Sabry in Cairo with backing from a consortium
+      of Egyptian banks and support from the Egyptian government's financial inclusion
+      agenda. Initial product: bill payment network enabling consumers to pay utility
+      and telecom bills through bank branches and kiosks — solving a specific Egyptian
+      infrastructure gap where most citizens lacked direct bank account access for
+      digital payment."
+    source: Fawry company history / EGX prospectus
+  - year: 2019
+    event_type: funding
+    description: "IPO on Egyptian Exchange (EGX: FAWRY) in August 2019 — first
+      Egyptian technology company to list on EGX. At IPO: 11 years of profitable
+      operation, 150,000+ service points, 35M+ registered users. IPO price EGP 6.46
+      per share. Proved domestic payment infrastructure model is viable as a standalone
+      listed business in an emerging market."
+    source: EGX IPO prospectus
+  - year: 2022
+    event_type: product_launch
+    implementation_pattern: domestic-payment-infrastructure
+    description: "Launched Fawry Plus (merchant payment terminals and B2B payment
+      services) and expanded B2B payment services for merchants. Grew to 300,000+
+      service points, 44M registered users, 40M+ monthly transactions. Expansion
+      of the domestic network from bill payments into full merchant payment acceptance."
+    capability: local-payment-rail-integrations
+    capability_deployed: "Existing network of 300,000+ service points and bank
+      integrations made B2B merchant payment expansion tractable — the same infrastructure
+      that processed consumer bill payments now processes merchant payments without
+      rebuilding the network."
+    source: Fawry EGX annual report 2022

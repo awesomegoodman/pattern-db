@@ -1,0 +1,84 @@
+slug: moniepoint
+name: Moniepoint (formerly TeamApt)
+domain: b2b-payments
+research_queue_source: "GEOGRAPHIC_WHITESPACE:full-stack-payment-processor:Nigeria"
+founded: 2015
+country: Nigeria
+status: operating
+stage: unicorn
+funding_history: "Founded 2015 as TeamApt. Relatively capital-efficient growth:
+  $5.5M Series A 2020 (QED Investors). $110M funding round September 2023 (QED
+  Investors, Novastar Ventures, Lightrock, Google's Africa Investment Fund, others)
+  at approximately $1B valuation. Total raised: ~$120M."
+revenue_signal: "10-100M"
+profitability_signal: estimated_profitable_proxy
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Tosin Eniolorunda (CEO) and Felix Ike (CTO) — both
+  former employees of Interswitch. The Interswitch lineage is analytically significant:
+  Eniolorunda and Ike worked on Interswitch's banking infrastructure products before
+  founding TeamApt in 2015. They applied that institutional knowledge to a different
+  layer of the Nigerian payment stack — instead of switching (Interswitch's model),
+  they built merchant-facing POS infrastructure and business banking for SMBs.
+  At $2B valuation (2024 QED internal estimate): 2M+ businesses on platform,
+  $17B+ monthly transaction volume claimed. Products: Moniepoint POS terminals
+  (250,000+ active terminals), Moniepoint Business Account (current account for
+  SMBs), MoniePoint Agency Banking (rural financial access expansion). Multiple
+  sources describe Moniepoint as profitable — including QED Investors, who do not
+  typically invest in pre-profitable companies at Series A. Original company name
+  TeamApt rebranded to Moniepoint in 2022 after spinning out the consumer product
+  (Monnify) as a separate entity. Structural contrast with Interswitch: Interswitch
+  built domestic switching rails bottom-up from the banking infrastructure; Moniepoint
+  built merchant-facing payment terminals top-down from business banking — both
+  necessary layers of the Nigerian payment stack, both profitable, both grounding
+  the domestic-payment-infrastructure and full-stack-payment-processor patterns."
+implementation_patterns:
+  - slug: full-stack-payment-processor
+    source: QED Investors announcement / Moniepoint press materials
+    notes: "Moniepoint processes SMB card and mobile money payments via own POS
+      terminal network — a full-stack approach (own hardware + processing + settlement)
+      targeting the 2M+ Nigerian SMBs that Interswitch's bank-facing infrastructure
+      does not directly serve."
+  - slug: domestic-payment-infrastructure
+    confidence: medium
+    source: QED Investors / Moniepoint press materials
+    notes: "Secondary — Moniepoint extends Nigeria's domestic payment infrastructure
+      to SMBs (merchant layer), complementing Interswitch's interbank switching layer."
+problems:
+  - slug: programmatic-payment-acceptance
+timeline:
+  - year: 2015
+    event_type: founding
+    implementation_pattern: full-stack-payment-processor
+    problem: programmatic-payment-acceptance
+    description: "Founded as TeamApt by Tosin Eniolorunda and Felix Ike — both former
+      Interswitch employees. Initial product: banking software infrastructure sold
+      to Nigerian banks (B2B banking technology). Institutional knowledge from
+      Interswitch's payment infrastructure applied to building the merchant-facing
+      layer of Nigerian payments."
+    source: Moniepoint company history / QED Investors
+  - year: 2020
+    event_type: product_launch
+    implementation_pattern: full-stack-payment-processor
+    description: "Launched Moniepoint POS terminal and agency banking product for
+      Nigerian SMBs. Series A $5.5M from QED Investors. Pivoted from bank-facing
+      software to merchant-facing payment infrastructure — the layer Interswitch's
+      interbank switching does not serve directly."
+    capability_deployed: "Institutional knowledge of Nigerian banking infrastructure
+      and CBN regulatory requirements from Interswitch experience — transferred
+      directly to building CBN-compliant POS infrastructure and business accounts."
+    source: QED Investors / TechCrunch
+  - year: 2022
+    event_type: pivot
+    implementation_pattern: full-stack-payment-processor
+    description: "Rebranded from TeamApt to Moniepoint. Spun out consumer product
+      (Monnify) as separate entity to focus fully on SMB business banking and payments.
+      At this point: 150,000+ active POS terminals, 1M+ businesses."
+    source: Moniepoint rebrand announcement
+  - year: 2023
+    event_type: funding
+    description: "$110M funding round at ~$1B valuation (QED Investors lead, Google
+      Africa Investment Fund, others). $17B+ monthly payment volume claimed. 2M+
+      businesses on platform. 250,000+ active POS terminals. Multiple investors
+      describe business as profitable at this stage."
+    source: TechCrunch / QED Investors announcement

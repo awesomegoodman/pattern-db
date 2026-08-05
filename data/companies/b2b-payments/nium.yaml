@@ -1,0 +1,70 @@
+slug: nium
+name: Nium
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
+founded: 2014
+country: Singapore
+status: operating
+stage: unicorn
+funding_history: "Founded 2014 as InstaReM. Rebrand to Nium 2020. Series B $41M
+  2019 (Visa participated as strategic investor). Series C $67M 2021. Series D $200M
+  October 2021 at $2.1B valuation (Riverwood Capital lead — unicorn). Total raised:
+  $286M+."
+revenue_signal: "10-100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded in Singapore as InstaReM by Prajit Nanu and Michael Minassian.
+  Rebranded to Nium in 2020 to signal expansion from cross-border remittances to
+  broader payment infrastructure. Primary product: real-time cross-border payout
+  infrastructure and card issuing APIs for financial institutions, fintechs, and
+  enterprises. Connected to 220+ countries and territories, 100+ currencies, 7
+  payment types. Key customers: Uber (global driver payouts), Deliveroo, Paysend,
+  and major banks using Nium for correspondent banking alternatives. Visa strategic
+  investment signals Visa sees Nium as infrastructure rather than a competitive
+  threat. Two revenue streams: (1) payout infrastructure (transaction fees on cross-
+  border payouts to bank accounts), (2) card issuing (interchange revenue on Nium-
+  issued corporate and virtual cards). B2B2B model: Nium sells to businesses that
+  then serve their own end customers. Singapore HQ provides regulatory base for APAC
+  expansion."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: Nium Series D announcement / company documentation
+problems:
+  - slug: cross-border-payment-infrastructure
+  - slug: programmatic-payment-disbursement
+    confidence: medium
+    notes: "Nium's primary use case is mass cross-border payouts — enterprises paying
+      employees, contractors, and suppliers in 220+ countries. Both cross-border
+      infrastructure and disbursement automation are relevant."
+timeline:
+  - year: 2014
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded as InstaReM in Singapore by Prajit Nanu and Michael Minassian.
+      Initial product: low-cost cross-border remittances for individuals in Asia
+      (Australia, Singapore, India, Malaysia corridors). Used local banking rails to
+      undercut bank FX rates. Visa applied for and received Money Transfer Operator
+      licence in Singapore."
+    source: InstaReM / Nium company history
+  - year: 2020
+    event_type: pivot
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Rebranded from InstaReM to Nium. Pivoted from B2C remittances to
+      B2B payout infrastructure and card issuing. Recognised the larger commercial
+      opportunity in being the infrastructure that other companies (banks, fintechs,
+      enterprises) use to send money globally rather than competing with consumer apps."
+    capability: local-payment-rail-integrations
+    capability_deployed: "Existing local rail connections in Asia-Pacific, built over
+      6 years of consumer remittance operation, transferred to B2B payout infrastructure
+      without re-building — the same integrations that moved consumer money now move
+      enterprise payouts."
+    source: Nium rebrand announcement / TechCrunch
+  - year: 2021
+    event_type: funding
+    description: "Series D $200M at $2.1B valuation (Riverwood Capital lead). Visa
+      participated. At this point: 220+ countries connected, 7 payment types, card
+      issuing launched. Uber uses Nium for driver payouts in multiple markets. Became
+      Singapore's first B2B fintech unicorn."
+    source: Nium Series D announcement

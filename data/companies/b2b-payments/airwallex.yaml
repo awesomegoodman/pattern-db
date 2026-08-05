@@ -1,0 +1,71 @@
+slug: airwallex
+name: Airwallex
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
+founded: 2015
+country: Australia
+status: operating
+stage: unicorn
+funding_history: "Seed 2015. Series A $13M January 2018. Series B $80M July 2018
+  (Tencent lead). Series C $100M March 2019 (DST Global, Sequoia China). Series D
+  $160M April 2020. Series E $100M September 2021 ($4B valuation). Series F $256M
+  November 2022 ($5.5B valuation — Lone Pine Capital lead). Total: $900M+."
+revenue_signal: ">100M"
+profitability_signal: estimated_profitable_proxy
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded in Melbourne, Australia by Jack Zhang, Lucy Liu, Max Li,
+  and Ki-Lok Wong — all met at University of Melbourne. Founded 2015 after experiencing
+  the cross-border payment pain firsthand running a coffee trading business between
+  Australia and China. Core product: multi-currency business accounts + API-first
+  cross-border payments. Reached $100B in annual payment volume in 2023. Claimed
+  profitability on annual run-rate basis in Q4 2023 (company statement). 100,000+
+  business customers. Customers include Navan, Brex, SHEIN, Qantas. Products span:
+  global business accounts, FX, payouts, corporate cards, expense management.
+  Embedded Finance (Airwallex for Platforms) launched 2022 — enables fintechs and
+  marketplaces to embed Airwallex's FX and multi-currency capabilities. Geographic
+  expansion facilitated by payment institution licences in Australia (ASIC), UK
+  (FCA), EU (Bank of Lithuania), Hong Kong (HKMA), and others. The Melbourne founding
+  team is notable: all four co-founders were technical (engineers), which explains
+  the API-first architecture from day one."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: Airwallex Series F announcement / company press materials
+problems:
+  - slug: cross-border-payment-infrastructure
+  - slug: programmatic-payment-disbursement
+    confidence: medium
+    notes: "Airwallex enables both sides: cross-border money movement (infrastructure)
+      and mass international payouts to employees and suppliers (disbursement)."
+timeline:
+  - year: 2015
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded in Melbourne by four University of Melbourne alumni. Founding
+      motivation: personal experience of excessive FX fees while running a coffee
+      import business between Australia and China. Initial product: API-first
+      multi-currency business accounts enabling companies to hold, convert, and send
+      money in 50+ currencies without intermediary bank FX margins."
+    source: Airwallex founder interviews / Crunchbase
+  - year: 2019
+    event_type: market_entry
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Series C $100M (DST Global lead). Launched UK operations (FCA
+      authorisation obtained). Expanded to Hong Kong, Singapore, Europe. At this point:
+      API-first cross-border product established; began building embedded finance
+      layer for fintechs and platforms."
+    capability: banking-licence-portfolio
+    capability_deployed: "FCA payment institution licence enabled direct local currency
+      settlement via UK Faster Payments — same capability that Wise used to build
+      its cross-border model, now replicated by Airwallex for its multi-currency
+      treasury product."
+    source: Airwallex Series C announcement
+  - year: 2022
+    event_type: product_launch
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Series F $256M at $5.5B valuation. Launched Airwallex for Platforms
+      — embedded multi-currency accounts and FX for other companies' products. $100B+
+      in annual payment volume by 2023. Claimed profitability Q4 2023. Customers
+      include Navan, Brex, SHEIN, Qantas."
+    source: Airwallex Series F / company blog

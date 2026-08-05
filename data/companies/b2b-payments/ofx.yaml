@@ -1,0 +1,67 @@
+slug: ofx
+name: OFX (formerly OzForex)
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
+founded: 1998
+country: Australia
+status: operating
+stage: public
+funding_history: "Founded as OzForex in Sydney 1998. IPO on Australian Securities
+  Exchange (ASX: OFX) in October 2013. No significant VC funding before IPO —
+  grew from transaction revenue for 15 years before listing."
+revenue_signal: ">100M"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "FY2024 (ending March 2024): revenue AUD 265.7M, net profit AUD 39.5M
+  (ASX annual report). Founded by Matthew Gilmour in Sydney as a low-cost alternative
+  to bank international wire transfers. Operates across Australia, UK, Canada, USA,
+  New Zealand, Hong Kong, Singapore. Key distinction from Wise: OFX targets larger
+  individual and business transfers ($10k+ average transaction value vs Wise's broader
+  smaller-transaction base). Offers FX forwards and hedging products for business
+  customers. 26 years operating, profitable, ASX-listed — one of the oldest surviving
+  cross-border A2A infrastructure companies. Structural comparison with Wise: both
+  use local banking rails to reduce correspondent banking costs; OFX is more traditional
+  FX broker model (spot rates, forwards, relationships) vs Wise's pooled-currency
+  network model. Both ground the cross-border-payment-network winning condition.
+  Second strong validator for cross-border-a2a-infrastructure pattern."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: OFX ASX annual report FY2024 / ASX:OFX listing
+problems:
+  - slug: cross-border-payment-infrastructure
+  - slug: programmatic-payment-disbursement
+    confidence: medium
+    notes: "OFX Business serves SMBs and enterprises for supplier payments and payroll
+      disbursement — a disbursement use case alongside the core FX/transfer use case."
+timeline:
+  - year: 1998
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: cross-border-payment-infrastructure
+    description: "Founded as OzForex in Sydney by Matthew Gilmour. Initial product:
+      online international money transfers at rates significantly better than retail
+      bank FX margins. Core model: hold currency pools in Australia and destination
+      countries, execute two domestic transfers plus a spot FX conversion — eliminating
+      the 4-7 correspondent bank hops of a standard SWIFT wire transfer."
+    source: OFX company history / ASX prospectus
+  - year: 2013
+    event_type: funding
+    description: "IPO on ASX at AUD 2.00/share, market cap AUD 440M. At IPO: 15
+      years of profitable operation, presence across Australia, UK, USA, Canada,
+      New Zealand. First online FX transfer company to IPO in Australia. Proved the
+      cross-border A2A model is economically self-sustaining without venture capital."
+    source: ASX IPO prospectus
+  - year: 2021
+    event_type: acquisition
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: programmatic-payment-disbursement
+    description: "Acquired Paytron (Australian B2B payables platform) — moved from
+      pure FX transfer into business accounts payable automation. Expanded target
+      from individual and SMB FX to enterprise AP workflows. Using existing banking
+      network and FX capability as the expansion base."
+    capability_deployed: "banking-licence-portfolio — existing payment institution
+      licences and bank relationships in 8 countries made B2B payables expansion
+      tractable without new regulatory applications."
+    capability: banking-licence-portfolio
+    source: OFX press release / ASX announcement

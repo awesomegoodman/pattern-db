@@ -1,0 +1,79 @@
+slug: corpay
+name: Corpay (formerly FleetCor Technologies)
+domain: b2b-payments
+research_queue_source: "STRONG_VALIDATOR_NEEDED:accounts-payable-automation"
+founded: 2000
+country: USA
+status: operating
+stage: public
+funding_history: "Founded 2000. IPO October 2010 on NYSE as FLT (FleetCor Technologies).
+  No significant VC dependency — grew from payment processing revenue. Renamed Corpay
+  February 2024 (NYSE: CPAY). Active acquirer: 75+ acquisitions since founding."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "FY2024 revenues $4.0B net revenue, operating income $1.7B (~43%
+  margin) — public filings. Founded by Ron Clarke in Atlanta, GA. Original core:
+  fleet fuel payment cards for commercial vehicle fleets (trucking, logistics). Over
+  24 years, expanded via acquisition into: corporate AP automation (Paymerang,
+  Nvoicepay acquisitions), cross-border B2B payments (Cambridge Global acquired
+  2019), lodging payments (Hotel Engine acquisition), and tolls (T-Systems toll
+  division). Rebranded from FleetCor to Corpay in February 2024 to signal the
+  expansion beyond fleet cards into broader corporate payments. Customers: 800,000+
+  businesses globally. Processes $1T+ in annual spend. Primary strong validator for
+  accounts-payable-automation solution pattern: 24 years of profitable operation,
+  public financials, 43% operating margin — the clearest evidence that B2B payment
+  automation produces durable economics. Note: Corpay is a corporate payment management
+  company, not a pure AP software company — revenue mix includes fleet cards (legacy),
+  AP automation, corporate travel, cross-border payments. AP automation is a growing
+  segment of the overall business rather than the sole product."
+implementation_patterns:
+  - slug: accounts-payable-automation
+    source: "Corpay (FleetCor) annual report 2024 / NYSE: CPAY filing"
+    notes: "Corpay's AP automation segment (Paymerang, Nvoicepay products) fits this
+      pattern. The broader fleet card and travel payment business is corporate payment
+      management — a superset of AP automation."
+problems:
+  - slug: programmatic-payment-disbursement
+  - slug: cross-border-payment-infrastructure
+    confidence: medium
+    notes: "Cambridge Global acquisition 2019 expanded Corpay into cross-border B2B
+      FX and payments — directly addresses cross-border payment infrastructure problem."
+timeline:
+  - year: 2000
+    event_type: founding
+    implementation_pattern: accounts-payable-automation
+    problem: programmatic-payment-disbursement
+    description: "Founded by Ron Clarke in Atlanta, GA. Initial product: fleet fuel
+      payment cards for commercial trucking and logistics fleets. Core mechanism:
+      gives fleet operators a closed-loop payment card accepted only at fuel stations,
+      with automated expense reporting and controls — eliminating cash reimbursement
+      and eliminating driver theft of fuel expenses."
+    source: FleetCor company history / IPO prospectus
+  - year: 2010
+    event_type: funding
+    description: "IPO on NYSE as FLT at $15/share, market cap ~$1.5B. At IPO:
+      fleet fuel card business with 300,000+ commercial vehicles. Self-sustaining
+      profitable operation for 10 years before listing. Demonstrated fleet payment
+      automation produces durable unit economics."
+    source: NYSE IPO prospectus / SEC filing
+  - year: 2019
+    event_type: acquisition
+    problem: cross-border-payment-infrastructure
+    description: "Acquired Cambridge Global Payments (now Corpay Cross-Border) for
+      $900M — major expansion into cross-border B2B FX and international payments.
+      Cambridge had $30B in annual FX volume and 12,000 corporate clients. This
+      acquisition transferred Corpay's corporate payment relationships into the
+      cross-border corridor."
+    capability_acquired: "FX hedging and cross-border payment infrastructure via
+      Cambridge Global — banking relationships and regulatory licences in multiple
+      jurisdictions for business FX."
+    source: FleetCor press release 2019
+  - year: 2024
+    event_type: product_launch
+    description: "Rebranded from FleetCor Technologies to Corpay (NYSE: CPAY) in
+      February 2024. FY2024 net revenues $4.0B, operating income $1.7B (43% margin).
+      Active in 150+ countries. 800,000+ business clients. Processes $1T+ in annual
+      spend across fleet, AP, travel, and cross-border products."
+    source: "Corpay annual report 2024 / NYSE: CPAY"

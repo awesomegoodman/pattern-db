@@ -1,0 +1,65 @@
+slug: tipalti
+name: Tipalti
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:accounts-payable-automation"
+founded: 2010
+country: Israel
+status: operating
+stage: unicorn
+funding_history: "Founded 2010 with $12M seed (founder-funded and early angels).
+  Series A $7.5M 2015. Series B $30M 2018. Series C $76M 2019. Series D $150M 2020.
+  Series E $270M 2021 at $8.3B valuation (G Squared, Durable Capital Partners lead).
+  Total raised: $550M+. By 2024, internal valuations for late-2021 growth-era rounds
+  broadly compressed; Tipalti's implied valuation likely in $3-5B range."
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Chen Amit (CEO) and Oren Kaniel in Israel (US HQ Foster
+  City, CA). Core product: mass payout automation — companies that pay large numbers
+  of suppliers, affiliates, creators, or contractors internationally. Handles payee
+  onboarding, tax compliance (W-9/W-8/1099), payment method selection, multi-currency
+  payouts, and payment reconciliation. Customers include Twitch, Twitter/X, GoDaddy,
+  Canva, Roku, LinkedIn, Vimeo. 4,000+ clients, $40B+ in annual payables processed.
+  Key distinction from BILL: BILL targets SMB invoice-based AP (paying 10-200 suppliers);
+  Tipalti targets companies paying 1,000-1,000,000 payees internationally (creators,
+  affiliates, marketplace sellers). The complexity Tipalti solves: paying 50,000
+  YouTube creators across 200 countries each requires different payment methods,
+  currencies, tax forms, and compliance rules — impossible to manage manually.
+  Founded in Israel; significant engineering team in Israel. Competes with BILL,
+  Corpay (for larger enterprises), and Stripe Payouts."
+implementation_patterns:
+  - slug: accounts-payable-automation
+    source: Tipalti company documentation / Series E announcement
+problems:
+  - slug: programmatic-payment-disbursement
+  - slug: cross-border-payment-infrastructure
+    confidence: medium
+    notes: "Tipalti's mass international payout capability requires cross-border
+      payment infrastructure in 196 countries — both problems are relevant."
+timeline:
+  - year: 2010
+    event_type: founding
+    implementation_pattern: accounts-payable-automation
+    problem: programmatic-payment-disbursement
+    description: "Founded by Chen Amit and Oren Kaniel in Israel. Initial insight:
+      companies paying large numbers of international affiliates, publishers, and
+      suppliers spend enormous resources on manual payment operations — collecting
+      payee bank details, managing tax compliance forms, sending individual wires.
+      Tipalti automates the entire payout lifecycle from payee onboarding to payment
+      execution and reconciliation."
+    source: Tipalti company history / TechCrunch
+  - year: 2019
+    event_type: product_launch
+    implementation_pattern: accounts-payable-automation
+    description: "Series C $76M. Launched Tipalti Approve — AP workflow automation
+      (purchase orders, invoice approvals, three-way matching). Expanded from pure
+      payout automation to full AP lifecycle. At this point: 1,000+ clients, processing
+      $5B+ in annual payables. Twitch and GoDaddy among major customers."
+    source: Tipalti Series C announcement
+  - year: 2021
+    event_type: funding
+    description: "Series E $270M at $8.3B valuation — peak growth-era valuation.
+      $40B+ in annual payables processed at this point. Launched Tipalti Pi (AI-powered
+      AP automation) and Tipalti Card (corporate spend management). 4,000+ clients."
+    source: Tipalti Series E announcement

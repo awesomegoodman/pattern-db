@@ -1,0 +1,71 @@
+slug: spreedly
+name: Spreedly
+domain: b2b-payments
+research_queue_source: "STRONG_VALIDATOR_NEEDED:payment-orchestration-layer"
+founded: 2008
+country: USA
+status: operating
+stage: series_b
+funding_history: "Bootstrapped from founding (2008) through 2021 — 13 years of self-
+  funded operation, zero external capital. First and only external round: $75M from
+  Silversmith Capital Partners in March 2021. Total external raised: $75M. The 13
+  years of self-funding before raising capital is the primary economic signal."
+revenue_signal: "10-100M"
+profitability_signal: estimated_profitable_proxy
+profitability_proxy_applied: true
+evidence_weight: strong_validator
+signal_confidence: low
+notable_facts: "Founded in Durham, North Carolina by Ben Milne (later Dwolla founder),
+  Ryan Dix, and others. Rebranded and repositioned from original B2C product (PaymentSpring)
+  to payment orchestration SaaS. Core product: universal payment vault + payment
+  orchestration layer — merchants tokenise payment methods once with Spreedly, then
+  route transactions to any of 130+ supported payment gateways (Stripe, Adyen,
+  Braintree, etc.) without re-tokenising. Primary value: flexibility to switch
+  payment processors without recapturing card data; resilience against gateway
+  outages; A/B testing of payment gateway performance. Customers include Grubhub,
+  Ritual, and companies in travel, marketplace, and platform sectors. 13 years
+  bootstrapped = strongest available economic signal for a private company in this
+  pattern. Profitability proxy applied (Tier 6 inference: no external funding for
+  13 years + sustained operation = Estimated profitable before 2021 raise). Post-2021
+  funding status unknown but baseline was clearly profitable before deciding to
+  raise growth capital. Second strong validator for payment-orchestration-layer
+  (Modern Treasury is first, but weak_validator)."
+implementation_patterns:
+  - slug: payment-orchestration-layer
+    source: Spreedly product documentation / Silversmith Capital announcement
+problems:
+  - slug: programmatic-payment-acceptance
+  - slug: programmatic-payment-disbursement
+    confidence: medium
+    notes: "Spreedly primarily addresses the payment acceptance orchestration problem
+      (routing payments to gateways); disbursement is secondary."
+timeline:
+  - year: 2008
+    event_type: founding
+    implementation_pattern: payment-orchestration-layer
+    problem: programmatic-payment-acceptance
+    description: "Founded in Durham, NC. Original product was a B2C subscription
+      payment product. Pivoted within a few years to the universal payment vault and
+      orchestration model after identifying the core pain: companies that accept
+      payments are locked to a single payment gateway and cannot switch without
+      re-capturing all stored card data from customers. Spreedly solves this by
+      vaulting payment methods centrally and routing to any gateway."
+    source: Spreedly company history / Silversmith Capital announcement
+  - year: 2015
+    event_type: product_launch
+    implementation_pattern: payment-orchestration-layer
+    description: "Established as a self-sustaining bootstrapped business at this
+      point — 7 years of zero external capital. Launched gateway routing capabilities
+      enabling A/B testing of payment providers and automatic failover. At this stage
+      the orchestration model was clearly validated by sustained operation without
+      external funding."
+    source: Spreedly product history
+  - year: 2021
+    event_type: funding
+    implementation_pattern: payment-orchestration-layer
+    description: "Raised first external round: $75M from Silversmith Capital Partners.
+      Chose to raise growth capital after 13 years of profitable bootstrapped operation.
+      The decision to raise after profitability rather than out of necessity distinguishes
+      this from typical venture-funded companies. Used capital for geographic expansion
+      and enterprise sales team. 130+ supported payment gateways at this point."
+    source: Spreedly / Silversmith Capital announcement

@@ -1,0 +1,61 @@
+slug: checkout-com
+name: Checkout.com
+domain: b2b-payments
+research_queue_source: "IMPLEMENTATION_FILL:developer-first-payment-api"
+founded: 2012
+country: UK
+status: operating
+stage: unicorn
+funding_history: "Self-funded by founder Guillaume Pousaz from 2012 to 2019 (7 years).
+  Series A $230M May 2019 (Insight Partners). Series B $150M January 2020. Series C
+  $450M June 2021 ($15B valuation). Series D $1B January 2022 ($40B valuation —
+  peak). By 2024, internal valuation reportedly marked down significantly (~$11B
+  range). Total raised: $1.83B."
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Guillaume Pousaz, Swiss entrepreneur, in London. Seven
+  years self-funded before first external capital — a structural signal of underlying
+  economics. Developer-first API targeting enterprise merchants with complex payment
+  routing needs. Differentiation from Stripe: Checkout.com offers more direct acquiring
+  relationships and lower pricing for high-volume merchants (similar to Adyen's IC++
+  model but with Stripe-like developer experience). Customers include Binance, Revolut,
+  Wise, Pizza Hut, Farfetch. Valuation compression from $40B (January 2022) to ~$11B
+  (2024 internal reports) reflects 2021 growth-era overpricing rather than business
+  failure — revenue reportedly still growing. Processing volume: $100B+ annually.
+  Notable: CEO Pousaz remained majority owner through all funding rounds (self-funded
+  for 7 years). Seven-year bootstrapped period before raising capital = estimated
+  profitable_proxy before external funding arrived."
+implementation_patterns:
+  - slug: developer-first-payment-api
+    source: Checkout.com press materials / Insight Partners announcement
+problems:
+  - slug: programmatic-payment-acceptance
+timeline:
+  - year: 2012
+    event_type: founding
+    implementation_pattern: developer-first-payment-api
+    problem: programmatic-payment-acceptance
+    description: "Founded by Guillaume Pousaz in London. Bootstrapped with founder
+      capital. Initial focus: enterprise merchants in Middle East and Europe needing
+      online payment acceptance with direct acquiring relationships rather than
+      aggregator models. Built without external funding for 7 years — proof of early
+      unit economic viability."
+    source: Checkout.com company history / Financial Times
+  - year: 2019
+    event_type: funding
+    implementation_pattern: developer-first-payment-api
+    description: "Series A $230M from Insight Partners after 7 years of self-funding
+      — first external capital. At this point: established enterprise customer base
+      including Deliveroo, TransferWise (Wise), and others. Chose to raise to accelerate
+      geographic expansion rather than out of necessity."
+    source: TechCrunch / Insight Partners
+  - year: 2022
+    event_type: funding
+    implementation_pattern: developer-first-payment-api
+    description: "Series D $1B at $40B valuation — peak valuation during 2021-2022
+      fintech boom. By 2024, internal valuation reportedly compressed to ~$11B range
+      as growth-era multiples contracted. Revenue still growing. Processing $100B+
+      in annual payment volume. Customers include Binance, Revolut, Pizza Hut, Farfetch."
+    source: Bloomberg / Financial Times
