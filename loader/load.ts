@@ -71,6 +71,7 @@ export async function load() {
     const sectorMap = await map("sectors");
 
     // ── Capabilities ─────────────────────────────────────────────────────────
+    // Pass 1: upsert with candidate status (trigger always allows candidate)
     for (const c of vocab.capabilities)
       await client.unsafe(
         "INSERT INTO capabilities (id,slug,name,description,status,created_at) VALUES (gen_random_uuid(),$1,$2,$3,'candidate',now()) ON CONFLICT(slug) DO UPDATE SET name=EXCLUDED.name,description=EXCLUDED.description,status='candidate'",

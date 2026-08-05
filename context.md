@@ -1,10 +1,5 @@
 # Economic Pattern Database — Agent Context
 
-Paste this into a new AI chat session for full working context.
-Generated dynamically — includes live DB state.
-
----
-
 ## What this project is
 
 A relational knowledge graph of recurring economic problems, the solution
