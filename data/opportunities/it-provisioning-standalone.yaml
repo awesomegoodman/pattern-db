@@ -1,6 +1,8 @@
 slug: it-provisioning-standalone
 name: Standalone IT lifecycle platform for mid-market companies
 status: open
+generation_mode: derived
+lens: structural_gap
 
 # ── Layer 2 references ────────────────────────────────────────────────────────
 problem: it-provisioning
@@ -99,6 +101,14 @@ open_questions:
     accessible to 50-person companies, the gap may be smaller than Q06 suggests."
   - "Are there bootstrapped or lightly-funded companies in this space not captured in
     the dataset? FAILURE_CASE_NEEDED score is 0 — no failures documented."
+
+predictions:
+  - claim: "A standalone IT lifecycle platform (no HR/payroll required) reaches $10M ARR in the US mid-market by 2028"
+    falsification: "Rippling launches a genuine IT-only plan at mid-market pricing with no HR/payroll dependency, or two well-funded standalone attempts fail with documented unit economics failures"
+    horizon: 2028
+  - claim: "Rippling does not offer a genuine standalone IT module (no HR/payroll required) as of research date"
+    falsification: "Rippling pricing page shows an IT-only plan with no HR/payroll prerequisite"
+    horizon: 2026
 
 notes: |
   Generated from Q06 structural gap query: lowest companies-per-pattern ratio in dataset

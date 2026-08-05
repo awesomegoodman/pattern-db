@@ -1,0 +1,90 @@
+# ── OPPORTUNITY TEMPLATE ──────────────────────────────────────────────────────
+# Copy to data/opportunities/<slug>.yaml. Fill every field.
+# Read docs/layer3-protocol.md before creating a new opportunity.
+#
+# well_formed checklist (computed by loader):
+#   ✓ lens is set
+#   ✓ winning_condition_required AND failure_condition_to_avoid both filled
+#   ✓ at least 1 prediction with claim + falsification
+#   ✓ at least 1 open_question
+#   ✓ if generation_mode = interpretive → departure_point is filled
+#
+# A record that fails the checklist is stored as draft and cannot be promoted.
+
+slug: your-slug
+name: Short descriptive name
+status: open  # open | investigating | validated | rejected | building
+
+# ── Track ─────────────────────────────────────────────────────────────────────
+generation_mode: derived
+# derived:       follows directly from query output; reproducible
+# interpretive:  non-obvious synthesis; departure_point required below
+
+lens: structural_gap
+# structural_gap | geographic_whitespace | segment_underserved |
+# capability_recombination | pattern_transfer | condition_shift |
+# cross_domain | pattern_inversion | other
+
+# ── Required for interpretive only ───────────────────────────────────────────
+# departure_point: |
+#   What the data shows: [specific Layer 1/2 observation].
+#   What a derived inference would conclude: [the obvious read].
+#   Where this hypothesis departs: [the non-obvious step and why].
+#   The departure relies on: [assumption imported from outside the dataset].
+#   Testable by: [specific research method].
+
+# ── Layer 2 references ────────────────────────────────────────────────────────
+problem: problem-slug
+
+existing_patterns:
+  - existing-implementation-pattern-slug
+
+recombined_patterns:
+  - pattern-being-recombined
+
+# ── The gap ───────────────────────────────────────────────────────────────────
+observed_gap: |
+  State the specific gap in Layer 1/2 terms. Cite evidence counts,
+  pattern names, company names. Do not state the hypothesis here.
+
+gap_evidence:
+  - "Q06: problem X has 1 implementation pattern and 0 profitable confirmations"
+
+evidence_strength: moderate  # strong | moderate | weak
+
+# ── The hypothesis ────────────────────────────────────────────────────────────
+hypothesis: |
+  Concrete claim. What, for whom, using which mechanism, in which market.
+
+# ── Structural conditions — fill both or neither ─────────────────────────────
+winning_condition_required: |
+  One transferable sentence. The structural condition that must hold.
+
+failure_condition_to_avoid: |
+  The direct logical inverse. What would kill this if present.
+
+# ── Capabilities ──────────────────────────────────────────────────────────────
+capabilities_required:
+  - slug: capability-slug
+    possessed_by: []
+    available_to_new_entrant: false
+    note: "Why this is or is not replicable by a new entrant"
+
+# ── Predictions — at least 1 required ────────────────────────────────────────
+predictions:
+  - claim: "A company will emerge using this pattern in [market] by [year]"
+    falsification: "Two well-funded attempts fail with documented unit economics failures before [year]"
+    horizon: 2028
+
+# ── Status quo ────────────────────────────────────────────────────────────────
+status_quo:
+  - "Current workaround customers use"
+
+# ── Open questions — at least 1 required ─────────────────────────────────────
+open_questions:
+  - question: "Is [specific unknown] true?"
+    method: "Interview [N] [persona]; check [specific source]"
+    close_criteria: "Majority confirm [specific signal], or [public data] shows [threshold]"
+
+notes: |
+  Any caveats or analyst notes.

@@ -69,6 +69,10 @@ export const CompanySchema = z.object({
   revenue_signal: z.string().optional(),
   profitability_signal: z.enum(["known_profitable","known_unprofitable","estimated_profitable_proxy","unknown"]).optional(),
   profitability_proxy_applied: z.boolean().optional(),
+  revenue_raw: z.string().optional(),
+  // Verbatim estimate before bucketing. e.g. "Sacra estimates $975M 2025"
+  founded_legal: z.number().int().min(1800).max(2100).optional(),
+  // Incorporation year when it differs from founded (operational).
   evidence_weight: z.enum(["strong_validator","weak_validator","disconfirming","unknown"]),
   signal_confidence: z.enum(["high","low"]),
   research_queue_source: z.string().min(1),
@@ -96,28 +100,87 @@ export const VocabSchema = z.object({
 export type Company = z.infer<typeof CompanySchema>;
 export type Vocab   = z.infer<typeof VocabSchema>;
 
+
+// ── Structured open question ──────────────────────────────────────────────────
+export const OpenQuestionSchema = z.union([
+  z.string().min(1),
+  z.object({
+    question:       z.string().min(1),
+    method:         z.string().optional(),
+    close_criteria: z.string().optional(),
+  }),
+]);
+
+// ── Prediction ────────────────────────────────────────────────────────────────
+// A specific falsifiable claim with a year by which it should be checkable.
+// Without predictions, Layer 3 has no feedback loop.
+export const PredictionSchema = z.object({
+  claim:         z.string().min(1),
+  falsification: z.string().min(1),
+  horizon:       z.number().int().optional(),
+});
+
 export const OpportunitySchema = z.object({
   slug,
   name:   z.string().min(1),
   status: z.enum(['open', 'investigating', 'validated', 'rejected', 'building']).default('open'),
+
+  // ── Track ──────────────────────────────────────────────────────────────────
+  generation_mode: z.enum(['derived', 'interpretive']).default('derived'),
+  // derived:       reproducible from queries
+  // interpretive:  non-obvious synthesis; departure_point required
+
+  departure_point: z.string().optional(),
+  // Required when generation_mode = 'interpretive'.
+  // State: what data shows, what derived inference would conclude,
+  // where and why this hypothesis departs from that.
+
+  lens: z.enum([
+    'structural_gap', 'geographic_whitespace', 'segment_underserved',
+    'capability_recombination', 'pattern_transfer', 'condition_shift',
+    'cross_domain', 'pattern_inversion', 'other',
+  ]).optional(),
+
+  // ── Layer 2 references ─────────────────────────────────────────────────────
   problem: slug,
   existing_patterns:   z.array(slug).default([]),
   recombined_patterns: z.array(slug).default([]),
+
+  // ── The gap ────────────────────────────────────────────────────────────────
   observed_gap:      z.string().min(1),
   gap_evidence:      z.array(z.string()).default([]),
   evidence_strength: z.enum(['strong', 'moderate', 'weak']),
   hypothesis:        z.string().min(1),
+
   capabilities_required: z.array(z.object({
     slug,
     possessed_by:             z.array(z.string()).default([]),
     available_to_new_entrant: z.boolean().default(false),
     note:                     z.string().optional(),
   })).default([]),
+
   winning_condition_required: z.string().optional(),
   failure_condition_to_avoid: z.string().optional(),
   status_quo:     z.array(z.string()).default([]),
-  open_questions: z.array(z.string()).default([]),
-  notes:          z.string().optional(),
-});
 
-export type Opportunity = z.infer<typeof OpportunitySchema>;
+  // ── Predictions ────────────────────────────────────────────────────────────
+  // At least 1 required for well_formed status.
+  // The feedback loop that lets Layer 3 calibrate over time.
+  predictions: z.array(PredictionSchema).default([]),
+
+  // ── Open questions ─────────────────────────────────────────────────────────
+  // At least 1 required for well_formed status.
+  open_questions: z.array(OpenQuestionSchema).default([]),
+
+  notes: z.string().optional(),
+}).refine(
+  (d) => d.generation_mode !== 'interpretive' || !!d.departure_point,
+  {
+    message: "departure_point is required when generation_mode is 'interpretive'",
+    path: ['departure_point'],
+  }
+);
+
+export type Opportunity  = z.infer<typeof OpportunitySchema>;
+export type OpenQuestion = z.infer<typeof OpenQuestionSchema>;
+export type Prediction   = z.infer<typeof PredictionSchema>;

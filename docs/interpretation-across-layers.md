@@ -73,15 +73,15 @@ For any field where interpretation was required, the record should contain:
 - One sentence on why the raw value maps to that bucket
 
 Example: `revenue_signal: ">100M"` with `revenue_raw: "Sacra estimates $975M
-2025"` and `revenue_derivation: "$1B boundary — Sacra is an estimate not a
-reported figure; assigned <1B pending audited financials."` The bucket
-disagreement between two contributors becomes harmless because the raw data is
-preserved and the reasoning is auditable.
+2025"` and a note in `notable_facts`: "$1B boundary — Sacra is an estimate not a
+reported figure; assigned <1B pending audited financials." The bucket disagreement
+between two contributors becomes harmless because the raw data is preserved and
+the reasoning is auditable.
 
 For founding year on a pivoted company: store both `founded_legal` (incorporation)
-and `founded_operational` (first revenue under current mission), with a note on
-which is used for temporal queries and why. Do not force a single value and
-silently discard the other.
+and `founded` (first revenue under current mission), with a note on which is used
+for temporal queries and why. Do not force a single value and silently discard
+the other.
 
 **The rule is: when you had to think about which value to use, store what you
 thought alongside the value you chose.**
@@ -127,8 +127,8 @@ subsequent payment company more effectively than re-reading the abstraction test
 
 - The company or companies involved
 - The two options that were live alternatives
-- The specific structural difference that decided it (not just "they are different"
-  but the concrete operational fact that made the difference)
+- The specific structural difference that decided it — not "they are different"
+  but the concrete operational fact that made the difference
 - The option chosen and why
 - Any dissenting reasoning that was considered and why it lost
 
@@ -158,7 +158,7 @@ Periodically take a pattern that looks mature by the internal metrics and have a
 contributor try to falsify it: find Layer 1 cases that should have been included
 but weren't, test whether the winning conditions fail to transfer, demonstrate
 that a different mechanism assignment fits equally well. If the pattern survives
-this pressure, confidence in it increases. If it doesn't, the maturity status is
+this pressure, confidence in it increases. If it doesn't, the maturity status was
 based on the wrong evidence.
 
 ---
@@ -169,36 +169,104 @@ Layer 3 hypotheses cannot be evaluated at creation time by whether they are
 correct. They can only be evaluated by whether the reasoning is coherent and
 honest, and by whether they turn out to be correct over time.
 
-The two-track distinction — derived and interpretive — is the right structure.
-Derived opportunities follow directly from query output; another contributor
-running the same queries on the same dataset would produce a similar record.
-Interpretive opportunities make a connection the data does not force; another
-contributor following the same protocol would not produce this record.
+### The two tracks
 
-Both tracks require the same minimum: a specific falsifiable claim with a year
-by which it should be checkable.
+**Derived** — follows directly from query output. Another contributor running
+the same queries would produce a similar record. The gap is in the data.
 
-For interpretive opportunities, one additional field is required: the departure
-point. This is a statement of what the data actually shows, what a derived
-inference from that data would conclude, and where and why this hypothesis
-departs from that inference. A well-formed departure point allows a skeptical
-reader to locate the interpretive move precisely, understand the assumption being
-imported, and evaluate whether the reasoning is coherent — even if they disagree
-with the conclusion.
+**Interpretive** — makes a connection the data does not force. Another contributor
+following the same protocol would not produce this record. Requires `departure_point`.
+
+The `departure_point` is not optional for interpretive records. Without it, a
+novel hypothesis is indistinguishable from a poorly-reasoned one. A well-formed
+departure point states:
+
+1. What the data actually shows
+2. What a derived inference from that data would conclude
+3. Where and why this hypothesis departs from that inference
+4. What assumption is being imported from outside the dataset
+5. How that assumption could be tested
 
 The departure point is not a defense of the hypothesis. It is an honest map of
 where the contributor left the data and started following a different logic.
 
-### The feedback loop
+### The well_formed checklist
 
-Predictions recorded at creation are the only mechanism by which Layer 3 can
-improve its own calibration. Without them, old opportunity records have no feedback
-loop and the database never learns whether its hypotheses were good ones.
+Computed automatically by the loader. A record that fails is stored with status
+`open` and flagged with the specific reasons. Required:
 
-After every load, the loader should compare new company records against open
-opportunity records. A new company that directly confirms or falsifies an open
-opportunity should flag it for immediate status review — not on the annual horizon
-date but now. The most valuable feedback is contemporaneous with the evidence.
+- `lens` is set
+- `winning_condition_required` AND `failure_condition_to_avoid` both filled
+- At least 1 prediction with `claim` + `falsification`
+- At least 1 open question
+- If `generation_mode: interpretive` → `departure_point` is filled
+
+Passing means the record is structurally complete. It does not mean the hypothesis
+is correct or well-grounded.
+
+### Predictions
+
+The only mechanism by which Layer 3 calibrates over time. Without them, old
+records have no feedback loop and the database never learns whether its hypotheses
+were good ones.
+
+A well-formed prediction has three parts:
+
+- `claim`: specific assertion about what will be observable in the future
+- `falsification`: the specific observable event that would prove it wrong
+- `horizon`: the year by which this should be checkable
+
+After every load, the loader compares new company records against open opportunity
+records. A new company that directly confirms or falsifies an open opportunity
+flags it for immediate status review — not on the annual horizon date, but when
+the evidence arrives.
+
+### Open questions
+
+Each must be researchable. Required fields:
+
+- `question`: the specific unknown
+- `method`: how to research it
+- `close_criteria`: what constitutes a satisfactory answer
+
+A question without a method and close_criteria is a concern, not a question.
+Move it to `notes`.
+
+### Status transitions
+
+Triggered by specific events, not contributor discretion:
+
+- `open` → `investigating`: contributor has begun researching open questions
+- `open/investigating` → `validated`: open questions answered favourably;
+  winning condition confirmed present in target market
+- `open/investigating` → `rejected`: falsification condition met, or a new
+  Layer 1 company already fills the gap
+- `open/investigating` → `building`: a company is actively building this
+- Any → `superseded`: newer opportunity with same gap fingerprint and
+  stronger evidence replaces this one
+
+Every status change requires a note with the specific evidence that caused it.
+
+### Gap fingerprints
+
+The loader computes `hash(problem_slug|lens|sorted_capability_slugs)` for each
+opportunity. Opportunities sharing a fingerprint address the same underlying gap
+and are automatically linked as `competing` in `opportunity_relationships`. After
+auto-detection, manually update the relationship type if appropriate:
+
+- `competing`: mutually exclusive bets; evidence will determine which is right
+- `complementary`: both can succeed simultaneously
+- `refinement`: one is a more specific version of the other
+- `redundant`: same gap, same framing; merge one into the other
+
+### Running the query suite before creating an opportunity
+
+Run at minimum: Q06 (structural gaps), Q04 (capability reuse), Q03 (expansion
+sequences), Q01 (winning conditions by maturity), Q09 (research queue).
+
+Derived opportunities must cite which query surfaced the gap. Interpretive
+opportunities must cite at least two query outputs that their synthesis reads
+across.
 
 ---
 
@@ -210,12 +278,11 @@ defenses are:
 **Make metrics compute from data, not be filled by contributors.** Evidence count
 is computed. Maturity status is computed from evidence count. Well-formed status
 is computed from field presence. These are outputs of good work, not targets
-contributors aim at. The contributor never sees "your evidence count is 2, you
-need 1 more for Proposed" as a prompt. They see the maturity status after the fact.
+contributors aim at.
 
-**Make the research queue optimize for diversity, not quantity.** The research
+**Make the research queue optimise for diversity, not quantity.** The research
 queue already does this: failure cases score highest, geographic whitespace scores
-next. These are Goodhart-resistant because optimizing them actually improves the
+next. These are Goodhart-resistant because optimising them actually improves the
 dataset. A contributor who games the queue by finding failure cases and filling
 geographic gaps produces exactly the records the database needs. Extend this logic
 to Layer 2: score which patterns need cross-industry stress testing, which winning
@@ -223,9 +290,9 @@ conditions have never been tested outside their originating domain, which
 capabilities have sector evidence from only one industry.
 
 **Keep the number of required fields minimal.** Every additional required field
-is another dimension along which contributors can optimize for appearance. The
-minimum viable record is the right instinct; resist additions that do not
-directly serve a query in the priority suite.
+is another dimension along which contributors can optimise for appearance. The
+minimum viable record is the right instinct; resist additions that do not directly
+serve a query in the priority suite.
 
 **Use the calibration sprint for inter-rater measurement, not as a compliance
 check.** Quarterly, take ten ambiguous companies and have all contributors classify

@@ -1,7 +1,6 @@
 slug: gcash
 name: GCash (Mynt)
 domain: c2c-payments
-customer_segment: c2c
 research_queue_source: "OFF_QUEUE:foundation-record"
 founded: 2004
 country: Philippines

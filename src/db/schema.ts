@@ -683,6 +683,39 @@ export type NewCapabilitySynonym        = typeof capabilitySynonyms.$inferInsert
 // LAYER 3 — OPPORTUNITIES (hypotheses linked to Layer 1 + 2 evidence)
 // ─────────────────────────────────────────────────────────────────────────────
 
+
+// ── Layer 3 enums ─────────────────────────────────────────────────────────────
+
+export const generationModeEnum = pgEnum('generation_mode', [
+  'derived',      // Another contributor running same queries would produce similar record
+  'interpretive', // Non-obvious synthesis; departure_point required
+]);
+
+export const opportunityLensEnum = pgEnum('opportunity_lens', [
+  'structural_gap',           // Problem with too few solution approaches
+  'geographic_whitespace',    // Pattern established in A, absent in B
+  'segment_underserved',      // Pattern exists for enterprise, not SMB, or vice versa
+  'capability_recombination', // Capabilities never combined that could be
+  'pattern_transfer',         // Structural approach from domain A not tried in domain B
+  'condition_shift',          // Winning condition becoming invalid; opens space for new pattern
+  'cross_domain',             // Analogy from unrelated industry
+  'pattern_inversion',        // Contrarian: what if the assumed winning condition is wrong
+  'other',                    // Must explain in departure_point
+]);
+
+export const opportunityRelationshipTypeEnum = pgEnum('opportunity_relationship_type', [
+  'competing',      // Mutually exclusive bets on the same gap
+  'complementary',  // Both can succeed simultaneously
+  'refinement',     // One is a more specific version of the other
+  'redundant',      // Same gap, same framing — merge candidate
+]);
+
+export const predictionStatusEnum = pgEnum('prediction_status', [
+  'open',
+  'confirmed',
+  'refuted',
+]);
+
 export const opportunityStatusEnum = pgEnum('opportunity_status', [
   'open',
   'investigating',
@@ -714,6 +747,15 @@ export const opportunities = pgTable(
     statusQuoToDisplace:      text('status_quo_to_displace'),
     openQuestions: text('open_questions'),
     notes:         text('notes'),
+
+    // ── Layer 3 governance fields ────────────────────────────────────────────
+    generationMode:  generationModeEnum('generation_mode').notNull().default('derived'),
+    departurePoint:  text('departure_point'),
+    lens:            opportunityLensEnum('lens'),
+    gapFingerprint:  text('gap_fingerprint'),
+    wellFormed:      boolean('well_formed').notNull().default(false),
+    predictionsText: text('predictions_text'),
+
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
   },
@@ -794,3 +836,78 @@ export type OpportunityPattern       = typeof opportunityPatterns.$inferSelect;
 export type NewOpportunityPattern    = typeof opportunityPatterns.$inferInsert;
 export type OpportunityCapability    = typeof opportunityCapabilities.$inferSelect;
 export type NewOpportunityCapability = typeof opportunityCapabilities.$inferInsert;
+
+// ── opportunity_predictions ───────────────────────────────────────────────────
+// Specific falsifiable claims recorded at creation time, checked on horizon date.
+// This is the mechanism by which Layer 3 accumulates calibration over time.
+
+export const opportunityPredictions = pgTable(
+  'opportunity_predictions',
+  {
+    id:              uuid('id').primaryKey().defaultRandom(),
+    opportunityId:   uuid('opportunity_id')
+                       .references(() => opportunities.id, { onDelete: 'cascade' })
+                       .notNull(),
+    claim:           text('claim').notNull(),
+    falsification:   text('falsification').notNull(),
+    // The specific observable event that would prove this prediction wrong.
+    horizon:         integer('horizon'),
+    // Year by which this should be checkable.
+    status:          predictionStatusEnum('status').notNull().default('open'),
+    resolutionNotes: text('resolution_notes'),
+    checkedAt:       timestamp('checked_at'),
+    createdAt:       timestamp('created_at').defaultNow().notNull(),
+  },
+  (t) => ({
+    opportunityIdx: index('opred_opportunity_idx').on(t.opportunityId),
+    statusIdx:      index('opred_status_idx').on(t.status),
+    horizonIdx:     index('opred_horizon_idx').on(t.horizon),
+  })
+);
+
+// ── opportunity_relationships ─────────────────────────────────────────────────
+// Explicit links between opportunities addressing the same gap.
+// Auto-populated by loader via gap_fingerprint; manually refined thereafter.
+
+export const opportunityRelationships = pgTable(
+  'opportunity_relationships',
+  {
+    opportunityId:        uuid('opportunity_id')
+                            .references(() => opportunities.id, { onDelete: 'cascade' })
+                            .notNull(),
+    relatedOpportunityId: uuid('related_opportunity_id')
+                            .references(() => opportunities.id, { onDelete: 'cascade' })
+                            .notNull(),
+    relationshipType:     opportunityRelationshipTypeEnum('relationship_type').notNull(),
+    notes:                text('notes'),
+    createdAt:            timestamp('created_at').defaultNow().notNull(),
+  },
+  (t) => ({
+    pk:      primaryKey({ columns: [t.opportunityId, t.relatedOpportunityId] }),
+    fromIdx: index('orel_from_idx').on(t.opportunityId),
+    toIdx:   index('orel_to_idx').on(t.relatedOpportunityId),
+  })
+);
+
+export const opportunityPredictionsRelations = relations(opportunityPredictions, ({ one }) => ({
+  opportunity: one(opportunities, {
+    fields:     [opportunityPredictions.opportunityId],
+    references: [opportunities.id],
+  }),
+}));
+
+export const opportunityRelationshipsRelations = relations(opportunityRelationships, ({ one }) => ({
+  opportunity: one(opportunities, {
+    fields:     [opportunityRelationships.opportunityId],
+    references: [opportunities.id],
+  }),
+  relatedOpportunity: one(opportunities, {
+    fields:     [opportunityRelationships.relatedOpportunityId],
+    references: [opportunities.id],
+  }),
+}));
+
+export type OpportunityPrediction        = typeof opportunityPredictions.$inferSelect;
+export type NewOpportunityPrediction     = typeof opportunityPredictions.$inferInsert;
+export type OpportunityRelationship      = typeof opportunityRelationships.$inferSelect;
+export type NewOpportunityRelationship   = typeof opportunityRelationships.$inferInsert;

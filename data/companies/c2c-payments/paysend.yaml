@@ -1,7 +1,6 @@
 slug: paysend
 name: Paysend
 domain: c2c-payments
-customer_segment: c2c
 research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
 founded: 2017
 country: UK

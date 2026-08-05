@@ -1,7 +1,6 @@
 slug: ria
 name: Ria Money Transfer (Euronet Worldwide)
 domain: c2c-payments
-customer_segment: c2c
 research_queue_source: "STRONG_VALIDATOR_NEEDED:cross-border-a2a-infrastructure"
 founded: 1987
 country: USA
