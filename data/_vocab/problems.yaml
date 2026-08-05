@@ -49,17 +49,35 @@
     from payment acceptance (money in vs money out) and requires different infrastructure
     (AP workflow + outbound rail vs acquiring + inbound settlement)."
 
-- slug: cross-border-payment-infrastructure
-  statement: "Businesses and individuals cannot move money across international borders
-    without establishing banking relationships in each jurisdiction, accepting correspondent
-    banking fees, or waiting days for settlement."
+- slug: b2b-cross-border-payments
+  statement: "Businesses cannot disburse or receive payments across international borders
+    programmatically without establishing banking relationships in each jurisdiction,
+    accepting correspondent banking fees, or waiting days for settlement."
   lifecycle: growing
-  notes: "Status quo: correspondent banking via SWIFT — slow (2-5 days), expensive
-    (3-5% of transaction value), and opaque. Underlying constraint: coordination failure
-    between national banking systems not designed to interoperate, compounded by per-jurisdiction
-    regulatory friction. Accelerating with global commerce and remote work. The EOR
-    domain addressed the employment side of this; the payments domain addresses the
-    money movement side."
+  notes: "Distinct from c2c-international-remittance by regulatory license type (payment
+    institution / EMI licence vs money-transmitter licence), unit economics (lower volume,
+    higher ticket, negotiated FX spreads, relationship sales), and product requirements
+    (API integration, multi-currency accounts, treasury tooling). Status quo: correspondent
+    banking via SWIFT (2-5 days, 3-5% cost). Underlying constraint: coordination failure
+    between national banking systems compounded by per-jurisdiction regulatory friction.
+    Primary companies: Airwallex, Wise for Business, OFX, Nium, Verto, Payoneer, Corpay.
+    Split from cross-border-payment-infrastructure 2025 — prior problem slug conflated
+    B2B and C2C segments whose winning conditions, unit economics, and regulatory
+    structures differ materially."
+
+- slug: c2c-international-remittance
+  statement: "Individuals cannot send money to family or dependents abroad without paying
+    high fees, accepting slow settlement, or relying on informal channels."
+  lifecycle: growing
+  notes: "Distinct from b2b-cross-border-payments by regulatory license type (money-transmitter
+    licence), unit economics (high volume, low ticket, FX spread with margin compression,
+    high CAC via diaspora community trust), and distribution (agent networks, mobile-money
+    integrations, community word-of-mouth). Status quo: informal channels (hawala, cash
+    couriers), Western Union, MoneyGram (expensive, slow). Underlying constraint: diaspora
+    communities lack access to cheap cross-border rails that banks reserve for commercial
+    customers. Primary companies: LemFi, Mukuru, Grey, NALA, Chipper Cash, Azimo,
+    Remitly, Zepz. Note Mukuru's ToS explicitly prohibits business use on its core
+    remittance product — clearest evidence of structural C2C-only design."
 
 - slug: embedded-banking-infrastructure
   statement: "Non-bank businesses cannot offer financial services to their customers
@@ -72,3 +90,33 @@
     BaaS middleware (Synapse model) was the dominant implementation 2018-2023; its
     structural failure in 2024 has shifted demand toward direct bank partnership models
     that eliminate the middleware ledger reconciliation risk."
+
+- slug: b2b-cross-border-payments
+  statement: "Businesses cannot disburse or receive payments across international borders
+    programmatically without establishing banking relationships in each jurisdiction,
+    accepting correspondent banking fees, or waiting days for settlement."
+  lifecycle: growing
+  notes: "Distinct from c2c-international-remittance by regulatory license type (payment
+    institution / EMI licence vs money-transmitter licence), unit economics (lower volume,
+    higher ticket, negotiated FX spreads, relationship sales), and product requirements
+    (API integration, multi-currency accounts, treasury tooling). Status quo: correspondent
+    banking via SWIFT (2-5 days, 3-5% cost). Underlying constraint: coordination failure
+    between national banking systems compounded by per-jurisdiction regulatory friction.
+    Primary companies: Airwallex, Wise for Business, OFX, Nium, Verto, Payoneer, Corpay.
+    Split from cross-border-payment-infrastructure 2025 — prior problem slug conflated
+    B2B and C2C segments whose winning conditions, unit economics, and regulatory
+    structures differ materially."
+
+- slug: c2c-international-remittance
+  statement: "Individuals cannot send money to family or dependents abroad without paying
+    high fees, accepting slow settlement, or relying on informal channels."
+  lifecycle: growing
+  notes: "Distinct from b2b-cross-border-payments by regulatory license type (money-transmitter
+    licence), unit economics (high volume, low ticket, FX spread with margin compression,
+    high CAC via diaspora community trust), and distribution (agent networks, mobile-money
+    integrations, community word-of-mouth). Status quo: informal channels (hawala, cash
+    couriers), Western Union, MoneyGram (expensive, slow). Underlying constraint: diaspora
+    communities lack access to cheap cross-border rails that banks reserve for commercial
+    customers. Primary companies: LemFi, Mukuru, Grey, NALA, Chipper Cash, Azimo,
+    Remitly, Zepz. Note Mukuru's ToS explicitly prohibits business use on its core
+    remittance product — clearest evidence of structural C2C-only design."

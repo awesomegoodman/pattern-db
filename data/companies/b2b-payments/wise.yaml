@@ -1,6 +1,7 @@
 slug: wise
 name: Wise (formerly TransferWise)
 domain: b2b-payments
+customer_segment: mixed
 research_queue_source: "OFF_QUEUE:foundation-record"
 founded: 2011
 country: UK
@@ -28,7 +29,10 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: Wise annual report FY2024 / LSE listing prospectus
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: b2b-cross-border-payments
+  - slug: c2c-international-remittance
+    confidence: medium
+    notes: Wise personal product is heavily used for individual cross-border transfers approaching C2C use cases (expat, traveler) though not pure diaspora remittance.
   - slug: programmatic-payment-disbursement
     confidence: medium
     notes: "Wise Business enables mass international payouts to contractors and suppliers
@@ -37,7 +41,7 @@ timeline:
   - year: 2011
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: b2b-cross-border-payments
     description: "Founded as TransferWise by Kristo Kaaarmann and Taavet Hinrikus in
       London. Both were Estonian expats frustrated by bank FX fees. Core insight: rather
       than moving money across borders, hold local currency pools in multiple countries

@@ -1,6 +1,7 @@
 slug: tipalti
 name: Tipalti
 domain: b2b-payments
+customer_segment: b2b
 research_queue_source: "IMPLEMENTATION_FILL:accounts-payable-automation"
 founded: 2010
 country: Israel
@@ -33,7 +34,7 @@ implementation_patterns:
     source: Tipalti company documentation / Series E announcement
 problems:
   - slug: programmatic-payment-disbursement
-  - slug: cross-border-payment-infrastructure
+  - slug: b2b-cross-border-payments
     confidence: medium
     notes: "Tipalti's mass international payout capability requires cross-border
       payment infrastructure in 196 countries — both problems are relevant."

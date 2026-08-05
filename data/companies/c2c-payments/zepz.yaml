@@ -1,6 +1,7 @@
 slug: zepz
 name: Zepz (WorldRemit + Sendwave)
-domain: b2b-payments
+domain: c2c-payments
+customer_segment: c2c
 research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
 founded: 2010
 country: UK
@@ -34,12 +35,12 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: Zepz press materials / WorldRemit / Sendwave acquisition announcement
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: c2c-international-remittance
 timeline:
   - year: 2010
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: c2c-international-remittance
     description: "Founded in London by Ismail Ahmed. Personal motivation: as a Somali
       immigrant whose family in Somaliland depended on diaspora remittances, Ahmed
       had direct experience paying 7-10% fees to hawk operators and money transfer

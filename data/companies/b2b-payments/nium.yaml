@@ -1,6 +1,7 @@
 slug: nium
 name: Nium
 domain: b2b-payments
+customer_segment: b2b
 research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
 founded: 2014
 country: Singapore
@@ -31,7 +32,7 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: Nium Series D announcement / company documentation
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: b2b-cross-border-payments
   - slug: programmatic-payment-disbursement
     confidence: medium
     notes: "Nium's primary use case is mass cross-border payouts — enterprises paying
@@ -41,7 +42,7 @@ timeline:
   - year: 2014
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: b2b-cross-border-payments
     description: "Founded as InstaReM in Singapore by Prajit Nanu and Michael Minassian.
       Initial product: low-cost cross-border remittances for individuals in Asia
       (Australia, Singapore, India, Malaysia corridors). Used local banking rails to

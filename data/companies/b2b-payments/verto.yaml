@@ -1,6 +1,7 @@
 slug: verto-fx
 name: Verto
 domain: b2b-payments
+customer_segment: b2b
 research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Nigeria"
 founded: 2019
 country: UK
@@ -31,7 +32,7 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: Quona Capital investment announcement / Verto product documentation
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: b2b-cross-border-payments
   - slug: programmatic-payment-disbursement
     confidence: medium
     notes: "Verto's primary customer is an African business converting FX for trade
@@ -41,7 +42,7 @@ timeline:
   - year: 2019
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: b2b-cross-border-payments
     description: "Founded in London and Lagos by Ola Oyetayo and Anthony Oduu. Both
       had prior careers at large financial institutions (Deutsche Bank, Standard
       Chartered) which gave them deep knowledge of B2B FX operations in Africa.

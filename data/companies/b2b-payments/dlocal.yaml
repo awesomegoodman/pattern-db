@@ -1,6 +1,7 @@
 slug: dlocal
 name: dLocal
 domain: b2b-payments
+customer_segment: b2b
 research_queue_source: "OFF_QUEUE:foundation-record"
 founded: 2016
 country: Uruguay
@@ -30,7 +31,7 @@ implementation_patterns:
     source: dLocal S-1 filing / Nasdaq IPO prospectus
 problems:
   - slug: programmatic-payment-acceptance
-  - slug: cross-border-payment-infrastructure
+  - slug: b2b-cross-border-payments
     confidence: medium
     notes: "dLocal enables cross-border payment acceptance (global merchants collecting
       from local customers) rather than pure cross-border transfers — the problem is
@@ -55,7 +56,7 @@ timeline:
   - year: 2023
     event_type: market_entry
     implementation_pattern: local-rail-aggregation
-    problem: cross-border-payment-infrastructure
+    problem: b2b-cross-border-payments
     description: "Expanded to 40+ markets including significant Africa presence (Nigeria,
       Kenya, South Africa, Egypt, Ghana). $14.1B total payment volume FY2023. Launched
       dLocal Go (simplified onboarding for smaller merchants) alongside enterprise product."

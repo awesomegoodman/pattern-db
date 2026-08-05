@@ -21,17 +21,18 @@
     from payment acceptance (money in vs money out) and requires different infrastructure
     (AP workflow + outbound rail vs acquiring + inbound settlement)."
 
-- slug: cross-border-payment-infrastructure
-  statement: "Businesses and individuals cannot move money across international borders
-    without establishing banking relationships in each jurisdiction, accepting correspondent
-    banking fees, or waiting days for settlement."
-  lifecycle: growing
-  notes: "Status quo: correspondent banking via SWIFT — slow (2-5 days), expensive
-    (3-5% of transaction value), and opaque. Underlying constraint: coordination failure
-    between national banking systems not designed to interoperate, compounded by per-jurisdiction
-    regulatory friction. Accelerating with global commerce and remote work. The EOR
-    domain addressed the employment side of this; the payments domain addresses the
-    money movement side."
+# RETIRED — split into b2b-cross-border-payments and c2c-international-remittance
+# - slug: cross-border-payment-infrastructure
+#   statement: "Businesses and individuals cannot move money across international borders
+#     without establishing banking relationships in each jurisdiction, accepting correspondent
+#     banking fees, or waiting days for settlement."
+#   lifecycle: growing
+#   notes: "Status quo: correspondent banking via SWIFT — slow (2-5 days), expensive
+#     (3-5% of transaction value), and opaque. Underlying constraint: coordination failure
+#     between national banking systems not designed to interoperate, compounded by per-jurisdiction
+#     regulatory friction. Accelerating with global commerce and remote work. The EOR
+#     domain addressed the employment side of this; the payments domain addresses the
+#     money movement side."
 
 - slug: embedded-banking-infrastructure
   statement: "Non-bank businesses cannot offer financial services to their customers

@@ -1,6 +1,7 @@
 slug: chipper-cash
 name: Chipper Cash
-domain: b2b-payments
+domain: c2c-payments
+customer_segment: c2c
 research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Uganda"
 founded: 2018
 country: USA
@@ -34,12 +35,12 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: TechCrunch / Chipper Cash press materials
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: c2c-international-remittance
 timeline:
   - year: 2018
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: c2c-international-remittance
     description: "Founded in San Francisco by Ham Serunjogi and Maijid Moujaled.
       Core insight: Africans in different countries cannot easily send money to each
       other — there is no pan-African payment network. SWIFT is expensive and slow;

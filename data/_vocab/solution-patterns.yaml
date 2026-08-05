@@ -91,10 +91,14 @@
   winning_condition_valid_from: 2011
   notes: "The structural bet that a network connecting disparate national banking systems
     can move money internationally faster and cheaper than correspondent banking (SWIFT,
-    first instantiated 1973). The modern iteration: a technology layer that replicates
-    correspondent banking outcomes without legacy overhead. Wise (A2A matching), dLocal
-    (local rail aggregation), and Flutterwave (pan-African switching) are three distinct
-    implementations of the same structural approach to the same underlying problem."
+    first instantiated 1973). Serves two structurally distinct demand populations under
+    one solution pattern: (1) B2B cross-border payables (b2b-cross-border-payments) —
+    Airwallex, Wise for Business, OFX, Nium; (2) C2C diaspora remittance
+    (c2c-international-remittance) — LemFi, Mukuru, Grey, NALA, Remitly, Zepz.
+    Winning conditions, unit economics, and regulatory structures differ materially
+    between segments — Q01 and Q02 must be filtered by customer_segment to return
+    valid conclusions. Problem was split in 2025 from the conflated
+    cross-border-payment-infrastructure slug."
 
 - slug: embedded-banking-infrastructure
   name: Embedded banking infrastructure

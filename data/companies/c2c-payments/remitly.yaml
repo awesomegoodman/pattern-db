@@ -1,6 +1,7 @@
 slug: remitly
 name: Remitly Global
-domain: b2b-payments
+domain: c2c-payments
+customer_segment: c2c
 research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
 founded: 2011
 country: USA
@@ -32,12 +33,12 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: "Nasdaq: RELY annual report FY2024"
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: c2c-international-remittance
 timeline:
   - year: 2011
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: c2c-international-remittance
     description: "Founded in Seattle by Matt Oppenheimer (ex-Barclays Africa), Josh
       Hug, and Shivaas Gulati. Oppenheimer's Africa banking experience gave direct
       insight into the friction of international transfers for immigrants. Initial

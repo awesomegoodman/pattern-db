@@ -1,6 +1,7 @@
 slug: nala
 name: NALA
-domain: b2b-payments
+domain: c2c-payments
+customer_segment: c2c
 research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Tanzania"
 founded: 2017
 country: Tanzania
@@ -32,11 +33,11 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: YC S21 / Bessemer Venture Partners Series A / NALA product documentation
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: c2c-international-remittance
 timeline:
   - year: 2017
     event_type: founding
-    problem: cross-border-payment-infrastructure
+    problem: c2c-international-remittance
     description: "Founded in Dar es Salaam by Benjamin Fernandes. Initial product:
       USSD-based feature-phone payment app for Tanzanians. Tanzania had high mobile
       money adoption (M-Pesa, Tigo Pesa) but fragmented — NALA aimed to provide

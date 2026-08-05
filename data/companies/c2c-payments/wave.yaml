@@ -1,6 +1,7 @@
 slug: wave-west-africa
 name: Wave Mobile Money
-domain: b2b-payments
+domain: c2c-payments
+customer_segment: c2c
 research_queue_source: "GEOGRAPHIC_WHITESPACE:local-rail-aggregation:Senegal"
 founded: 2017
 country: Senegal
@@ -49,7 +50,7 @@ implementation_patterns:
       aggregation as the primary value proposition."
 problems:
   - slug: programmatic-payment-acceptance
-  - slug: cross-border-payment-infrastructure
+  - slug: c2c-international-remittance
     confidence: medium
     notes: "Wave's multi-country Francophone West Africa presence enables cross-border
       transfers between Senegal, Côte d'Ivoire, Mali — an emerging cross-border

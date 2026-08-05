@@ -1,6 +1,7 @@
 slug: payoneer
 name: Payoneer
 domain: b2b-payments
+customer_segment: b2b
 research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:USA"
 founded: 2005
 country: USA
@@ -31,7 +32,7 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: "Nasdaq: PAYO annual report FY2024"
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: b2b-cross-border-payments
   - slug: programmatic-payment-disbursement
     confidence: medium
     notes: "Payoneer enables both receiving and sending. The primary use case is
@@ -41,7 +42,7 @@ timeline:
   - year: 2005
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: b2b-cross-border-payments
     description: "Founded in New York. Initial product: prepaid Mastercard for
       freelancers receiving international payments — at a time when wire transfer
       was the only alternative (high fees, days delay). Founding team Israeli,

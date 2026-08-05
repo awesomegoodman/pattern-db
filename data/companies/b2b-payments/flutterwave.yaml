@@ -1,6 +1,7 @@
 slug: flutterwave
 name: Flutterwave
 domain: b2b-payments
+customer_segment: mixed
 research_queue_source: "OFF_QUEUE:foundation-record"
 founded: 2016
 country: Nigeria
@@ -20,22 +21,21 @@ notable_facts: "Founded by Olugbenga (GB) Agboola and Iyinoluwa Aboyeji in San F
   Customers include Uber, Facebook, Flutterwave Store, AirtelTigo. Products: Rave
   (payment gateway), Barter (consumer wallet), Flutterwave Store (e-commerce). Founded
   by former UBA bank executive (Agboola) and first Africa country manager of Andela
-  (Aboyeji). Both co-founded Andela previously. Strategic distinction from Interswitch:
-  Interswitch built domestic Nigerian rails first then expanded regionally; Flutterwave
-  built pan-African cross-border connectivity first. Together they represent two distinct
-  structural approaches to the African payment infrastructure problem. Regulatory
-  challenges: CBN licence suspended in 2022 (restored 2023); ongoing regulatory
-  navigation across multiple African jurisdictions."
+  (Aboyeji). Strategic distinction from Interswitch: Interswitch built domestic Nigerian
+  rails first then expanded regionally; Flutterwave built pan-African cross-border
+  connectivity first. Regulatory challenges: CBN licence suspended 2022 (restored 2023)."
 implementation_patterns:
   - slug: local-rail-aggregation
     source: Flutterwave S-series funding announcements / CBN regulatory filings
 problems:
   - slug: programmatic-payment-acceptance
-  - slug: cross-border-payment-infrastructure
-    confidence: medium
+  - slug: b2b-cross-border-payments
     notes: "Flutterwave enables cross-border payments within Africa and between Africa
-      and global markets — both acceptance (money in from global platforms) and
-      cross-border transfer (money moving across African countries)."
+      and global markets — both acceptance and cross-border transfer."
+  - slug: c2c-international-remittance
+    confidence: medium
+    notes: "Flutterwave Send App is a consumer remittance product targeting diaspora
+      sending to Africa, distinct from the B2B payment acceptance core business."
 timeline:
   - year: 2016
     event_type: founding
@@ -58,18 +58,15 @@ timeline:
     event_type: funding
     implementation_pattern: local-rail-aggregation
     description: "Series C $170M at $1B valuation — Africa's first payments unicorn
-      by VC valuation (Interswitch reached unicorn status via strategic Visa investment
-      rather than VC round). Processed $9B in payment volume in 2020. 290,000 businesses.
+      by VC valuation. Processed $9B in payment volume in 2020. 290,000 businesses.
       Visa and Mastercard took strategic positions."
     source: TechCrunch Series C announcement
   - year: 2022
     event_type: market_entry
     implementation_pattern: local-rail-aggregation
-    problem: cross-border-payment-infrastructure
+    problem: b2b-cross-border-payments
     description: "Series D $250M at $3B valuation. Expanded to 34 African countries.
       CBN licence suspended August 2022 (restored 2023 after compliance improvements).
-      Regulatory episode illustrates the challenge of maintaining licences across
-      multiple African jurisdictions simultaneously — the capability that the domestic-
-      payment-infrastructure pattern (Interswitch) built deliberately vs Flutterwave's
-      expansion-first approach."
+      Illustrates the challenge of maintaining licences across multiple African
+      jurisdictions simultaneously."
     source: TechCrunch Series D / CBN regulatory notices

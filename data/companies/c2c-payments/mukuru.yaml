@@ -1,6 +1,7 @@
 slug: mukuru
 name: Mukuru
-domain: b2b-payments
+domain: c2c-payments
+customer_segment: c2c
 research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Zimbabwe"
 founded: 2004
 country: Zimbabwe
@@ -33,12 +34,12 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: Apis Partners investment announcement / Mukuru press materials
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: c2c-international-remittance
 timeline:
   - year: 2004
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: c2c-international-remittance
     description: "Founded in Zimbabwe by Andrew Jury to serve the Zimbabwe diaspora
       in South Africa — at the time the primary economic migration corridor as Zimbabwe's
       economy collapsed. Initial product: cash remittances via agent network, enabling

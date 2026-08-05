@@ -1,6 +1,7 @@
 slug: rapyd
 name: Rapyd
 domain: b2b-payments
+customer_segment: b2b
 research_queue_source: "IMPLEMENTATION_FILL:local-rail-aggregation"
 founded: 2016
 country: UK
@@ -34,7 +35,7 @@ implementation_patterns:
     source: Rapyd Series E announcement / company documentation
 problems:
   - slug: programmatic-payment-acceptance
-  - slug: cross-border-payment-infrastructure
+  - slug: b2b-cross-border-payments
     confidence: medium
     notes: "Rapyd enables both local collection (acceptance) and cross-border disbursement.
       The aggregation of 900+ local payment methods addresses both problems simultaneously."

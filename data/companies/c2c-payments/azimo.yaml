@@ -1,6 +1,7 @@
 slug: azimo
 name: Azimo (acquired by Papaya Global 2022)
-domain: b2b-payments
+domain: c2c-payments
+customer_segment: c2c
 research_queue_source: "FAILURE_CASE_NEEDED:cross-border-a2a-infrastructure"
 founded: 2012
 country: UK
@@ -40,12 +41,12 @@ implementation_patterns:
       acquisition well below invested capital. Pattern-structural partially: the
       cross-border A2A model requires scale Azimo did not achieve."
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: c2c-international-remittance
 timeline:
   - year: 2012
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: c2c-international-remittance
     description: "Founded in London by Michael Kent and Boris Druppel. Initial product:
       low-cost international money transfers from Europe to 200+ countries. Direct
       competitor to Wise (then TransferWise), launched in same year. Both targeted

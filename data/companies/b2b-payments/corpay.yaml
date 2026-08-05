@@ -1,6 +1,7 @@
 slug: corpay
 name: Corpay (formerly FleetCor Technologies)
 domain: b2b-payments
+customer_segment: b2b
 research_queue_source: "STRONG_VALIDATOR_NEEDED:accounts-payable-automation"
 founded: 2000
 country: USA
@@ -36,7 +37,7 @@ implementation_patterns:
       management — a superset of AP automation."
 problems:
   - slug: programmatic-payment-disbursement
-  - slug: cross-border-payment-infrastructure
+  - slug: b2b-cross-border-payments
     confidence: medium
     notes: "Cambridge Global acquisition 2019 expanded Corpay into cross-border B2B
       FX and payments — directly addresses cross-border payment infrastructure problem."
@@ -60,7 +61,7 @@ timeline:
     source: NYSE IPO prospectus / SEC filing
   - year: 2019
     event_type: acquisition
-    problem: cross-border-payment-infrastructure
+    problem: b2b-cross-border-payments
     description: "Acquired Cambridge Global Payments (now Corpay Cross-Border) for
       $900M — major expansion into cross-border B2B FX and international payments.
       Cambridge had $30B in annual FX volume and 12,000 corporate clients. This

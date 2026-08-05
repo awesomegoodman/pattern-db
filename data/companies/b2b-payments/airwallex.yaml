@@ -1,6 +1,7 @@
 slug: airwallex
 name: Airwallex
 domain: b2b-payments
+customer_segment: b2b
 research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
 founded: 2015
 country: Australia
@@ -32,7 +33,7 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: Airwallex Series F announcement / company press materials
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: b2b-cross-border-payments
   - slug: programmatic-payment-disbursement
     confidence: medium
     notes: "Airwallex enables both sides: cross-border money movement (infrastructure)
@@ -41,7 +42,7 @@ timeline:
   - year: 2015
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: b2b-cross-border-payments
     description: "Founded in Melbourne by four University of Melbourne alumni. Founding
       motivation: personal experience of excessive FX fees while running a coffee
       import business between Australia and China. Initial product: API-first

@@ -1,6 +1,7 @@
 slug: lemfi
 name: LemFi (formerly Lemonade Finance)
-domain: b2b-payments
+domain: c2c-payments
+customer_segment: c2c
 research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Nigeria"
 founded: 2020
 country: UK
@@ -28,12 +29,12 @@ implementation_patterns:
   - slug: cross-border-a2a-infrastructure
     source: YC W21 / Series A announcement / LemFi product documentation
 problems:
-  - slug: cross-border-payment-infrastructure
+  - slug: c2c-international-remittance
 timeline:
   - year: 2020
     event_type: founding
     implementation_pattern: cross-border-a2a-infrastructure
-    problem: cross-border-payment-infrastructure
+    problem: c2c-international-remittance
     description: "Founded in London by Ridwan Olalere and Rian Cochran. Initial
       product: low-cost international transfers from UK to Nigeria, Kenya, Ghana.
       Founding insight: African diaspora in the UK pay 4-7% of remittance value in
