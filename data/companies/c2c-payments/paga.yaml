@@ -1,0 +1,72 @@
+slug: paga
+name: Paga
+domain: c2c-payments
+customer_segment: c2c
+research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
+founded: 2009
+country: Nigeria
+status: operating
+stage: series_b
+funding_history: "Seed 2009. Series A $5M 2012 (Adlevo Capital, Omidyar Network).
+  Series B $10M 2015. Undisclosed rounds through 2021. Total raised: ~$35M+.
+  Primarily bootstrapped relative to peers — Flutterwave raised 13x as much.
+  No external funding since 2021: profitability proxy applies."
+revenue_signal: "10-100M"
+profitability_signal: estimated_profitable_proxy
+profitability_proxy_applied: true
+evidence_weight: strong_validator
+signal_confidence: low
+notable_facts: "Founded by Jay Alabraba, Emeka Okoye, and Chris Burkmenn. 17M+
+  customers, 50,000+ agent locations across Nigeria. Processes 6M+ transactions/month
+  (2023 claim). B2B payments infrastructure layer for Nigerian businesses also offered
+  (Paga for Business) — primarily C2C by volume. One of Nigeria's oldest surviving
+  fintech companies. The agent network model in Nigeria is structurally distinct from
+  Western Union: Paga agents are primarily airtime resellers and small retail shops
+  converted to mobile money agents — same conversion model as M-Pesa's original
+  Kenya playbook. Profitability proxy applied: no external funding since 2021 +
+  15 years operating = Estimated profitable. Signal confidence Low — not equivalent
+  to Known profitable. Fills IMPLEMENTATION_FILL on cross-border-a2a-infrastructure
+  AND adds a non-UK/non-US C2C operator with an agent-network distribution model
+  distinct from app-first peers (Grey, LemFi, NALA)."
+implementation_patterns:
+  - slug: agent-network-remittance
+    source: Paga company website / CB Insights profile
+    notes: "Nigerian agent-network variant. Built agent network through existing
+      informal retail infrastructure rather than dedicated financial service agents.
+      Same structural approach as M-Pesa Kenya but in a market with higher smartphone
+      penetration — creates a hybrid agent-plus-app model."
+  - slug: cross-border-a2a-infrastructure
+    confidence: medium
+    source: Paga cross-border transfer product 2022
+    notes: "Added cross-border transfer capability 2022 — Nigeria to diaspora destinations.
+      Secondary pattern; agent network remains primary."
+problems:
+  - slug: c2c-international-remittance
+timeline:
+  - year: 2009
+    event_type: founding
+    implementation_pattern: agent-network-remittance
+    problem: c2c-international-remittance
+    description: "Founded by Jay Alabraba (ex-McKinsey Nigeria) with explicit thesis:
+      replicate M-Pesa Kenya model in Nigeria. Initial product: mobile money via
+      agent network targeting the 60%+ of Nigerians without bank accounts in 2009."
+    source: Paga founder interviews / CB Insights profile
+  - year: 2015
+    event_type: product_launch
+    implementation_pattern: agent-network-remittance
+    description: "Launched Paga for Business — B2B payment disbursement layer built
+      on top of the consumer agent network. Businesses pay suppliers and employees
+      via the same agent infrastructure. Demonstrates capability reuse: agent network
+      built for C2C creates distribution for B2B disbursement at low marginal cost."
+    capability_deployed: "Existing 25,000+ agent network and consumer trust —
+      businesses could disburse to any Paga customer via existing rails."
+    source: Paga product announcements 2015
+  - year: 2022
+    event_type: market_entry
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: c2c-international-remittance
+    description: "Launched cross-border transfer: Nigeria to UK, USA, Canada corridors.
+      Expansion into A2A infrastructure built on existing Nigerian customer base.
+      Positions Paga against Grey, LemFi, and NALA on outbound Nigerian diaspora
+      corridors."
+    source: Paga cross-border launch announcement 2022

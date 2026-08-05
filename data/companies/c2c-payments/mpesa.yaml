@@ -1,0 +1,83 @@
+slug: mpesa
+name: M-Pesa (Safaricom)
+domain: c2c-payments
+customer_segment: c2c
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2007
+country: Kenya
+status: operating
+stage: public
+funding_history: "Launched by Safaricom (Kenya) in 2007. Safaricom is publicly listed
+  on Nairobi Securities Exchange (NSE: SCOM) and partially owned by Vodafone/Vodacom
+  (40%) and Kenyan government (35%). M-Pesa is a product line of Safaricom, not a
+  separate entity — M-Pesa revenue and costs disclosed separately in Safaricom annual
+  reports. No external VC funding — telco-funded product launch."
+revenue_signal: ">100M"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "M-Pesa FY2024 revenue: KES 139.9B (~$1.08B USD) per Safaricom FY2024 annual report.
+  32.4M active M-Pesa customers in Kenya; 66.2M total across all markets (Kenya, Tanzania, Mozambique, DRC, Lesotho, Ghana, Ethiopia) per Safaricom FY2024 (Kenya, Tanzania, Mozambique, DRC, Lesotho, Ghana,
+  Ethiopia). 262,309 active M-Pesa agents in Kenya per FY2024 annual report. Processes more transactions per year than
+  Kenya's entire formal banking system. Reached profitability within 3 years of
+  launch (2010). Launched by Safaricom CEO Michael Joseph and Nick Hughes (Vodafone).
+  Original thesis: airtime distribution agents already existed across Kenya; converting
+  them to mobile money agents required almost no new infrastructure. Structural
+  insight: SIM registration provided KYC at zero marginal cost; airtime billing
+  infrastructure provided payment rails at zero marginal cost. The telco-owned model
+  is structurally distinct from both agent-network-remittance (Western Union) and
+  cross-border-a2a-infrastructure (Wise): the telco owns the rail, not just the
+  product sitting on top of it. Expansion to Ethiopia 2022: launched in a market
+  where formal banking penetration is <5% — the strongest possible test of the
+  model's applicability to underbanked markets."
+implementation_patterns:
+  - slug: mobile-money-network
+    source: Safaricom FY2024 Annual Report / M-Pesa Foundation data
+  - slug: cross-border-a2a-infrastructure
+    confidence: medium
+    source: M-Pesa GlobalPay product launch 2021
+    notes: "M-Pesa GlobalPay (2021) extended into cross-border A2A via Visa virtual
+      card integration — allowing M-Pesa wallets to send to international recipients.
+      Secondary pattern to the primary mobile-money-network instantiation."
+problems:
+  - slug: c2c-international-remittance
+timeline:
+  - year: 2007
+    event_type: founding
+    implementation_pattern: mobile-money-network
+    problem: c2c-international-remittance
+    description: "M-Pesa launched by Safaricom in Kenya. Initial use case: microfinance
+      loan repayment via SMS. Immediately repurposed by users for P2P transfers —
+      Safaricom observed users sending airtime as a proxy for money before the product
+      launched and designed M-Pesa to formalise what was already happening informally."
+    source: Safaricom company history / Nick Hughes (Vodafone) founder interviews
+  - year: 2010
+    event_type: product_launch
+    implementation_pattern: mobile-money-network
+    description: "M-Pesa reached profitability — 3 years after launch. 10M+ customers,
+      20,000+ agents. Kenyan government formally integrated M-Pesa into tax collection
+      infrastructure — first government-mandated mobile money integration globally.
+      This integration created a non-optional use case that anchored M-Pesa as
+      infrastructure rather than a consumer product."
+    source: Safaricom FY2010 Annual Report / Kenyan Revenue Authority records
+  - year: 2012
+    event_type: market_entry
+    implementation_pattern: mobile-money-network
+    description: "Expanded to Tanzania and South Africa via Vodacom (Vodafone subsidiary).
+      South Africa expansion failed — South Africa had significantly higher formal
+      banking penetration than Kenya, removing M-Pesa's core structural advantage.
+      Tanzania succeeded. This is the dataset's clearest natural experiment on the
+      winning condition: mobile-money-network wins when formal banking penetration
+      is low enough that the unbanked population represents a material market."
+    source: Safaricom expansion announcements / Vodacom South Africa exit 2016
+  - year: 2021
+    event_type: product_launch
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: c2c-international-remittance
+    description: "Launched M-Pesa GlobalPay — cross-border transfers via Visa virtual
+      card infrastructure. Enabled M-Pesa wallet holders to send to recipients in
+      countries with no M-Pesa presence. First move from domestic mobile-money-network
+      to cross-border A2A infrastructure."
+    capability_deployed: "51M+ registered M-Pesa customers and 600,000+ agent network
+      provided distribution for GlobalPay at zero additional CAC."
+    source: Safaricom M-Pesa GlobalPay launch announcement 2021

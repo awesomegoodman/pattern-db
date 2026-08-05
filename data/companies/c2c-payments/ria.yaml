@@ -1,0 +1,64 @@
+slug: ria
+name: Ria Money Transfer (Euronet Worldwide)
+domain: c2c-payments
+customer_segment: c2c
+research_queue_source: "STRONG_VALIDATOR_NEEDED:cross-border-a2a-infrastructure"
+founded: 1987
+country: USA
+status: operating
+stage: public
+funding_history: "Founded 1987 as Ria Financial Services. Acquired by Euronet Worldwide
+  (NASDAQ: EEFT) in 2007 for $520M. Disclosed separately in Euronet earnings as
+  the Money Transfer segment. Euronet market cap ~$3B (2024). No external VC — 
+  Euronet-funded since acquisition."
+revenue_signal: ">100M"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "Euronet Money Transfer segment revenue (Ria + Xe + HiFX combined): $1.6B 2023 per Euronet 10-K (NASDAQ: EEFT). Ria-only revenue not disclosed separately. Segment EBITDA $216M 2023 (profitable). ~42% of Euronet consolidated revenues. Third largest money transfer operator globally by transaction volume
+  (behind Western Union and MoneyGram, ahead of Wise by transaction count if not by
+  digital volume). 540,000+ agent locations across 194 countries per Euronet Q3 2023 earnings call. Serves predominantly
+  Latino diaspora in the US-to-Latin America corridor — highest volume single corridor
+  globally. Also operates xe.com (FX data and transfer) and HiFX (UK-based FX).
+  Distinct from Western Union: Ria built specifically for specific diaspora corridors
+  rather than universal coverage. This corridor specialisation allows deeper agent
+  network penetration in target geographies at lower cost than Western Union's
+  universal model. Profitable and self-sustaining for 35+ years — strongest available
+  strong validator for the agent-network-remittance pattern after Western Union."
+implementation_patterns:
+  - slug: agent-network-remittance
+    source: Euronet 2023 10-K Money Transfer segment / Ria corporate website
+    notes: "Third-largest global instantiation. Corridor-specialised variant: concentrated
+      agent network in US-LatAm corridor rather than universal coverage. Validates
+      that corridor specialisation is a viable alternative to Western Union's universal
+      model within the same agent-network pattern."
+problems:
+  - slug: c2c-international-remittance
+timeline:
+  - year: 1987
+    event_type: founding
+    implementation_pattern: agent-network-remittance
+    problem: c2c-international-remittance
+    description: "Founded as Ria Financial Services in New York by Héctor Cañas.
+      Initial focus: US-to-Latin America remittance corridor serving Latino diaspora.
+      Agent network built through existing Latino-community businesses (bodegas,
+      laundromats, travel agencies) — distribution through existing community trust
+      rather than building new agent relationships from scratch."
+    source: Ria company history / Euronet acquisition documents 2007
+  - year: 2007
+    event_type: acquisition
+    implementation_pattern: agent-network-remittance
+    description: "Acquired by Euronet Worldwide for $520M. At acquisition: $400M+
+      revenue, operations in 100+ countries. Euronet provided capital for geographic
+      expansion while Ria maintained brand and operational independence. Acquisition
+      also brought xe.com (FX rate provider) into the group."
+    source: Euronet 2007 acquisition announcement / SEC Form 8-K
+  - year: 2023
+    event_type: product_launch
+    implementation_pattern: agent-network-remittance
+    description: "Launched Ria digital app — direct response to Wise, Remitly, and
+      LemFi digital competition. Euronet Money Transfer segment $1.6B 2023 (Ria + Xe combined), EBITDA $216M.
+      Digital channel growing but agent network remains primary volume driver.
+      xe.com integration enables FX rate transparency that differentiates Ria from
+      Western Union on pricing perception."
+    source: Euronet 2023 Annual Report / Q4 2023 earnings call transcript

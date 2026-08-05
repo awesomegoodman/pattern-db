@@ -235,3 +235,43 @@
     baas-middleware, but the abstraction layer is software-only, not a ledger.
     Status quo displaced: direct banking licence application (2-5 years) and
     baas-middleware (now dead)."
+
+- slug: agent-network-remittance
+  name: Agent network remittance
+  solution_pattern: cross-border-payment-network
+  first_observed: 1871
+  status: live
+  business_model: Per-transaction fee (flat or percentage) plus FX spread
+  pricing_signal: <100/mo
+  notes: "The original cross-border money movement pattern. Physical agent locations
+    (retail stores, post offices, pharmacies) act as cash-in and cash-out points.
+    Sender deposits cash at origin agent; recipient collects cash at destination agent.
+    Western Union is the canonical 150-year instantiation. Structural advantage over
+    digital-first: reaches unbanked populations and rural geographies where smartphones
+    and bank accounts are absent. Structural disadvantage: agent commission cost floor
+    makes fee compression impossible beyond a point — exactly the opening Wise, Remitly,
+    and LemFi exploited. Pattern is not dead: 700M+ people remain unbanked globally
+    and agent networks are the only practical rail for many corridors. Mechanism:
+    coordination — matches cash at origin to cash at destination via agent float.
+    Status quo displaced: informal hawala networks, physical cash transport."
+
+- slug: mobile-money-network
+  name: Telco-owned mobile money network
+  solution_pattern: cross-border-payment-network
+  first_observed: 2007
+  status: live
+  business_model: Per-transaction fee (percentage of transfer value)
+  pricing_signal: <100/mo
+  notes: "Mobile money infrastructure owned and operated by a telecommunications company,
+    using the telco's existing subscriber base and airtime distribution network as
+    the distribution channel. Structurally distinct from both agent-network-remittance
+    (no telco ownership, no SIM-based wallet) and cross-border-a2a-infrastructure
+    (telco owns the rail rather than sitting on top of banking rails). M-Pesa (Safaricom,
+    Kenya) is the canonical instantiation — launched 2007, reached profitability within
+    3 years, now processes more transactions than Kenya's entire banking system.
+    Key structural insight: telco already has billing infrastructure, agent network
+    (airtime resellers), KYC from SIM registration, and daily customer touch. Payment
+    is a zero-marginal-cost add-on to an existing distribution asset. Mechanism:
+    aggregation — aggregates existing telco subscriber relationships into a payment
+    network. Status quo displaced: bank branches (inaccessible to rural/unbanked),
+    cash, informal transfers."

@@ -1,0 +1,73 @@
+slug: moneygram
+name: MoneyGram International
+domain: c2c-payments
+customer_segment: c2c
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 1940
+country: USA
+status: acquired
+stage: series_c
+funding_history: "Founded 1940 as Travelers Express. Public (NASDAQ: MGI) until
+  acquisition. Near-bankruptcy 2018-2019 — failed Ant Group acquisition ($1.8B) blocked
+  by CFIUS on national security grounds 2018; subsequent emergency capital raises.
+  Acquired by Madison Dearborn Partners for $1.8B in 2023 — taken private."
+revenue_signal: ">100M"
+profitability_signal: known_unprofitable
+evidence_weight: disconfirming
+signal_confidence: high
+notable_facts: "DISCONFIRMING CASE — High failure attribution confidence. The agent
+  network remittance pattern's failure to adapt to digital-first competition is most
+  clearly documented in MoneyGram rather than Western Union. 2018: Ant Group attempted
+  $1.8B acquisition; blocked by CFIUS. 2019: Stock fell 90%+ from 2015 peak as
+  Remitly, Wise, and WorldRemit took share. 2023: Taken private by Madison Dearborn
+  at fraction of peak valuation. Failure mode: agent-network cost structure (agent
+  commissions + physical infrastructure) created a fee floor that digital-first
+  competitors undercut by 60-70% on major corridors. MoneyGram could not match
+  digital pricing without destroying agent economics that underpinned its distribution.
+  Distinct from Western Union failure mode: Western Union has sufficient scale and
+  digital revenue to sustain the transition; MoneyGram did not reach digital scale
+  before its agent business eroded. Failure attribution confidence: High — documented
+  in SEC filings, analyst reports, and contemporaneous press."
+implementation_patterns:
+  - slug: agent-network-remittance
+    source: MoneyGram SEC filings / Madison Dearborn acquisition announcement
+    notes: "DISCONFIRMING. Second agent-network instantiation with documented failure
+      trajectory. Failure mode differs from Western Union: insufficient scale to absorb
+      digital transition costs while maintaining agent network economics."
+problems:
+  - slug: c2c-international-remittance
+timeline:
+  - year: 1940
+    event_type: founding
+    implementation_pattern: agent-network-remittance
+    problem: c2c-international-remittance
+    description: "Founded as Travelers Express in Minneapolis. Money order and money
+      transfer via agent network. Rebranded MoneyGram International 1996."
+    source: MoneyGram company history
+  - year: 2008
+    event_type: pivot
+    implementation_pattern: agent-network-remittance
+    description: "Near-collapse during 2008 financial crisis due to investment losses
+      in mortgage-backed securities. Required $1.5B emergency recapitalisation from
+      Thomas H. Lee Partners and Goldman Sachs. First major evidence of structural
+      fragility — agent-network model generates thin margins that leave no buffer
+      for capital losses."
+    source: MoneyGram 2008 SEC filings / Bloomberg reporting
+  - year: 2018
+    event_type: acquisition
+    implementation_pattern: agent-network-remittance
+    description: "Ant Group (Alibaba affiliate) proposed $1.8B acquisition blocked by
+      CFIUS on national security grounds — the largest CFIUS-blocked transaction at
+      the time. Blocking removed the one structural exit that would have given MoneyGram
+      access to Alipay's digital distribution network. Without this acquisition,
+      MoneyGram had no path to digital scale."
+    source: CFIUS blocking order January 2018 / WSJ reporting
+  - year: 2023
+    event_type: acquisition
+    implementation_pattern: agent-network-remittance
+    description: "Taken private by Madison Dearborn Partners for $1.8B. Delisted from
+      NASDAQ. Revenue was $1.31B in 2022 (last full public year before acquisition); $900M was 2019 revenue during pandemic trough. Agent transaction volume
+      declining 8-12% annually as digital alternatives captured corridor share.
+      Acquisition price implies terminal value assumptions — private equity turnaround
+      rather than growth investment."
+    source: MoneyGram 2023 acquisition announcement / SEC final 10-K

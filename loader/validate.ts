@@ -50,7 +50,7 @@ export const BoundaryCaseSchema = z.object({
 });
 
 export const TimelineEntrySchema = z.object({
-  year: z.number().int().min(1900).max(2100),
+  year: z.number().int().min(1800).max(2100),
   event_type: z.enum(["founding","product_launch","market_entry","acquisition","pivot","shutdown","capability_acquisition","funding"]),
   implementation_pattern: slug.optional(),
   problem: slug.optional(),

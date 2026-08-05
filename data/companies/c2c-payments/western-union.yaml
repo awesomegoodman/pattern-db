@@ -1,0 +1,71 @@
+slug: western-union
+name: Western Union
+domain: c2c-payments
+customer_segment: c2c
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 1851
+country: USA
+status: operating
+stage: public
+funding_history: "Founded 1851 as New York and Mississippi Valley Printing Telegraph
+  Company. NYSE listed (WU) since 2006 spin-off from First Data Corporation. Self-sustaining
+  for 170+ years — no venture funding. Revenue from operations throughout."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "2023 revenue $4.4B (public filing, NYSE: WU). Net income $626M 2023.
+  ~380,000 agent locations actively conducting transfers across 200+ countries (total network larger; active locations per 2024 10-K) and territories. Processes ~$100B+
+  in annual consumer-to-consumer transfer volume. The status quo being displaced by
+  digital-first operators. Structural cost floor: agent commission (typically 15-20%
+  of fee revenue) makes fee compression below ~$5-8/transfer structurally difficult —
+  exactly the gap Wise, Remitly, and LemFi exploit. 2023 CEO change: Devin McGranahan
+  replaced Hikmet Ersek, signalling digital pivot attempt. Digital channel now ~25%
+  of transactions but agent network remains core. Represents a distinct and historically
+  validated implementation pattern (agent-network-remittance) absent from the dataset
+  until this entry. Without this record the dataset has no documentation of the
+  status quo being displaced."
+implementation_patterns:
+  - slug: agent-network-remittance
+    source: Western Union 2023 Annual Report / NYSE WU public filings
+    notes: "Canonical 150-year instantiation. Agent network is the moat and the cost
+      floor simultaneously — the same asset that gives geographic reach prevents fee
+      compression below the agent commission floor."
+problems:
+  - slug: c2c-international-remittance
+timeline:
+  - year: 1871
+    event_type: founding
+    implementation_pattern: agent-network-remittance
+    problem: c2c-international-remittance
+    description: "Western Union launched its money transfer service in 1871, originally
+      using its telegraph network as the coordination rail. Sender deposited cash at
+      one telegraph office; recipient collected at another. The agent-network model
+      has not changed structurally in 150 years — only the coordination rail has
+      (telegraph → telex → proprietary network → digital)."
+    source: Western Union company history / FTC historical records
+  - year: 2006
+    event_type: funding
+    implementation_pattern: agent-network-remittance
+    description: "Spun off from First Data Corporation and listed on NYSE as WU.
+      At spin-off: $3.7B revenue, 290,000 agent locations, operations in 200+ countries.
+      Spin-off crystallised Western Union as a pure-play money transfer business
+      rather than a payments services subsidiary."
+    source: Western Union 2006 Form 10-K / NYSE listing documents
+  - year: 2019
+    event_type: market_entry
+    implementation_pattern: agent-network-remittance
+    description: "Launched WU.com digital channel as primary response to Wise, Remitly,
+      and digital-first competition. Digital transactions grew from <5% to ~25% of
+      volume by 2023. Agent network maintained in parallel — digital has not displaced
+      physical, it has been layered on top."
+    source: Western Union 2019-2023 Annual Reports
+  - year: 2023
+    event_type: pivot
+    implementation_pattern: agent-network-remittance
+    description: "CEO change (Devin McGranahan). Announced 'Evolve 2025' strategy
+      with explicit digital-first repositioning. Revenue $4.4B, net income $598M.
+      Fee revenue per transaction declining as digital channel cannibalises higher-margin
+      agent transactions. Structural tension: digital channel growth reduces agent
+      dependency but also reduces per-transaction revenue."
+    source: Western Union 2023 Annual Report / Q4 2023 earnings call

@@ -1,0 +1,64 @@
+slug: paysend
+name: Paysend
+domain: c2c-payments
+customer_segment: c2c
+research_queue_source: "IMPLEMENTATION_FILL:cross-border-a2a-infrastructure"
+founded: 2017
+country: UK
+status: operating
+stage: series_b
+funding_history: "Seed 2017 (internal). Series A $20M 2019 (One Peak Partners).
+  Series B $125M 2021 at $700M valuation (One Peak Partners lead, Infravia Growth).
+  Total: $145M+ raised. No external funding since 2021."
+revenue_signal: "10-100M"
+profitability_signal: estimated_profitable_proxy
+profitability_proxy_applied: true
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Ronald Millar and Dmitry Avdeev. 7M+ customers, 170+
+  countries, 40+ currencies. Primary product: flat-fee cross-border card-to-card
+  transfer ($2 flat fee per transfer regardless of amount — structural differentiator
+  from percentage-based competitors). The flat fee model is a deliberate structural
+  bet: at high transfer amounts, $2 flat fee is dramatically cheaper than Wise's
+  0.45% FX fee; at low amounts, it is more expensive. This implies Paysend is
+  targeting higher-ticket diaspora transfers (e.g. rent, tuition) rather than
+  frequent low-value transfers. Card-to-card rather than bank-to-bank is also
+  structurally distinct from Wise and Remitly — recipients do not need a bank account,
+  only a debit card, which extends reach to partially-banked populations.
+  Profitability proxy applied: no external funding since 2021 + 7 years operating.
+  Signal confidence Low. Fills IMPLEMENTATION_FILL on cross-border-a2a-infrastructure
+  with a flat-fee pricing variant not otherwise represented in the dataset."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: Paysend corporate website / Series B announcement
+    notes: "Card-to-card variant of A2A infrastructure. Structurally distinct from
+      bank-to-bank (Wise, Remitly) in two ways: (1) flat fee pricing vs percentage,
+      (2) card-to-card delivery vs bank account delivery. Extends reach to
+      partially-banked recipients."
+problems:
+  - slug: c2c-international-remittance
+timeline:
+  - year: 2017
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: c2c-international-remittance
+    description: "Founded in London by Ronald Millar (former Visa executive) and
+      Dmitry Avdeev. Initial product: card-to-card international money transfer at
+      $2 flat fee. Millar's Visa background provided direct card scheme access —
+      the capability that enabled card-to-card delivery without bank intermediation."
+    source: Paysend company history / Series A announcement
+  - year: 2019
+    event_type: funding
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Series A $20M (One Peak Partners). 1M+ customers. Operating in
+      50+ countries. Flat-fee model validated: customer acquisition cost lower than
+      Wise and Remitly on high-ticket transfer corridors where $2 fee represents
+      a fraction of percentage-based competitor pricing."
+    source: Paysend Series A announcement / One Peak Partners press release
+  - year: 2021
+    event_type: funding
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Series B $125M at $700M valuation. 5M+ customers, 150+ countries.
+      No external funding since this round — 4 years of operation without capital
+      injection. Profitability proxy threshold met."
+    source: Paysend Series B announcement / Infravia Growth press release

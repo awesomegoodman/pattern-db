@@ -1,0 +1,70 @@
+slug: thunes
+name: Thunes
+domain: b2b-payments
+customer_segment: b2b
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2016
+country: Singapore
+status: operating
+stage: series_c
+funding_history: "Series A $10M 2019 (GGV Capital, Future Shape). Series B $60M
+  2021 (Helios Investment Partners, Standard Chartered, Visa, Future Shape). Series C
+  $72M 2023 (Marshall Wace, Standard Chartered). Total: $142M+ raised."
+revenue_signal: "10-100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Founded by Peter De Caluwe. Operates a B2B payment network connecting
+  remittance operators, digital wallets, and banks across 130+ countries and 80+
+  currencies. Structural position: Thunes is infrastructure for other payment companies
+  — it connects LemFi, NALA, and similar C2C operators to local payout rails they
+  could not build individually. This is the B2B layer enabling the C2C layer. Distinct
+  from Wise and Airwallex: those companies build consumer or SMB-facing products;
+  Thunes builds the B2B rail that consumer-facing companies connect to. Think of
+  Thunes as the payments equivalent of AWS — it is the infrastructure layer underneath
+  the product layer. Standard Chartered and Visa strategic investments signal the
+  incumbent recognition that B2B payment network infrastructure is strategically valuable.
+  Singapore HQ is deliberate: MAS regulatory framework, proximity to ASEAN payment
+  corridors, and access to the Singapore-based international financial hub. Fills a
+  structural gap: no existing dataset entry captured the B2B-infrastructure-for-C2C-operators
+  position, which is a distinct implementation pattern from both B2B-cross-border-payments
+  (serving end businesses) and C2C-remittance (serving end consumers)."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: Thunes network coverage data / Series C announcement
+    notes: "B2B variant: Thunes connects payment operators to each other rather than
+      connecting individuals to recipients. The A2A mechanism is the same but the
+      customer is another payment company, not a consumer."
+problems:
+  - slug: b2b-cross-border-payments
+    notes: "Thunes solves the problem for payment operators: a remittance company
+      cannot build 130-country payout rail integrations individually. Thunes
+      provides the network as a service."
+timeline:
+  - year: 2016
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: b2b-cross-border-payments
+    description: "Founded as TransferTo Network by Peter De Caluwe. Initial product:
+      B2B airtime top-up network connecting mobile operators across emerging markets.
+      Rebranded Thunes 2019 when pivoting from airtime to full payment network."
+    source: Thunes company history / TransferTo rebranding announcement
+  - year: 2021
+    event_type: product_launch
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Series B $60M. Standard Chartered and Visa invested strategically.
+      Expanded from airtime top-up to full payment network: bank accounts, mobile
+      wallets, cash pickup. 100+ countries, 60+ currencies. Standard Chartered
+      investment enabled direct bank rail access in markets where Thunes previously
+      relied on third-party banking relationships."
+    capability_acquired: "Standard Chartered banking relationships in 50+ markets —
+      reduced dependency on third-party correspondent banks and lowered per-transaction
+      settlement cost."
+    source: Thunes Series B announcement / Standard Chartered strategic investment press release
+  - year: 2023
+    event_type: funding
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Series C $72M (Marshall Wace, Standard Chartered). 130+ countries,
+      80+ currencies, 7B+ wallet endpoints reachable. Customers include major remittance
+      operators, digital banks, and gig economy platforms needing mass payout capability."
+    source: Thunes Series C announcement 2023

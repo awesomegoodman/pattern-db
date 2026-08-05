@@ -1,0 +1,79 @@
+slug: gcash
+name: GCash (Mynt)
+domain: c2c-payments
+customer_segment: c2c
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2004
+country: Philippines
+status: operating
+stage: unicorn
+funding_history: "Launched 2004 by Globe Telecom as a mobile money product. Spun out
+  into Mynt (Globe Fintech Innovations) in 2015. Series A: Ant Group invested 2021
+  ($175M at $1B+ valuation — unicorn). Series B: $300M 2022 at $2B valuation (Warburg
+  Pincus, Bow Wave Capital, Amplo, Globe Telecom, Ant Group). Total: $475M+ raised
+  as Mynt. Globe Telecom retains majority ownership."
+revenue_signal: ">100M"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "GCash profitable from 2022 — CEO Martha Sazon stated profitable three years ahead of plan. 2023 net income PHP 6.7B (~$115M) per Globe Telecom annual report. 94M+ registered users. PHP 1.5 trillion total transaction value. $5B valuation after MUFG acquired 8% stake for $393M August 2024. Mynt filed IPO prospectus June 2026 on Philippine Stock Exchange.
+  Products: P2P transfer, bills payment, GSave (deposits), GInvest (mutual funds),
+  GLoan, QR payments. Ant Group's 2021 investment was strategic: GCash adopted
+  Alipay's technical infrastructure and product playbook for the Philippine market.
+  Structural parallel to M-Pesa: Globe Telecom's existing subscriber base and airtime
+  distribution network provided zero-CAC distribution at launch. Key difference from
+  M-Pesa: Philippines had higher smartphone penetration at launch — GCash is primarily
+  app-based rather than USSD/SMS-based. Fills domestic-payment-infrastructure with a
+  Southeast Asia strong validator. Natural experiment vs M-Pesa: similar telco-owned
+  model, different market conditions (higher banked population, higher smartphone
+  penetration), similar outcome (dominant market position). Validates the model
+  transfers across different starting conditions."
+implementation_patterns:
+  - slug: mobile-money-network
+    source: Globe Telecom annual reports / Mynt Series B announcement
+  - slug: domestic-payment-infrastructure
+    confidence: medium
+    source: GCash QR payment network coverage data 2023
+    notes: "GCash QR network accepted at 5M+ merchant locations across Philippines —
+      de facto domestic payment infrastructure for digital transactions."
+problems:
+  - slug: c2c-international-remittance
+timeline:
+  - year: 2004
+    event_type: founding
+    implementation_pattern: mobile-money-network
+    problem: c2c-international-remittance
+    description: "Launched by Globe Telecom as SMS-based mobile money service. Initial
+      use case: airtime transfer and bill payment. P2P money transfer added as primary
+      use case when users demonstrated demand by using airtime transfer as a money proxy
+      — identical origin story to M-Pesa Kenya three years later."
+    source: Globe Telecom company history / GCash product history
+  - year: 2015
+    event_type: pivot
+    implementation_pattern: mobile-money-network
+    description: "Globe Telecom spun GCash out into Mynt (Globe Fintech Innovations)
+      as a separate entity. Pivot from USSD/SMS to app-first model as Philippine
+      smartphone penetration reached critical mass. This pivot is the structural
+      fork from M-Pesa's model: M-Pesa remained USSD-first because Kenya's smartphone
+      penetration was lower; GCash moved to app-first."
+    source: Globe Telecom 2015 Annual Report / Mynt incorporation documents
+  - year: 2021
+    event_type: funding
+    implementation_pattern: mobile-money-network
+    description: "Ant Group invested at $1B+ valuation. GCash adopted Alipay technical
+      infrastructure — payment QR standard, credit scoring model, financial product
+      distribution layer. 55M users at time of investment. Ant investment was strategic:
+      GCash became Alipay's primary vehicle for Philippine market entry without requiring
+      Ant to obtain a Philippine e-money licence directly."
+    capability_acquired: "Alipay technical infrastructure and credit scoring models —
+      enabled GInvest, GLoan, and GSave product launches within 12 months of investment."
+    source: Mynt Series A announcement / Globe Telecom 2021 Annual Report
+  - year: 2022
+    event_type: product_launch
+    implementation_pattern: mobile-money-network
+    description: "First full profitable year declared in Globe Telecom annual report.
+      $300M Series B 2022 ($2B valuation at time); valuation rose to $5B by August 2024 after MUFG investment. 66M users. $60B+ gross transaction value.
+      Profitability achieved via financial services revenue (GInvest, GLoan) layered
+      on top of P2P transfer base — same financial services expansion trajectory
+      as M-Pesa GlobalPay and Gusto Cash Accounts."
+    source: Globe Telecom 2022 Annual Report / Mynt Series B announcement

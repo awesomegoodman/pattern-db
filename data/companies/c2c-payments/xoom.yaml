@@ -1,0 +1,69 @@
+slug: xoom
+name: Xoom (PayPal subsidiary)
+domain: c2c-payments
+customer_segment: c2c
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2001
+country: USA
+status: acquired
+stage: public
+funding_history: "Series A $5M 2001. Series B $13M 2003. Series C $30M 2007. IPO
+  February 2013 (NASDAQ: XOOM) at $300M valuation. Acquired by PayPal July 2015
+  for $890M (3x IPO valuation)."
+revenue_signal: "10-100M"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "Acquired by PayPal for $890M in 2015 — the canonical case of a
+  digital-first C2C remittance operator reaching sufficient scale to be absorbed
+  into a larger payments platform. At acquisition: $234M revenue run rate, 1.3M
+  active customers, operations in 40+ countries. The acquisition documents where
+  value accrues in the C2C remittance chain: at scale, the customer acquisition
+  asset (brand, customer database, established corridors) is more valuable to an
+  acquirer than the underlying technology. Xoom's technology was not proprietary —
+  it used standard banking rails. The asset was the verified customer base and the
+  corridor economics. Post-acquisition: PayPal integrated Xoom as a brand within
+  its platform; product has grown to 160+ countries as of 2024. The acquisition
+  also establishes a baseline exit multiple for digital-first C2C operators:
+  ~3-4x revenue at time of acquisition. This multiple implies Remitly ($1B revenue
+  2023) would theoretically exit at $3-4B — below its current public market cap,
+  which implies the market is pricing future revenue growth, not current multiple."
+implementation_patterns:
+  - slug: cross-border-a2a-infrastructure
+    source: Xoom IPO S-1 filing 2013 / PayPal acquisition 10-K
+    notes: "Early digital-first A2A instantiation. Validated that digital-only
+      distribution (no agent network) could reach material scale in C2C remittance.
+      Acquisition price ($890M on $234M revenue) confirmed the economics at scale."
+problems:
+  - slug: c2c-international-remittance
+timeline:
+  - year: 2001
+    event_type: founding
+    implementation_pattern: cross-border-a2a-infrastructure
+    problem: c2c-international-remittance
+    description: "Founded by Kevin Hartz and John Kunze in San Francisco. Original
+      thesis: internet-enabled money transfer can eliminate Western Union's agent
+      commission cost floor. Early product: bank-to-bank transfer for US-to-Philippines
+      corridor. Philippines was chosen because: large diaspora in California, high
+      remittance dependency (~10% of Philippine GDP), and existing bank infrastructure
+      enabling A2A settlement."
+    source: Xoom IPO S-1 filing 2013
+  - year: 2013
+    event_type: funding
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "IPO on NASDAQ at $300M valuation. At IPO: $130M revenue, 950,000
+      active customers, 40+ countries. S-1 disclosed corridor-level unit economics —
+      the first public documentation of digital C2C remittance economics. Key data:
+      CAC $18-22 per customer, LTV $180-240, 8-12x LTV/CAC ratio. These figures
+      established the benchmark for subsequent C2C operator fundraising."
+    source: Xoom S-1 IPO filing February 2013 / NASDAQ listing documents
+  - year: 2015
+    event_type: acquisition
+    implementation_pattern: cross-border-a2a-infrastructure
+    description: "Acquired by PayPal for $890M — 3.8x revenue multiple. PayPal thesis:
+      Xoom's customer base and corridor infrastructure could be distributed to PayPal's
+      existing 180M active accounts at near-zero marginal cost. Acquisition confirmed
+      that the most valuable asset in digital C2C remittance is the verified corridor
+      customer base, not the technology. Post-acquisition integration took 18 months;
+      Xoom brand maintained as distinct product within PayPal ecosystem."
+    source: PayPal acquisition announcement July 2015 / SEC Form 8-K
