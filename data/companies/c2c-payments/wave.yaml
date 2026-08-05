@@ -1,7 +1,6 @@
 slug: wave-west-africa
 name: Wave Mobile Money
 domain: c2c-payments
-customer_segment: c2c
 research_queue_source: "GEOGRAPHIC_WHITESPACE:local-rail-aggregation:Senegal"
 founded: 2017
 country: Senegal

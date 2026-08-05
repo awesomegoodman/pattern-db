@@ -1,7 +1,6 @@
 slug: chipper-cash
 name: Chipper Cash
 domain: c2c-payments
-customer_segment: c2c
 research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Uganda"
 founded: 2018
 country: USA

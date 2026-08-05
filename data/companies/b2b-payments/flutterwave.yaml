@@ -1,7 +1,6 @@
 slug: flutterwave
 name: Flutterwave
 domain: b2b-payments
-customer_segment: mixed
 research_queue_source: "OFF_QUEUE:foundation-record"
 founded: 2016
 country: Nigeria

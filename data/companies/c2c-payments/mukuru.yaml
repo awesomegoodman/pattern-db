@@ -1,7 +1,6 @@
 slug: mukuru
 name: Mukuru
 domain: c2c-payments
-customer_segment: c2c
 research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Zimbabwe"
 founded: 2004
 country: Zimbabwe

@@ -1,7 +1,6 @@
 slug: nala
 name: NALA
 domain: c2c-payments
-customer_segment: c2c
 research_queue_source: "GEOGRAPHIC_WHITESPACE:cross-border-a2a-infrastructure:Tanzania"
 founded: 2017
 country: Tanzania

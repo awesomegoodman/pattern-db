@@ -1,7 +1,6 @@
 slug: corpay
 name: Corpay (formerly FleetCor Technologies)
 domain: b2b-payments
-customer_segment: b2b
 research_queue_source: "STRONG_VALIDATOR_NEEDED:accounts-payable-automation"
 founded: 2000
 country: USA

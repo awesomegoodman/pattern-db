@@ -1,7 +1,6 @@
 slug: tipalti
 name: Tipalti
 domain: b2b-payments
-customer_segment: b2b
 research_queue_source: "IMPLEMENTATION_FILL:accounts-payable-automation"
 founded: 2010
 country: Israel

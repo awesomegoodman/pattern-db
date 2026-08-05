@@ -1,7 +1,6 @@
 slug: interswitch
 name: Interswitch Group
 domain: b2b-payments
-customer_segment: b2b
 research_queue_source: "OFF_QUEUE:foundation-record"
 founded: 2002
 country: Nigeria
