@@ -25,6 +25,17 @@ function row(label: string, value: any, indent = 2) {
   console.log(`${" ".repeat(indent)}${label.padEnd(26)} ${value ?? "—"}`);
 }
 
+function evidence(n: number | string | null): string {
+  const count = Number(n ?? 0);
+  if (count >= 10) return `Established (${count} companies)`;
+  if (count >= 5)  return `Strong (${count} companies)`;
+  if (count >= 2)  return `Emerging (${count} companies)`;
+  if (count === 1) return `Anecdotal (1 company)`;
+  return `No observations`;
+}
+
+
+
 async function run() {
 
   // Q01: Winning conditions
@@ -60,7 +71,7 @@ async function run() {
 
   for (const r of q01) {
     console.log(`\n  ${r.solution_pattern}`);
-    row("Total companies:", r.total_companies);
+    row("Evidence:", evidence(r.total_companies));
     row("Profitable confirmations:", r.profitable_confirmations);
     row("Disconfirming cases:", r.disconfirming_cases);
     row("Maturity:", r.maturity);
@@ -99,7 +110,8 @@ async function run() {
   for (const r of q02) {
     console.log(`\n  ${r.problem}`);
     console.log(`  -> ${r.business_model}`);
-    row("Total / Profitable / Failed:", `${r.total_companies} / ${r.profitable_confirmations} / ${r.failures}`);
+    row("Evidence:", evidence(r.total_companies));
+    row("Profitable / Failed:", `${r.profitable_confirmations} / ${r.failures}`);
     row("Companies:", r.companies);
   }
 
@@ -133,7 +145,8 @@ async function run() {
     console.log(`\n  FROM: ${r.starting_problem}`);
     console.log(`  INTO: ${r.problem_entered}`);
     row("Years out:", r.years_out);
-    row("Observed / Profitable:", `${r.times_observed} / ${r.confirmed_by_profitable}`);
+    row("Evidence:", evidence(r.times_observed));
+    row("Profitable confirmations:", r.confirmed_by_profitable);
     if (r.capability_deployed) row("Capability:", r.capability_deployed);
     row("Companies:", r.companies);
   }
@@ -168,7 +181,7 @@ async function run() {
 
   for (const r of q04) {
     console.log(`\n  ${r.capability} [${r.maturity} — ${r.sectors_confirmed} sector(s)]`);
-    row("Expansion events:", r.expansion_events);
+    row("Evidence:", evidence(r.expansion_events));
     row("Confirmed by profitable:", r.confirmed_by_profitable);
     row("Problems unlocked:", r.problems_unlocked);
     row("Companies:", r.companies);
@@ -240,7 +253,8 @@ async function run() {
 
   for (const r of q06) {
     console.log(`\n  ${r.problem}`);
-    row("Patterns / Companies:", `${r.pattern_count} / ${r.company_count}`);
+    row("Patterns:", r.pattern_count);
+    row("Evidence:", evidence(r.company_count));
     row("Profitable:", r.profitable_companies);
     row("Companies per pattern:", r.companies_per_pattern);
     row("Patterns:", r.patterns);
@@ -280,7 +294,8 @@ async function run() {
 
   for (const r of q07) {
     console.log(`\n  ${r.problem}`);
-    row("Total / Funded / Failed:", `${r.total_companies} / ${r.funded_unproven} / ${r.failed}`);
+    row("Evidence:", evidence(r.total_companies));
+    row("Funded unproven / Failed:", `${r.funded_unproven} / ${r.failed}`);
     row("Patterns attempted:", r.patterns_attempted);
     row("Companies:", r.companies);
   }
@@ -318,6 +333,7 @@ async function run() {
     console.log(`\n  ${r.implementation_pattern}`);
     row("First observed:", r.first_observed);
     row("Years alive:", r.years_alive);
+    row("Evidence:", evidence(r.total_companies));
     row("Profitable today:", r.profitable_today);
     row("Funded unproven:", r.funded_unproven);
     row("Failed:", r.failed);
