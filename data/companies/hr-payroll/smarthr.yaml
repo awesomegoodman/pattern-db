@@ -1,0 +1,48 @@
+slug: smarthr
+name: SmartHR
+domain: hr-payroll
+founded: 2013
+country: Japan
+status: operating
+stage: series_e
+funding_history: Series A-D 2015-2021. Series D $142.5M 2021 $1.6B valuation. Series E $140M 2024 KKR Teachers Venture
+  Growth. General Atlantic $96M strategic Nov 2025. Total ~$355M+.
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-native-smb-payroll-saas:Japan
+notable_facts: "Founded 2013 Tokyo by Kensuke Naito and Shoji Miyata. Product launched 2015. $100M ARR February 2024 (up
+  from $80M FY2023). Unicorn at $1.6B valuation 2021. 60,000 companies on platform. Investors: KKR Ontario Teachers
+  General Atlantic. Founding insight: Miyata recovered from rare disease using national health insurance but found the
+  administrative paperwork a nightmare — built to automate labour compliance paperwork that is uniquely complex in Japan
+  (employment contracts social insurance year-end tax adjustments). Japan-specific regulatory complexity is the moat:
+  global vendors have historically failed to localise adequately. SmartHR self-compares to Rippling as closest global
+  analogue in products and strategy."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: TechCrunch Jul 2024
+    notes: Japan-native cloud HR. Regulatory complexity moat. Self-compares to Rippling as closest global analogue.
+problems:
+  - slug: wage-compliance
+    source: SmartHR product scope / TechCrunch
+timeline:
+  - year: 2013
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Founded Tokyo Japan by Kensuke Naito and Shoji Miyata. Miyata inspiration: navigating Japan complex health
+      insurance paperwork while ill. Targeted automation of labour compliance paperwork uniquely burdensome in Japan."
+    source: TechCrunch Jul 2024 / Unleash
+  - year: 2021
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series D $142.5M at $1.6B valuation — unicorn. 60,000 companies on platform serving enterprises and SMEs
+      across Japan.
+    source: TechCrunch / Unleash
+  - year: 2024
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series E $140M KKR Ontario Teachers Venture Growth. $100M ARR Feb 2024. General Atlantic $96M strategic
+      investment Nov 2025. Total $355M+.
+    source: TechCrunch Jul 2024 / General Atlantic Nov 2025

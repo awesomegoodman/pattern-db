@@ -1,0 +1,44 @@
+slug: papaya-global
+name: Papaya Global
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2016
+country: Israel
+status: operating
+stage: series_d
+funding_history: $446M total. Series B $40M 2020 (Scale VP lead, Workday Ventures participated). Series D $250M 2021
+  ($3.7B valuation — peak). Bessemer, Insight Partners investors.
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Latka estimates $145M revenue 2024 (up from $100M 2023). Founded by Eynat Guez, Ruben Drong, Ofer Herman
+  in Tel Aviv. Partner model (vs. entity-ownership): uses local providers rather than owning entities per country.
+  Faster geographic expansion but lower margin control and weaker moat than Deel/Remote. Valuation compressed from $3.7B
+  2021 peak. Workday Ventures participation = strategic validation signal."
+implementation_patterns:
+  - slug: global-payroll-eor-platform
+    source: TechCrunch / BusinessWire
+    notes: Partner model (not entity-ownership). Distinct sub-approach within IP-006.
+problems:
+  - slug: cross-border-employment
+timeline:
+  - year: 2016
+    event_type: founding
+    implementation_pattern: global-payroll-eor-platform
+    problem: cross-border-employment
+    description: Founded in Tel Aviv by Eynat Guez, Ruben Drong, Ofer Herman. Cloud-based global payroll via partner model
+      (local providers rather than own entities).
+    source: TechCrunch / BusinessWire
+  - year: 2020
+    event_type: funding
+    implementation_pattern: global-payroll-eor-platform
+    description: Series B $40M (Scale VP lead). Workday Ventures participated — strategic signal of enterprise validation.
+      300% YoY revenue growth at this point.
+    source: TechCrunch
+  - year: 2021
+    event_type: product_launch
+    implementation_pattern: global-payroll-eor-platform
+    description: Series D $250M at $3.7B valuation. Launched Total Payroll — all global payroll through single panel
+      including equity and benefits. Forbes Cloud 100 inclusion.
+    source: BusinessWire

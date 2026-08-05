@@ -1,0 +1,65 @@
+slug: bento-africa
+name: Bento Africa (shut down Feb 2025)
+domain: hr-payroll
+founded: 2019
+country: Nigeria
+status: dead
+stage: seed
+funding_history: Seed round (small, undisclosed). Total funding minimal — seed stage only.
+revenue_signal: <10M
+profitability_signal: known_unprofitable
+evidence_weight: disconfirming
+signal_confidence: high
+research_queue_source: FAILURE_CASE_NEEDED:cloud-native-smb-payroll-saas
+notable_facts: "DISCONFIRMING CASE. Founded 2019 as Verifi by Ebun Okubanjo and Chidozie Okonkwo; rebranded to Bento
+  Africa 2020. Cloud payroll and HR platform for African businesses. At peak: 900+ active Nigerian businesses, customers
+  including Paystack, Moniepoint, Kobo360, Hygeia, Tangerine Africa, Helium Health. FAILURE MECHANISM: Failed to remit
+  tax (PAYE) and pension payments on behalf of clients to LIRS (Lagos Inland Revenue Service) — investigated by LIRS and
+  EFCC (financial crimes). CEO resigned January 2025. High-profile clients Paystack, Moniepoint, Bamboo, Kobo360 exited
+  in 2024 as problems emerged. Operations temporarily halted February 2025. ANALYTICALLY NOTABLE: Failed at the core
+  function it was selling — payroll compliance. This mirrors Zenefits failure mode (compliance non-compliance) but at
+  the execution layer rather than the regulatory-strategy layer. Pattern failure mode: payroll compliance infrastructure
+  requires operational discipline that cannot be shortcut regardless of software quality. Grounds both
+  GEOGRAPHIC_WHITESPACE (Nigeria) and FAILURE_CASE_NEEDED for IP-002."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: TechCabal Jan 2025
+    notes: DISCONFIRMING. Cloud payroll SaaS shut down Feb 2025. Compliance failure.
+problems:
+  - slug: wage-compliance
+    source: TechCrunch Dec 2021
+timeline:
+  - year: 2019
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded as Verifi Lagos Nigeria. Rebranded Bento Africa 2020. Cloud payroll and HR for African SMBs.
+    source: TechCrunch Dec 2021
+  - year: 2019
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded as Verifi Lagos Nigeria. Rebranded Bento Africa 2020. Cloud payroll and HR for African SMBs.
+    source: TechCrunch Dec 2021
+  - year: 2021
+    event_type: market_entry
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Expanded Ghana Kenya Rwanda. 900+ Nigerian businesses including Paystack Moniepoint Kobo360.
+    source: TechCrunch Dec 2021
+  - year: 2021
+    event_type: market_entry
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Expanded Ghana Kenya Rwanda. 900+ Nigerian businesses including Paystack Moniepoint Kobo360.
+    source: TechCrunch Dec 2021
+  - year: 2025
+    event_type: shutdown
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: FAILURE. Investigated LIRS EFCC for failing to remit PAYE tax and pension payments for clients. CEO
+      resigned Jan 2025. Client exodus 2024. Operations halted Feb 2025.
+    source: TechCabal Jan 2025
+  - year: 2025
+    event_type: shutdown
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: FAILURE. Investigated LIRS EFCC for failing to remit PAYE tax and pension payments for clients. CEO
+      resigned Jan 2025. Client exodus 2024. Operations halted Feb 2025.
+    source: TechCabal Jan 2025

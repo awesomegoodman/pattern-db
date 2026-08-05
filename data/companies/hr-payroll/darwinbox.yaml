@@ -1,0 +1,70 @@
+slug: darwinbox
+name: Darwinbox
+domain: hr-payroll
+founded: 2015
+country: India
+status: operating
+stage: series_d
+funding_history: Series A-D 2016-2022 $110M+. Series D $72M 2022 TCV Salesforce Lightspeed Sequoia India at $1B+
+  valuation. Further $140M 2025 KKR Partners Group. Total ~$296M.
+revenue_signal: ">10M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-enterprise-hcm-platform:India
+notable_facts: "Founded 2015 Chaitanya Peddi Jayant Paleti Rohit Chennamaneni Hyderabad India. Latka $100M revenue 2025.
+  FY2025 operating revenue INR 533.9 crore (~$64M) per filings (50% growth). Unicorn 2022. 550+ enterprise customers
+  1.5M+ users. Investors: Microsoft Salesforce Ventures Sequoia TCV Peak XV Lightspeed KKR. Key structural
+  differentiation: mobile-first for deskless workers. In India Southeast Asia Middle East most corporate workers are
+  field staff (delivery retail manufacturing). Legacy HR software requires desktop and high bandwidth — unusable for
+  field staff. Darwinbox lightweight mobile app on low-end smartphones and low-connectivity networks allowed large
+  enterprises in retail logistics hospitality to digitise entire workforce. Clients: Starbucks Dominos Swiggy Kotak LuLu
+  Group. Expanding US MENA. Competing directly with Workday SAP Oracle in Asia-Pacific."
+implementation_patterns:
+  - slug: cloud-enterprise-hcm-platform
+    source: TechCrunch Mar 2025
+    notes: Enterprise HCM for emerging markets. Mobile-first for deskless workers. Competing Workday/Rippling.
+problems:
+  - slug: wage-compliance
+    source: Darwinbox product scope
+timeline:
+  - year: 2015
+    event_type: founding
+    implementation_pattern: cloud-enterprise-hcm-platform
+    problem: wage-compliance
+    description: Founded Hyderabad India Chaitanya Peddi Jayant Paleti Rohit Chennamaneni Vineet Singh. Cloud enterprise HCM
+      mobile-first for deskless workers in emerging markets.
+    source: TechCrunch Mar 2025 / Inc42
+  - year: 2015
+    event_type: founding
+    implementation_pattern: cloud-enterprise-hcm-platform
+    problem: wage-compliance
+    description: Founded Hyderabad India Chaitanya Peddi Jayant Paleti Rohit Chennamaneni Vineet Singh. Cloud enterprise HCM
+      mobile-first for deskless workers in emerging markets.
+    source: TechCrunch Mar 2025 / Inc42
+  - year: 2022
+    event_type: funding
+    implementation_pattern: cloud-enterprise-hcm-platform
+    description: Series D $72M TCV lead Salesforce Lightspeed Sequoia India. $1B+ valuation — unicorn. Expanded MENA. 650+
+      enterprise clients 1.5M+ users.
+    source: TechCrunch / Gulf News
+  - year: 2022
+    event_type: funding
+    implementation_pattern: cloud-enterprise-hcm-platform
+    description: Series D $72M TCV lead Salesforce Lightspeed Sequoia India. $1B+ valuation — unicorn. Expanded MENA. 650+
+      enterprise clients 1.5M+ users.
+    source: TechCrunch / Gulf News
+  - year: 2025
+    event_type: funding
+    implementation_pattern: cloud-enterprise-hcm-platform
+    description: Raised $140M KKR Partners Group (primary and secondary). Targeting US expansion and direct Workday/Rippling
+      competition. FY2025 revenue INR 533.9 crore (~$64M) 50% growth. Investors include Microsoft Salesforce Sequoia TCV
+      Peak XV Lightspeed.
+    source: TechCrunch Mar 2025
+  - year: 2025
+    event_type: funding
+    implementation_pattern: cloud-enterprise-hcm-platform
+    description: Raised $140M KKR Partners Group (primary and secondary). Targeting US expansion and direct Workday/Rippling
+      competition. FY2025 revenue INR 533.9 crore (~$64M) 50% growth. Investors include Microsoft Salesforce Sequoia TCV
+      Peak XV Lightspeed.
+    source: TechCrunch Mar 2025

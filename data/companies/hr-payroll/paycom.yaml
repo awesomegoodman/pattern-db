@@ -1,0 +1,44 @@
+slug: paycom
+name: Paycom Software, Inc.
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 1998
+country: USA
+status: operating
+stage: public
+funding_history: "Self-funded until IPO April 15 2014 (NYSE: PAYC). No external VC. Founder Chad Richison retained
+  majority control through IPO."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: 2025 revenue $2.05B, operating income $567M, net income $453M (public filing). One of the first fully
+  online payroll providers. Founded by Chad Richison, who had prior payroll industry experience. S&P 600 component.
+  5,800 employees. Bootstrapped to IPO.
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Wikipedia
+problems:
+  - slug: wage-compliance
+timeline:
+  - year: 1998
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded by Chad Richison in Oklahoma City as one of the first fully online payroll providers. No external
+      funding — built from revenue.
+    source: Wikipedia
+  - year: 2001
+    event_type: product_launch
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    capability: employer-database-and-relationships
+    capability_deployed: Existing employer database and self-serve web infrastructure.
+    description: Expanded to include HR management modules. Early expansion along the standard payroll to HR trajectory.
+    source: Wikipedia
+  - year: 2014
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: IPO on NYSE (PAYC). Self-funded to IPO — no venture capital. Founder retained majority control.
+      Demonstrates payroll SaaS economics without VC dependency.
+    source: Wikipedia / SEC filing

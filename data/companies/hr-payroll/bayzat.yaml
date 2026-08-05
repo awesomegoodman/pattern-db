@@ -1,0 +1,50 @@
+slug: bayzat
+name: Bayzat
+domain: hr-payroll
+founded: 2012
+country: UAE
+status: operating
+stage: series_c
+funding_history: Series A 2015 undisclosed. Series B $16M Oct 2019 Point72 Mubadala Elm Greyhound. Series C $25M Dec
+  2022 ADQ. Total ~$60M.
+revenue_signal: 10-100M
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-native-smb-payroll-saas:UAE
+notable_facts: "Founded 2012 Dubai UAE by Brian Habibi Tarek Bayaa Talal Bayaa. 3,000+ companies in UAE expanding to
+  Saudi Arabia and wider GCC. $63M estimated annual revenue (Startup Intros). STRUCTURAL DIFFERENTIATION: integrates
+  health insurance brokerage directly with HR payroll. In UAE, group health insurance is mandatory for all employees and
+  administered through brokers. Bayzat combined insurance marketplace with HR software — the insurance commission
+  revenue subsidises the HR platform creating a bundled value proposition unavailable from global vendors. UAE-specific
+  regulatory hyperlocalisation: WPS (Wage Protection System) compliance, DEWS (DIFC Employee Workplace Savings),
+  gratuity calculations under UAE Labour Law. Investors include Point72 Mubadala (Abu Dhabi sovereign) ADQ (Abu Dhabi
+  sovereign) — sovereign backing signals GCC government validation. Expanding to Saudi Arabia largest GCC market."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Preqin / Tracxn
+    notes: UAE GCC cloud HR payroll plus health insurance. Insurance bundling creates UAE-specific structural differentiation.
+problems:
+  - slug: wage-compliance
+    source: Bayzat product scope / Preqin
+timeline:
+  - year: 2012
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Founded Dubai UAE by Brian Habibi Tarek Bayaa Talal Bayaa. Cloud HR payroll and health insurance for UAE
+      businesses. Structural differentiation: mandatory group health insurance in UAE creates bundled distribution
+      opportunity not available in most other markets."
+    source: Preqin / Tracxn / CBInsights
+  - year: 2019
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series B $16M Point72 Mubadala Elm Greyhound Endeavor Catalyst. Serving 1,500+ UAE companies. Expanding WPS
+      compliance payroll features.
+    source: FinTech Global
+  - year: 2022
+    event_type: market_entry
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series C $25M ADQ (Abu Dhabi sovereign). Expanding into Saudi Arabia. 100%+ annual growth in past 3 years
+      per company statement. 3,000+ companies in UAE and GCC.
+    source: Preqin / FinTech Global Aug 2022

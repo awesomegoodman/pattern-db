@@ -1,0 +1,75 @@
+slug: employment-hero
+name: Employment Hero
+domain: hr-payroll
+founded: 2014
+country: Australia
+status: acquired
+stage: series_f
+funding_history: Series A-E pre-2022. Series F A$263M Oct 2023 TCV lead Insight Partners AirTree SEEK OneVentures. Total
+  A$650M (~$460M USD). Acquired stake by KKR Feb 2025.
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-native-smb-payroll-saas:Australia
+notable_facts: "Founded 2014 Ben Thompson Richard McLean Dave Tong Sydney. $152.8M ARR 2024 (Latka). 350000+ businesses
+  2M+ employees globally. 2023 revenue A$114.7M public filing. Acquired KeyPay 2022 for payroll infrastructure. Expanded
+  UK Canada Malaysia Singapore. UK ARR doubled YoY. KKR acquired stake Feb 2025 from SEEK — PE investment signals
+  profitability trajectory. Pattern: same IP-002 structural bet as Gusto but Australian-first then international.
+  Differentiation: deeper award interpretation for Australian industrial relations complexity."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Sacra / TNGlobal
+    notes: Australia-first then international SME HR and payroll platform. Same structural pattern as Gusto.
+problems:
+  - slug: wage-compliance
+    source: Employment Hero product scope
+timeline:
+  - year: 2014
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded Sydney Australia by Ben Thompson Richard McLean Dave Tong. Cloud HR payroll benefits for Australian SMEs.
+    source: itbrief.com.au / Sacra
+  - year: 2014
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded Sydney Australia by Ben Thompson Richard McLean Dave Tong. Cloud HR payroll benefits for Australian SMEs.
+    source: itbrief.com.au / Sacra
+  - year: 2022
+    event_type: acquisition
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Acquired KeyPay — cloud payroll infrastructure provider. Gave Employment Hero own payroll engine rather
+      than relying on third-party integrations. Enabled payroll + HR as fully integrated product.
+    source: Sacra / SmallBizAI
+  - year: 2022
+    event_type: acquisition
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Acquired KeyPay — cloud payroll infrastructure provider. Gave Employment Hero own payroll engine rather
+      than relying on third-party integrations. Enabled payroll + HR as fully integrated product.
+    source: Sacra / SmallBizAI
+  - year: 2023
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series F A$263M TCV lead Insight Partners AirTree SEEK OneVentures. $2.13B valuation. UK ARR doubled YoY.
+      300000+ businesses 2M+ employees globally.
+    source: TNGlobal Oct 2023
+  - year: 2023
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series F A$263M TCV lead Insight Partners AirTree SEEK OneVentures. $2.13B valuation. UK ARR doubled YoY.
+      300000+ businesses 2M+ employees globally.
+    source: TNGlobal Oct 2023
+  - year: 2025
+    event_type: acquisition
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: KKR acquired stake from SEEK Investments Feb 2025. PE acquisition signals profitability trajectory. $152.8M
+      ARR 2024.
+    source: Tracxn / Bakersfield Feb 2025
+  - year: 2025
+    event_type: acquisition
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: KKR acquired stake from SEEK Investments Feb 2025. PE acquisition signals profitability trajectory. $152.8M
+      ARR 2024.
+    source: Tracxn / Bakersfield Feb 2025

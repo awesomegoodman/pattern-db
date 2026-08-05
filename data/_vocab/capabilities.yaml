@@ -1,0 +1,60 @@
+- slug: direct-banking-relationships
+  name: Direct banking relationships
+  description: Direct financial relationships with end customers established through an existing product. Makes financial
+    product expansion tractable.
+  status: proposed
+  sector_evidence:
+    - sector: hr-and-workforce
+      example_company: Gusto formerly ZenPayroll
+      evidence_note: Gusto established direct banking relationships via payroll direct deposit. In 2020 it launched Gusto Cash
+        Accounts using these relationships as foundation.
+- slug: employer-database-and-relationships
+  name: Employer database and relationships
+  description: Accumulated employer accounts and administrative access built through an existing product. Makes adjacent
+    product expansion tractable because distribution is already solved.
+  status: proposed
+  sector_evidence:
+    - sector: hr-and-workforce
+      example_company: Gusto formerly ZenPayroll
+      evidence_note: Gusto built employer relationships through payroll for 500000+ businesses. Each expansion was an upsell
+        to an existing account, not cold acquisition.
+- slug: enterprise-sales-network
+  name: Enterprise sales network
+  description: Trained enterprise sales organisation for large-organisation contracts. Makes adjacent enterprise product
+    expansion tractable because the sales motion transfers.
+  status: proposed
+  sector_evidence:
+    - sector: hr-and-workforce
+      example_company: SAP SE
+      evidence_note: SAP built 300000+ enterprise customer relationships through decades of ERP sales. When acquiring
+        SuccessFactors in 2012, it distributed the cloud HCM product to its installed base immediately.
+- slug: global-compliance-and-entity-infrastructure
+  name: Global compliance and entity infrastructure
+  description: Legal entities in multiple jurisdictions with local regulatory approvals. Makes cross-border expansion
+    tractable because the per-country foundation is in place.
+  status: proposed
+  sector_evidence:
+    - sector: hr-and-workforce
+      example_company: Remote Technology Inc
+      evidence_note: Remote built legal entities per country rather than partnering with local providers. This infrastructure
+        enabled cross-border expansion without rebuilding the legal foundation each time.
+- slug: payroll-compliance-infrastructure
+  name: Payroll compliance infrastructure
+  description: Regulatory knowledge and processing infrastructure to calculate and disburse wages under
+    jurisdiction-specific law. Transfers to adjacent compliance-governed domains at low marginal cost.
+  status: proposed
+  sector_evidence:
+    - sector: hr-and-workforce
+      example_company: Automatic Data Processing ADP
+      evidence_note: ADP built payroll compliance infrastructure over 40+ years of US operations, then transferred the same
+        regulatory navigation capability to international markets in 1990.
+- slug: unified-employee-data-model
+  name: Unified employee data model
+  description: A single canonical record per person so all downstream modules read from the same source of truth without
+    transformation.
+  status: proposed
+  sector_evidence:
+    - sector: hr-and-workforce
+      example_company: Rippling People Center Inc
+      evidence_note: "Rippling built the Employee Graph: one record powering HR IT and Finance simultaneously. Each new module
+        reached 1M ARR within 5-6 months because data was already structured."

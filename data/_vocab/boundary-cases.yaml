@@ -1,0 +1,36 @@
+- company: Rippling
+  option_a: IP-002 (cloud-native SMB payroll SaaS)
+  option_b: IP-005 (compound HR+IT+Finance platform)
+  chosen: IP-005 (compound HR+IT+Finance platform)
+  reason: Rippling's core value proposition is the unified Employee Graph enabling cross-functional automation — payroll
+    is the wedge, not the thesis. Gusto is the canonical IP-002 instantiation.
+  resolved_at: 2026-08-04
+- company: Zenefits
+  option_a: IP-002 (cloud-native SMB payroll SaaS)
+  option_b: IP-004 (compliance-led free HR SaaS, broker revenue)
+  chosen: IP-004 (compliance-led free HR SaaS, broker revenue)
+  reason: Zenefits's mechanism was insurance broker commissions funding free software — structurally distinct from
+    standard PEPM SaaS subscription. The revenue model difference is the analytically important fact.
+  resolved_at: 2026-08-04
+- company: Justworks
+  option_a: IP-002 (cloud-native SMB payroll SaaS)
+  option_b: IP-006 (global payroll / EOR platform)
+  chosen: IP-002 (cloud-native SMB payroll SaaS, PEO variant)
+  reason: Justworks's PEO model is co-employment within the US, not cross-border employment. Conceptually closer to
+    domestic outsourcing than international EOR. Recorded as a variant note on the IP-002 relationship.
+  resolved_at: 2026-08-04
+- company: Deel (US payroll launch 2024)
+  option_a: Keep as IP-006 only
+  option_b: Add IP-002 relationship for US payroll
+  chosen: Keep as IP-006 only, with note on company record and timeline
+  reason: US payroll is a new expansion move for Deel, not its primary instantiation. Adding IP-002 would imply
+    equivalence with Gusto — Deel's US payroll is a secondary product, not its founding pattern.
+  resolved_at: 2026-08-04
+- company: Papaya Global vs. Deel/Remote
+  option_a: All three as IP-006 with no distinction
+  option_b: Split into IP-006a (entity-ownership) and IP-006b (partner model)
+  chosen: All three as IP-006, with sub-model recorded in notes
+  reason: The partner vs. entity-ownership distinction is meaningful but not yet supported by enough evidence to justify a
+    separate pattern record. If entity-ownership dominance is confirmed across 3+ more observations, split warranted in
+    Phase 2.
+  resolved_at: 2026-08-04

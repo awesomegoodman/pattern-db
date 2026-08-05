@@ -1,0 +1,50 @@
+slug: payfit
+name: PayFit
+domain: hr-payroll
+founded: 2015
+country: France
+status: operating
+stage: series_e
+funding_history: Series A-E 2017-2022. Series E EUR 254M Jan 2022 General Atlantic lead Eurazeo Bpifrance Accel at EUR
+  1.82B valuation. Total ~$496M.
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-native-smb-payroll-saas:France
+notable_facts: "Founded 2015 Paris by Firmin Zocchetto Ghislain de Fontenay Florian Fournier. Latka estimates $155M ARR
+  2024 (up from $105M 2023). Unicorn EUR 1.82B 2022. 15,000+ SME customers across France Germany Spain UK. France-first
+  positioning: French payroll is the most complex in Europe (Global Payroll Complexity Index ranks it #1). This
+  complexity is a structural moat identical to Japan for SmartHR — global vendors fail to localise adequately, creating
+  durable opening for native-first operators. Expanded to Germany (second-most-complex payroll in Europe) Spain UK.
+  2024: opened New York office for US market entry. Target: SMEs 10-500 employees. Positioning as Workday for European
+  SMEs same framing as Personio — two companies with near-identical positioning competing in adjacent but overlapping
+  European SME markets."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: PayFit website / General Atlantic
+    notes: European SME cloud payroll. France-first. Same IP-002 structural pattern applied to most complex European payroll
+      market.
+problems:
+  - slug: wage-compliance
+    source: PayFit product scope
+timeline:
+  - year: 2015
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Founded Paris France by Firmin Zocchetto Ghislain de Fontenay Florian Fournier. Cloud payroll for European
+      SMEs. France-first: French payroll ranked most complex in Europe."
+    source: PayFit website / Wikipedia
+  - year: 2022
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series E EUR 254M General Atlantic at EUR 1.82B valuation. First French HR tech unicorn. Expanded Germany
+      Spain UK. 6,000+ clients at time of round.
+    source: Silicon Republic Jan 2022 / General Atlantic
+  - year: 2024
+    event_type: market_entry
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Opened New York office. US market entry. $155M ARR 2024 (up 48% from $105M 2023). 15,000+ SME customers 70+
+      countries.
+    source: Latka / Grokipedia

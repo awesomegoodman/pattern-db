@@ -1,0 +1,51 @@
+slug: charlie-hr
+name: Charlie HR
+domain: hr-payroll
+founded: 2014
+country: UK
+status: operating
+stage: series_a
+funding_history: Bootstrapped 2014-2021. Raised ~GBP 14M Series A 2021 (Notion Capital Beringea). Total ~GBP 14M.
+revenue_signal: <10M
+profitability_signal: estimated_profitable_proxy
+evidence_weight: weak_validator
+signal_confidence: low
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-native-smb-payroll-saas:UK
+notable_facts: "Founded 2014 London. Cloud HR software for UK SMBs 1-250 employees. Bootstrapped 7 years before raising
+  external capital — strong signal of sustainable unit economics. Profitability proxy applied: minimal external funding
+  + 7 years bootstrapped operation pre-raise. Product: employee records onboarding time-off performance reviews.
+  UK-native compliance. Customers: small businesses across UK. Competes with BambooHR in UK SMB segment. Represents the
+  European SMB end of the pattern spectrum (Personio targets 10-2000 employees Charlie HR targets sub-100 employees more
+  analogous to Gusto ICP)."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Companies House / Notion Capital
+    notes: UK SMB HR SaaS. Sub-100 employee ICP — most analogous to Gusto in UK market.
+problems:
+  - slug: wage-compliance
+    source: Charlie HR product scope
+timeline:
+  - year: 2014
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded London UK. Cloud HR software for UK SMBs under 250 employees. Bootstrapped from launch.
+    source: Companies House / Charlie HR website
+  - year: 2014
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded London UK. Cloud HR software for UK SMBs under 250 employees. Bootstrapped from launch.
+    source: Companies House / Charlie HR website
+  - year: 2021
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series A ~GBP 14M Notion Capital Beringea. First external capital after 7 years bootstrapped. 7-year
+      bootstrap period is strong signal of sustainable unit economics.
+    source: Tech.eu / Notion Capital
+  - year: 2021
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series A ~GBP 14M Notion Capital Beringea. First external capital after 7 years bootstrapped. 7-year
+      bootstrap period is strong signal of sustainable unit economics.
+    source: Tech.eu / Notion Capital

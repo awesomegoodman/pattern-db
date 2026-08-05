@@ -1,0 +1,60 @@
+slug: gusto
+name: Gusto (formerly ZenPayroll)
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2012
+country: USA
+status: operating
+stage: unicorn
+funding_history: "Seed $6.1M 2012 (YC batch). Series A through E 2013-2022. Total: ~$746M across 9 rounds. Tender offer
+  June 2025 at $9.3B valuation."
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: Sacra estimates $975M revenue 2025 (up 30% YoY from $750M 2024). 500,000+ businesses (direct). 401k
+  services grew 50% YoY 2024; Gusto Money grew 140% YoY 2024. US-only — geographic constraint creates documented
+  international demand gap. Accountant referral channel is primary GTM.
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Sacra / Built In
+problems:
+  - slug: wage-compliance
+  - slug: employee-benefits
+  - slug: cross-border-employment
+    confidence: medium
+    notes: RemoteTeam acquisition 2021 — contractor-only, not full EOR.
+timeline:
+  - year: 2012
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Founded as ZenPayroll by Joshua Reeves, Tomer London, Edward Kim. YC batch 2012. Initial product: payroll
+      for SMBs. First funding: $6.1M Seed."
+    source: Sacra / Built In
+  - year: 2014
+    event_type: product_launch
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: employee-benefits
+    capability: employer-database-and-relationships
+    capability_deployed: Existing employer database and payroll compliance infrastructure.
+    description: Renamed Gusto. Added health insurance benefits administration — first move beyond payroll. Standard payroll
+      to benefits trajectory.
+    source: Sacra / marketcurve.substack.com
+  - year: 2020
+    event_type: product_launch
+    problem: wage-compliance
+    capability: direct-banking-relationships
+    capability_deployed: Direct banking relationship with 300k+ employees via payroll direct deposit.
+    description: Launched Gusto Cash Accounts — employee financial wellness product. First move into financial services for
+      employees (not employers).
+    source: marketcurve.substack.com
+  - year: 2021
+    event_type: acquisition
+    problem: cross-border-employment
+    capability: payroll-compliance-infrastructure
+    capability_deployed: Payroll compliance engine and employer relationships.
+    capability_acquired: International contractor management capability and API-first architecture.
+    description: Acquired RemoteTeam (international contractor management). Added international contractor payments.
+      Launched Gusto Embedded Payroll API — enables third-party apps to embed Gusto's payroll engine.
+    source: marketcurve.substack.com

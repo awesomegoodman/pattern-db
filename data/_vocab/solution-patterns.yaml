@@ -1,0 +1,45 @@
+- slug: payroll-processing-infrastructure
+  name: Payroll processing infrastructure
+  first_observed: 1949
+  pattern_durability: decades-old
+  winning_condition: Regulatory complexity creates recurring non-discretionary demand for compliance execution, and the
+    rate of regulatory change keeps that complexity high enough that specialist knowledge cannot be cost-effectively
+    replicated in-house.
+  failure_condition: Regulatory complexity stabilises or decreases to the point where in-house compliance execution
+    becomes cheaper than specialist outsourcing, or a general-purpose software platform successfully abstracts the
+    compliance layer at a price below specialist outsourcing cost.
+  winning_condition_maturity: proposed
+  winning_condition_valid_from: 1949
+  notes: "The structural bet that a third party can handle wage calculation, tax withholding, and disbursement more
+    reliably and cheaply than employers doing it themselves. Has produced profitable operators across three distinct
+    technological eras: manual bureau, desktop/server, cloud SaaS. Winning/Failure conditions deferred — need 3+
+    cross-industry observations."
+- slug: cloud-hcm-platform
+  name: Cloud HCM platform
+  first_observed: 2005
+  pattern_durability: established
+  winning_condition: Incumbent's installed-base lock-in prevents it from offering cloud delivery without cannibalising
+    existing licence revenue, creating a durable opening for a cloud-native entrant whose cost structure carries no
+    on-premise installed base to protect.
+  failure_condition: Incumbent successfully completes cloud transition — via acquisition, rebuild, or partner ecosystem —
+    before the cloud-native entrant reaches sufficient scale, closing the cost structure window before the entrant
+    achieves switching-cost parity.
+  winning_condition_maturity: proposed
+  winning_condition_valid_from: 2005
+  notes: The structural bet that a unified cloud platform can replace fragmented on-premise HR software (PeopleSoft, SAP)
+    for enterprise workforce management. Founded on the insight that cloud delivery enables continuous updates,
+    cross-module data sharing, and lower total cost of ownership than on-premise.
+- slug: global-employment-infrastructure
+  name: Global employment infrastructure
+  first_observed: 2016
+  pattern_durability: emerging
+  notes: "The structural bet that a technology-enabled intermediary can absorb the legal and compliance complexity of
+    cross-border employment, making global hiring accessible without entity setup. Two sub-approaches: entity-ownership
+    model (Deel, Remote) vs. partner model (Papaya Global). Entity-ownership model appears to be winning as of 2025."
+- slug: compound-workforce-management-platform
+  name: Compound workforce management platform
+  first_observed: 2016
+  pattern_durability: emerging
+  notes: The structural bet that HR, IT, and Finance are not separate domains but a single operational problem — managing
+    the employee lifecycle — that should be served by one data model. Requires a unified employee record as the core
+    primitive. Parker Conrad's explicit thesis at Rippling after diagnosing Zenefits's failure.

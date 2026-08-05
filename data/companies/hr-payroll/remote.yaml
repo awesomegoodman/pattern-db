@@ -1,0 +1,42 @@
+slug: remote
+name: Remote Technology, Inc.
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2019
+country: Estonia
+status: operating
+stage: series_c
+funding_history: $496M total. Series C $300M (SoftBank Vision Fund 2 lead). Accel, Sequoia, Index Ventures, Two Sigma, General Catalyst.
+revenue_signal: 10-100M
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "$3B+ valuation. Entity-ownership model (same structural choice as Deel). Founded as a fully distributed
+  company with no single HQ. Notable enterprise customers: GitLab, DoorDash. Deliberate decision to build own legal
+  entities rather than partner — takes longer, creates stronger moat. Competing with Deel for entity-ownership model
+  leadership."
+implementation_patterns:
+  - slug: global-payroll-eor-platform
+    source: Contrary Research
+problems:
+  - slug: cross-border-employment
+timeline:
+  - year: 2019
+    event_type: founding
+    implementation_pattern: global-payroll-eor-platform
+    problem: cross-border-employment
+    description: "Founded in Estonia as a fully distributed company. Initial product: international payroll, benefits,
+      compliance for employees and contractors. Entity-ownership model from day one."
+    source: Contrary Research
+  - year: 2020
+    event_type: product_launch
+    implementation_pattern: global-payroll-eor-platform
+    capability_acquired: Per-country legal entity ownership and local compliance expertise — the primary moat of the entity-ownership model.
+    description: "Built own legal entities in each country rather than partnering with local providers like Papaya.
+      Deliberate structural choice: slower but creates proprietary moat."
+    source: Contrary Research
+  - year: 2021
+    event_type: funding
+    implementation_pattern: global-payroll-eor-platform
+    description: Series C $300M (SoftBank Vision Fund 2 lead). $3B+ valuation. Enterprise customers include GitLab and DoorDash.
+    source: Contrary Research

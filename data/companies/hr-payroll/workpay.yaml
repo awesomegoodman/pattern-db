@@ -1,0 +1,48 @@
+slug: workpay
+name: Workpay
+domain: hr-payroll
+founded: 2019
+country: Kenya
+status: operating
+stage: series_a
+funding_history: Seed $2.1M 2020. Pre-Series A $2.7M 2023 Launch Africa Saviu Norrsken Proparco Fondation Botnar. Series
+  A $5M 2024 Norrsken22 lead Visa YC Saviu Axian. Total ~$9.8M.
+revenue_signal: <10M
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-native-smb-payroll-saas:Kenya
+notable_facts: "Founded 2019 Nairobi Kenya by Paul Kimani CEO and Jackson Kibigo Kungu COO. YC W20. Serves two ICP
+  segments: (1) local businesses 20-100 employees single jurisdiction; (2) cross-border businesses 100-1000 employees
+  multi-country. 1,000+ businesses across 20 African countries. Revenue grew 1.5x H1 2024. Notable investor: Visa
+  (strategic) via Visa accelerator program — payment rail signal. Key insight from CEO: each African country has
+  distinct payroll regulations — Ivory Coast payroll differs from South Africa payroll, making pan-African compliance a
+  genuine technical moat not replicable by global players quickly. Added EOR services in addition to payroll. Stated
+  goal: reach profitability as milestone (Series A announcement language)."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: TechCrunch Aug 2024
+    notes: Kenyan cloud payroll HR. Pan-African multi-country compliance is core differentiator. YC-backed.
+problems:
+  - slug: wage-compliance
+    source: Workpay product scope / TechCrunch
+timeline:
+  - year: 2019
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Founded Nairobi Kenya by Paul Kimani and Jackson Kibigo Kungu. YC W20. Cloud payroll and HR for African
+      businesses. Two ICPs: local 20-100 employee single-country businesses and cross-border 100-1000 employee
+      multi-country businesses."
+    source: YC profile / TechCrunch Aug 2024
+  - year: 2023
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Pre-Series A $2.7M Launch Africa Saviu Norrsken Proparco Fondation Botnar. Expanding to 40 African countries.
+    source: TechCrunch / Africa Business Communities
+  - year: 2024
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series A $5M Norrsken22 lead Visa YC Saviu Axian Verod-Kepple Acadian. 1,000+ customers across 20 African
+      countries. Revenue grew 1.5x H1 2024.
+    source: TechCrunch Aug 2024 / FinTech Global

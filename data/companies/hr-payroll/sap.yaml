@@ -1,0 +1,63 @@
+slug: sap
+name: SAP SE
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 1972
+country: Germany
+status: operating
+stage: public
+funding_history: "Self-funded from founding. IPO 1998 (NYSE: SAP, XETRA: SAP). No VC dependency. Founded by five ex-IBM engineers."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "FY2024 revenue EUR 33.3B (~$36B), operating profit EUR 3.9B (public filing). Founded 1972 as
+  Systemanalyse und Programmentwicklung by Dietmar Hopp, Hasso Plattner, and three others — all ex-IBM. Entered cloud
+  HCM via acquisition of SuccessFactors in 2012 for $3.4B. SuccessFactors was founded in 2001 and IPO'd in 2007 before
+  acquisition. SAP's on-premise installed base (SAP R/3, launched 1992) was both its competitive advantage and its
+  liability when the cloud transition came — the installed base created revenue that could not be abandoned without
+  destroying short-term financials. This is the canonical illustation of the cloud HCM winning condition: incumbent
+  lock-in created the opening Workday exploited."
+implementation_patterns:
+  - slug: cloud-enterprise-hcm-platform
+    source: SAP Annual Report 2023 / SuccessFactors acquisition press release
+    notes: SAP entered cloud enterprise HCM via acquisition (SuccessFactors, 2012) rather than organic build. Incumbent
+      transition path — distinct from Workday's greenfield path. Both instantiate the same implementation pattern with
+      meaningfully different execution.
+problems:
+  - slug: wage-compliance
+    source: SAP SuccessFactors product scope
+timeline:
+  - year: 1972
+    event_type: founding
+    description: "Founded as Systemanalyse und Programmentwicklung by five ex-IBM engineers in Weinheim, Germany. Initial
+      product: financial accounting software running on IBM mainframes. First client: ICI (Imperial Chemical
+      Industries)."
+    source: SAP company history / Wikipedia
+  - year: 1992
+    event_type: product_launch
+    description: Launched SAP R/3 — client-server enterprise software replacing mainframe-based R/2. R/3 became the dominant
+      on-premise ERP globally. This is the installed base that later created lock-in and liability during the cloud
+      transition.
+    source: SAP company history / Wikipedia
+  - year: 2012
+    event_type: acquisition
+    implementation_pattern: cloud-enterprise-hcm-platform
+    problem: wage-compliance
+    capability: enterprise-sales-network
+    capability_deployed: SAP's global enterprise sales relationships and customer base — SuccessFactors got immediate access
+      to SAP's 300,000+ customers.
+    capability_acquired: Cloud-native HCM architecture and SaaS delivery model via SuccessFactors. SAP could not build this
+      internally without cannibalising on-premise revenue.
+    description: "Acquired SuccessFactors for $3.4B — cloud HCM provider founded in 2001 and IPO'd in 2007. This was SAP's
+      primary cloud HCM entry. Rationale: Workday had demonstrated the cloud HCM model was viable and SAP's on-premise
+      R/3-era HR module could not be cloud-ified without disrupting the installed base. Acquisition was the only viable
+      path to cloud HCM at speed."
+    source: TechCrunch / SAP press release / Bloomberg
+  - year: 2023
+    event_type: product_launch
+    implementation_pattern: cloud-enterprise-hcm-platform
+    description: "SAP SuccessFactors serves 10,000+ customers in 200 countries. SAP is now predominantly cloud revenue (75%+
+      of new business is cloud). RISE with SAP programme converts on-premise customers to cloud. Market share: ~22% of
+      enterprise HCM market."
+    source: SAP Annual Report 2023 / Gartner HCM Magic Quadrant

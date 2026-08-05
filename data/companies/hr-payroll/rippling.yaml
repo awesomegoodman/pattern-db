@@ -1,0 +1,61 @@
+slug: rippling
+name: Rippling People Center, Inc.
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2016
+country: USA
+status: operating
+stage: unicorn
+funding_history: "Seed $7M 2016 (Initialized Capital + YC). Series B $145M 2020 ($1.35B valuation). Series E $500M 2023
+  ($11.3B). Series G $450M May 2025 ($16.8B). Total: ~$1.85B across 10 rounds."
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: Sacra estimates $570M ARR February 2025. 20,000+ customers. 99.5% annual client retention. NRR
+  approaching 200%. 10+ product lines each >$1M ARR, reaching that milestone within 5-6 months of launch. Founded by
+  Parker Conrad (ex-Zenefits CEO) as the corrected version — compound platform thesis. Employee Graph is the core
+  primitive. Anticipated IPO 2026.
+implementation_patterns:
+  - slug: compound-hr-it-finance-platform
+    source: Sacra / Rainmaker Securities
+problems:
+  - slug: wage-compliance
+  - slug: employee-benefits
+  - slug: it-provisioning
+  - slug: cross-border-employment
+timeline:
+  - year: 2016
+    event_type: founding
+    implementation_pattern: compound-hr-it-finance-platform
+    problem: wage-compliance
+    description: "Founded by Parker Conrad (ex-Zenefits CEO) and Prasanna Sankar. Thesis: unified employee record (Employee
+      Graph) enabling one-click hire that simultaneously triggers payroll, benefits, device provisioning, and app
+      access. Seed $7M."
+    source: Sacra / businessmodelcanvastemplate.com
+  - year: 2020
+    event_type: product_launch
+    implementation_pattern: compound-hr-it-finance-platform
+    problem: it-provisioning
+    capability: unified-employee-data-model
+    capability_deployed: Employee Graph — unified employee record already contained app permissions and device data, making
+      IT module launch at near-zero marginal cost.
+    description: Series B $145M ($1.35B valuation). Expanded into corporate spend management and IT management. First major
+      step beyond HR into the compound platform thesis.
+    source: businessmodelcanvastemplate.com / Sacra
+  - year: 2022
+    event_type: market_entry
+    implementation_pattern: global-payroll-eor-platform
+    problem: cross-border-employment
+    capability: unified-employee-data-model
+    capability_deployed: Employee Graph with existing compliance and HR infrastructure — made international payroll a
+      configuration rather than a rebuild.
+    description: Launched global payroll (October 2022). COO described it as biggest launch of his career. First direct
+      competition with Deel and Remote.
+    source: Contrary Research
+  - year: 2025
+    event_type: funding
+    implementation_pattern: compound-hr-it-finance-platform
+    description: Series G $450M at $16.8B valuation. 25,000+ customers. $570M ARR. 10+ product lines each >$1M ARR. Super
+      Bowl ad. Anticipated IPO 2026.
+    source: Sacra / Rainmaker Securities

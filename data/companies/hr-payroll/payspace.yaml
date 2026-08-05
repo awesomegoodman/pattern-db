@@ -1,0 +1,58 @@
+slug: payspace
+name: PaySpace (now Deel Local Payroll)
+domain: hr-payroll
+founded: 2002
+country: South Africa
+status: acquired
+stage: bootstrapped
+funding_history: Bootstrapped from founding. Undisclosed minority investment from Netcash 2023. Acquired Deel March 2024 for ~$100M.
+revenue_signal: ">10M"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-native-smb-payroll-saas:South Africa
+notable_facts: "STRONG VALIDATOR. Founded 2002 South Africa by Bruce Clark Clyde Clark Warren Clark George
+  Karageorgiades. Cloud-native payroll from inception — one of Africa earliest cloud payroll companies. 20+ years
+  operating. Bootstrapped entire period with no VC. 30% annual revenue growth sustained. 14,000+ customers in 44
+  countries including Heineken Coca-Cola Beverages Puma Sports. Acquired by Deel March 2024 for ~$100M — largest African
+  HR tech exit to date at time. Deel acquisition rationale: PaySpace provided native payroll engines for 10+ African
+  countries that Deel needed for its global payroll expansion strategy. Post-acquisition: rebranded Deel Local Payroll
+  powered by PaySpace. PaySpace calculation engine became Deels calculation engine. ANALYTICALLY SIGNIFICANT: (1)
+  confirms cloud payroll SaaS pattern is viable and profitable in African markets without VC; (2) bootstrapped to $100M
+  exit proves the pattern does not require external capital to succeed; (3) earliest African cloud payroll company by
+  founding year in this dataset — 20 years before Bento which failed. Profitability signal: Known profitable — 20+ years
+  bootstrapped operation with 30% annual growth and premium acquisition price confirms sustainable unit economics."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: TechCrunch Mar 2024 / Deel blog
+    notes: STRONG VALIDATOR. South Africa cloud payroll bootstrapped 20+ years. $100M exit to Deel. Earliest African cloud
+      payroll in dataset.
+problems:
+  - slug: wage-compliance
+    source: PaySpace product scope / TechCrunch
+timeline:
+  - year: 2002
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded South Africa by Bruce Clark Clyde Clark Warren Clark George Karageorgiades. Cloud-native payroll
+      and HR from inception. One of Africas earliest cloud payroll companies. Bootstrapped — no external VC capital.
+    source: TechCrunch Mar 2024 / Africa Press
+  - year: 2012
+    event_type: market_entry
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Expanded to 11 countries within first decade. 30% annual revenue growth sustained without external capital.
+    source: TechCrunch Mar 2024
+  - year: 2022
+    event_type: market_entry
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Operations expanded to 43 countries. Plans to launch Brazil and UK. 14,000+ enterprise and mid-market
+      customers including Heineken Coca-Cola Puma Sports.
+    source: TechCrunch Mar 2024
+  - year: 2024
+    event_type: acquisition
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: "Acquired by Deel March 2024 for ~$100M — largest African HR tech acquisition to date. Rebranded Deel Local
+      Payroll powered by PaySpace. PaySpace native payroll engines integrated into Deel global payroll product.
+      Acquisition confirmed profitable unit economics: premium exit after 20+ years bootstrapped."
+    source: TechCrunch Mar 2024 / Deel blog

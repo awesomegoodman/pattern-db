@@ -113,6 +113,7 @@ export const companies = pgTable(
   'companies',
   {
     id: uuid('id').primaryKey().defaultRandom(),
+    slug: text('slug').unique(),
     name: text('name').notNull(),
 
     // ── Core identity (MVR) ──────────────────────────────────────────────────
@@ -238,6 +239,7 @@ export const problems = pgTable(
   'problems',
   {
     id: uuid('id').primaryKey().defaultRandom(),
+    slug: text('slug').unique(),
     statement: text('statement').notNull().unique(),
     // BEFORE creating a new record: run the deduplication query (pg_trgm similarity > 0.6)
     // to check for near-duplicate existing records.
@@ -339,6 +341,7 @@ export const implementationPatterns = pgTable(
   'implementation_patterns',
   {
     id: uuid('id').primaryKey().defaultRandom(),
+    slug: text('slug').unique(),
     name: text('name').notNull().unique(),
 
     solutionPatternId: uuid('solution_pattern_id')

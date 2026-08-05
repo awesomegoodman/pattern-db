@@ -1,0 +1,49 @@
+slug: namely
+name: Namely
+domain: hr-payroll
+founded: 2012
+country: USA
+status: acquired
+stage: series_d
+funding_history: Series A through D 2013-2019. Total ~$200M+ including $60M Series D 2019 (Altimeter Capital). Acquired
+  Vensure Employer Solutions 2022.
+revenue_signal: 10-100M
+profitability_signal: known_unprofitable
+evidence_weight: disconfirming
+signal_confidence: high
+research_queue_source: FAILURE_CASE_NEEDED:cloud-enterprise-hcm-platform
+notable_facts: "DISCONFIRMING. Founded 2012 New York by Matt Straz. Cloud HCM platform for mid-market companies 25-1000
+  employees. Raised $200M+ positioning as modern alternative to Workday for companies too large for Gusto too small for
+  full Workday implementation. Failure modes: (1) product breadth trap — tried to build payroll benefits performance
+  management simultaneously competing with specialists in each; (2) sales motion mismatch — mid-market requires
+  enterprise sales cycles but SMB unit economics; (3) CEO controversy and toxic workplace reports 2019 leading to
+  leadership changes; (4) multiple layoff rounds 2019-2021 as growth stalled. Acquired by Vensure Employer Solutions
+  (PEO/HRO company) 2022 — distressed exit. Analytically: illustrates the mid-market trap in HCM — too complex for
+  self-serve economics, too small for enterprise sales ROI. The no-mans-land between Gusto and Workday."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Crunchbase / HR Dive
+    notes: DISCONFIRMING. Mid-market cloud HCM 25-1000 employees. Distressed acquisition 2022. Illustrates mid-market trap.
+problems:
+  - slug: wage-compliance
+    source: Namely product scope
+timeline:
+  - year: 2012
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Founded New York by Matt Straz. Cloud HCM targeting mid-market companies 25-1000 employees. Positioning:
+      modern alternative to Workday for companies too large for Gusto."
+    source: Crunchbase / TechCrunch
+  - year: 2019
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series D $60M Altimeter Capital. Total $200M+ raised. Multiple layoff rounds begin as growth stalls and
+      unit economics under pressure.
+    source: TechCrunch / Crunchbase
+  - year: 2022
+    event_type: acquisition
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: "Acquired by Vensure Employer Solutions. Distressed exit. Failure modes: mid-market trap (enterprise sales
+      costs, SMB unit economics), product breadth overreach, leadership instability, competition from specialists."
+    source: TechCrunch / HR Dive

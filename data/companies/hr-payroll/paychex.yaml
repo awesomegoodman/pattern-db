@@ -1,0 +1,43 @@
+slug: paychex
+name: Paychex, Inc.
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 1971
+country: USA
+status: operating
+stage: public
+funding_history: "Self-funded from founding. Tom Golisano started with $3,000. IPO 1983 (Nasdaq: PAYX)."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: FY2025 revenue $5.57B, net income $1.66B, operating income $2.21B (public filing). ~800,000 payroll
+  clients. 100+ offices. Fortune 500 (#681). Focused on SMB segment vs. ADP's full-market coverage. 54 years operating.
+implementation_patterns:
+  - slug: manual-payroll-bureau
+    source: Wikipedia
+problems:
+  - slug: wage-compliance
+  - slug: employee-benefits
+timeline:
+  - year: 1971
+    event_type: founding
+    implementation_pattern: manual-payroll-bureau
+    problem: wage-compliance
+    description: Founded by Tom Golisano with $3,000 in Rochester, NY. Targeted SMBs — the segment ADP underserved at the time.
+    source: Wikipedia
+  - year: 1983
+    event_type: funding
+    implementation_pattern: manual-payroll-bureau
+    description: "IPO (Nasdaq: PAYX). Previously consolidated 18 franchises and partnerships into one private company in 1979."
+    source: Wikipedia
+  - year: 2000
+    event_type: product_launch
+    implementation_pattern: manual-payroll-bureau
+    problem: employee-benefits
+    capability: payroll-compliance-infrastructure
+    capability_deployed: Existing employer relationships and payroll processing infrastructure — enabled upsell of adjacent
+      services to existing clients.
+    description: Expanded to benefits administration, HR administration, and time & attendance. Followed the standard
+      payroll-first expansion trajectory into adjacent HR problems.
+    source: Wikipedia / Paychex product history

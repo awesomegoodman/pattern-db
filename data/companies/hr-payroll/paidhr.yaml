@@ -1,0 +1,57 @@
+slug: paidhr
+name: PaidHR (formerly Pade HCM)
+domain: hr-payroll
+founded: 2020
+country: Nigeria
+status: operating
+stage: seed
+funding_history: Bootstrapped 2020-2023. Pre-seed $500k 2023 Zrosk Zedcrest Microtraction Expert Dojo Resilience17. Seed
+  $1.8M 2025 Accion Venture Lab Zrosk Chui Ventures Zedcrest. Total ~$2.97M.
+revenue_signal: <10M
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-native-smb-payroll-saas:Nigeria
+notable_facts: "Founded December 2020 Seye Bandele Lekan Omotosho Lagos. Rebranded PaidHR 2024. 2024: processed $18M+ in
+  salaries 20000+ employees onboarded 250+ businesses. Expanded Nigeria Kenya South Africa. Customers: Flutterwave Mono
+  Dantata TSL. Bootstrapped through 2023 then raised pre-seed. Capital-efficient relative to SeamlessHR."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Afrotech Jun 2025
+    notes: Seed-stage Nigerian cloud payroll SaaS. Capital-efficient relative to SeamlessHR.
+problems:
+  - slug: wage-compliance
+    source: Afrotech Jun 2025
+timeline:
+  - year: 2020
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded as Pade HCM December 2020 Lagos Nigeria. Cloud payroll HR for African businesses. Bootstrapped.
+    source: Disrupt Africa Feb 2023
+  - year: 2020
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded as Pade HCM December 2020 Lagos Nigeria. Cloud payroll HR for African businesses. Bootstrapped.
+    source: Disrupt Africa Feb 2023
+  - year: 2024
+    event_type: product_launch
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Processed $18M+ salaries 20000+ employees 250+ businesses in Nigeria Kenya South Africa. Rebranded PaidHR.
+    source: Afrotech Jun 2025
+  - year: 2024
+    event_type: product_launch
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Processed $18M+ salaries 20000+ employees 250+ businesses in Nigeria Kenya South Africa. Rebranded PaidHR.
+    source: Afrotech Jun 2025
+  - year: 2025
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Seed $1.8M Accion Venture Lab Zrosk Chui Ventures Zedcrest. Total $2.97M.
+    source: Afrotech Jun 2025
+  - year: 2025
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Seed $1.8M Accion Venture Lab Zrosk Chui Ventures Zedcrest. Total $2.97M.
+    source: Afrotech Jun 2025

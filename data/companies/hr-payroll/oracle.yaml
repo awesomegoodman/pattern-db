@@ -1,0 +1,72 @@
+slug: oracle
+name: Oracle Corporation
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 1977
+country: USA
+status: operating
+stage: public
+funding_history: "Self-funded from founding by Larry Ellison, Bob Miner, Ed Oates. IPO March 1986 (Nasdaq: ORCL). No VC dependency."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "FY2025 revenue $56.9B, operating income $12.7B (public filing). Entered HCM via hostile acquisition of
+  PeopleSoft in 2005 for $10.3B (18-month hostile takeover battle). PeopleSoft was the dominant on-premise HCM vendor.
+  Key strategic error: Oracle maintained PeopleSoft as a separate product line for years rather than integrating —
+  giving Workday time to establish cloud HCM before Oracle had a credible cloud response. Oracle Fusion HCM
+  (cloud-native) launched 2013, 8 years after the PeopleSoft acquisition. Also acquired Taleo (talent management cloud)
+  in 2012 for $1.9B. The PeopleSoft acquisition is the disconfirming case for on-premise HCM as a standalone strategy —
+  the acquirer absorbed the liability, not just the asset."
+implementation_patterns:
+  - slug: cloud-enterprise-hcm-platform
+    source: Oracle FY2025 earnings / Taleo acquisition / Oracle Fusion HCM launch
+    notes: Oracle entered cloud enterprise HCM via acquisition (Taleo, 2012) + internal rebuild (Oracle Fusion HCM, 2013).
+      Second incumbent transition path. The 8-year gap between PeopleSoft acquisition (2005) and cloud HCM launch (2013)
+      is the empirical measure of how long incumbent transition takes when an installed base must be protected.
+problems:
+  - slug: wage-compliance
+    source: Oracle HCM Cloud product scope
+timeline:
+  - year: 1977
+    event_type: founding
+    description: "Founded as Software Development Laboratories by Larry Ellison, Bob Miner, Ed Oates in Santa Clara. First
+      product: Oracle Database (originally for the CIA). Became the dominant enterprise database vendor."
+    source: Oracle company history / Wikipedia
+  - year: 2005
+    event_type: acquisition
+    capability_acquired: PeopleSoft's enterprise HCM customer base (thousands of large enterprises), HR domain expertise,
+      and sales relationships.
+    description: "Completed hostile acquisition of PeopleSoft for $10.3B after an 18-month battle. PeopleSoft was the
+      dominant on-premise HCM and ERP vendor. This acquisition directly triggered the founding of Workday: David
+      Duffield (PeopleSoft CEO) and Aneel Bhusri (PeopleSoft SVP) founded Workday in 2005 as a direct response. Oracle's
+      strategy: acquire the incumbent, maintain the installed base, charge maintenance fees. This created the market
+      opening that Workday exploited for the next decade."
+    source: New York Times / Oracle press release / Workday origin story
+  - year: 2012
+    event_type: acquisition
+    implementation_pattern: cloud-enterprise-hcm-platform
+    problem: wage-compliance
+    capability_acquired: Cloud-native talent management and recruiting capability via Taleo. Oracle could not build cloud
+      HCM internally without disrupting PeopleSoft maintenance revenue.
+    description: Acquired Taleo for $1.9B — cloud talent management (recruiting, performance, learning). Oracle's first
+      meaningful cloud HCM product. Also acquired RightNow (customer service cloud) and Eloqua (marketing cloud) in 2012
+      — broader cloud push.
+    source: Oracle press release / TechCrunch
+  - year: 2013
+    event_type: product_launch
+    implementation_pattern: cloud-enterprise-hcm-platform
+    capability_deployed: PeopleSoft HR domain knowledge and Oracle's enterprise infrastructure — both reapplied to cloud
+      architecture after years of internal development.
+    description: "Launched Oracle Fusion HCM (now Oracle HCM Cloud) — the cloud-native rebuild of Oracle's on-premise HR
+      product. 8 years after the PeopleSoft acquisition. The long gap between acquisition and cloud product illustrates
+      the execution difficulty of the incumbent cloud transition: the installed base created internal resistance to
+      cannibalising on-premise revenue."
+    source: Oracle press release / Gartner
+  - year: 2024
+    event_type: product_launch
+    implementation_pattern: cloud-enterprise-hcm-platform
+    description: Oracle HCM Cloud serves 30M+ users across 175+ countries. Oracle is now the second largest HCM vendor by
+      market share (~18%). FY2025 cloud revenue $21.8B, up 25% YoY. Full transition from on-premise to cloud-first
+      complete.
+    source: Oracle FY2025 earnings / IDC HCM market share report

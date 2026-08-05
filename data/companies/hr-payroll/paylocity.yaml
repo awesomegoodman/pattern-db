@@ -1,0 +1,47 @@
+slug: paylocity
+name: Paylocity Holding Corporation
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 1997
+country: USA
+status: operating
+stage: public
+funding_history: "Founded as Ameripay Payroll Ltd. Self-funded until IPO 2014 (Nasdaq: PCTY). Founder Steve Sarowitz held 44% at IPO."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "2025 revenue $1.59B, operating income $304M, net income $227M (public filing). Targets SMB-mid market
+  (50-1,000 employees). Active acquirer: BeneFLEX (2018), VidGrid (2020), Blue Marble Payroll (2021), Airbase (2024).
+  S&P 400 component."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Wikipedia
+problems:
+  - slug: wage-compliance
+  - slug: cross-border-employment
+    confidence: medium
+    notes: Blue Marble acquisition 2021 — partial coverage.
+timeline:
+  - year: 1997
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded as Ameripay Payroll, Ltd. by Steve Sarowitz in Illinois. Online payroll for SMB-mid market
+      (50-1,000 employees).
+    source: Wikipedia
+  - year: 2014
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: "IPO (Nasdaq: PCTY). Founder held 44% at IPO. Self-funded to public markets."
+    source: Wikipedia
+  - year: 2021
+    event_type: acquisition
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: cross-border-employment
+    capability: payroll-compliance-infrastructure
+    capability_deployed: Existing SMB payroll infrastructure and customer relationships.
+    capability_acquired: International payroll processing and local compliance relationships via Blue Marble.
+    description: Acquired Blue Marble Payroll — international payroll services. First move toward cross-border employment
+      capability.
+    source: Wikipedia

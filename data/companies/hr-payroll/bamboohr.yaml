@@ -1,0 +1,40 @@
+slug: bamboohr
+name: BambooHR
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2008
+country: USA
+status: operating
+stage: bootstrapped
+funding_history: Minimal. Single round from Norwest Venture Partners. Primarily bootstrapped. No external VC dependency.
+revenue_signal: ">100M"
+profitability_signal: estimated_profitable_proxy
+profitability_proxy_applied: true
+evidence_weight: strong_validator
+signal_confidence: low
+notable_facts: "Growjo estimates ~$358M revenue 2024. 34,000+ organizations, ~2M employees, 100 countries. Bootstrapped
+  15+ years — proxy rule applied: no external funding + 15 years operating = Estimated profitable. Differentiated by
+  starting with HRIS and adding payroll later (vs. payroll-first competitors). Customers include SoundCloud, Foursquare,
+  Reddit."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Software Report
+problems:
+  - slug: wage-compliance
+timeline:
+  - year: 2008
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Founded in Utah. Initial product: cloud HRIS for SMBs — employee data management before payroll.
+      Differentiated from Gusto/Paycom by starting with HRIS and adding payroll later."
+    source: Software Report / BambooHR site
+  - year: 2015
+    event_type: product_launch
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    capability: unified-employee-data-model
+    capability_deployed: Existing employee data model and employer relationships — payroll added as natural extension of existing HR record.
+    description: Added US payroll processing. 25,000+ organizations, 2M+ employees across 100 countries. Demonstrates
+      HRIS-first then payroll as viable alternative to payroll-first.
+    source: Software Report

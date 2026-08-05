@@ -1,0 +1,37 @@
+slug: justworks
+name: Justworks, Inc.
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2012
+country: USA
+status: operating
+stage: series_e
+funding_history: $148M total across 7 rounds. Index Ventures, FirstMark, Redpoint. Series E $50M 2020. Formerly Clockwork Solutions.
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: Latka estimates $350M revenue 2024 (up from $140M 2022). 12,000 customers. 1,500 employees. $1.4B
+  valuation 2025. PEO (Professional Employer Organization) model — co-employment within the US. Gives SMBs access to
+  Fortune 500-level benefits rates via co-employer aggregation.
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Latka / Tracxn
+    notes: PEO variant — co-employment model, not standard subscription.
+problems:
+  - slug: wage-compliance
+  - slug: employee-benefits
+timeline:
+  - year: 2012
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded as Clockwork Solutions by Isaac Oates and Iris Ramos. Pivoted to PEO (Professional Employer
+      Organization) model — co-employment for US SMBs.
+    source: Tracxn
+  - year: 2020
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series E $50M. 12,000+ customers. $1.4B valuation 2025. Raised total $148M — capital-efficient relative to
+      Gusto ($746M) serving similar customer base.
+    source: Latka / Tracxn

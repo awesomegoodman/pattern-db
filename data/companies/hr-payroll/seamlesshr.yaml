@@ -1,0 +1,65 @@
+slug: seamlesshr
+name: SeamlessHR
+domain: hr-payroll
+founded: 2018
+country: Nigeria
+status: operating
+stage: series_a
+funding_history: "Seed 2021 (amount undisclosed). Series A $10M 2022 (TLcom Capital lead, Capria Ventures, Enza Capital,
+  Ingressive Capital). Series A extension $9M Jan 2025 (Gates Foundation, Helios Digital Ventures). Total: ~$28.2M."
+revenue_signal: 10-100M
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-native-smb-payroll-saas:Nigeria
+notable_facts: "Latka estimates $27M ARR 2024. Founded by Emmanuel Okeleji (CEO) and Deji Lana (CTO) after pivoting from
+  Insidify (job aggregator, unprofitable). Revenue grew 10x in first year after MVP launch. Customers: 2,000+
+  medium-to-large enterprises across 20+ African countries, 300,000+ employees managed. Offices in Nigeria, Ghana,
+  Kenya. IMPORTANT ICP DISTINCTION: explicitly targets medium-to-large enterprises (100+ employees), NOT SMBs. In
+  African markets, SMBs lack purchasing power for HR software — the addressable market is large enterprises, not the
+  long tail served by Gusto in the US. FT Africa Fastest-Growing Companies 2024. Business model: PEPM SaaS (consistent
+  with IP-002 structural pattern even though ICP differs from US SMB SaaS). Expanding into embedded finance (earned wage
+  access, payroll financing). Named Africa leading HR and payroll software company by multiple sources."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: TechCrunch Jan 2022
+    notes: "PEPM SaaS consistent with IP-002 pattern. ICP: medium-large enterprises 100+ not pure SMB. African market
+      structure forces upmarket focus."
+problems:
+  - slug: wage-compliance
+    source: TechCrunch Jan 2022
+timeline:
+  - year: 2018
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded Lagos Nigeria after pivoting from Insidify job aggregator. Cloud HRMS targeting Nigerian enterprises.
+    source: TechCrunch Jan 2022
+  - year: 2018
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: Founded Lagos Nigeria after pivoting from Insidify job aggregator. Cloud HRMS targeting Nigerian enterprises.
+    source: TechCrunch Jan 2022
+  - year: 2022
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series A $10M TLcom Capital. Expanded Ghana Kenya. 100000+ employees managed monthly.
+    source: TechCrunch Jan 2022
+  - year: 2022
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series A $10M TLcom Capital. Expanded Ghana Kenya. 100000+ employees managed monthly.
+    source: TechCrunch Jan 2022
+  - year: 2025
+    event_type: product_launch
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: "Series A extension $9M Gates Foundation Helios. Total $28.2M. 2000+ enterprises 20+ countries. Launched
+      embedded finance: earned wage access payroll financing."
+    source: Empower Africa Jan 2025
+  - year: 2025
+    event_type: product_launch
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: "Series A extension $9M Gates Foundation Helios. Total $28.2M. 2000+ enterprises 20+ countries. Launched
+      embedded finance: earned wage access payroll financing."
+    source: Empower Africa Jan 2025

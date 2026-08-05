@@ -1,0 +1,64 @@
+slug: peoplesoft
+name: PeopleSoft, Inc.
+domain: hr-payroll
+founded: 1987
+country: USA
+status: acquired
+stage: public
+funding_history: "IPO 1992 (Nasdaq: PSFT). No external VC dependency. Acquired by Oracle December 2005 for $10.3B
+  (hostile takeover after 18-month battle)."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: disconfirming
+signal_confidence: high
+research_queue_source: OFF_QUEUE:historical-predecessor-record-grounds-cloud-hcm-winning-condition
+notable_facts: "Founded by Dave Duffield and Ken Morris in Walnut Creek, CA. Became the dominant on-premise HCM and ERP
+  vendor by the 1990s, displacing earlier mainframe-based systems. Peak: $1.3B annual revenue, 13,000 employees, 5,100
+  customers. Failure mechanism: could not transition to cloud delivery without cannibalising perpetual licence and
+  maintenance revenue (17-22% of licence, annually recurring). Oracle hostile takeover (resisted for 18 months)
+  completed December 2005 at $10.3B. Dave Duffield and Aneel Bhusri (SVP Strategy at PeopleSoft) founded Workday in 2005
+  explicitly as the cloud-native replacement. This makes PeopleSoft the canonical empirical ground for the cloud HCM
+  winning condition: incumbent lock-in creating the structural opening that cloud-native entrants exploited.
+  DISCONFIRMING for on-premise enterprise HCM pattern (IP-007). CONFIRMING for cloud enterprise HCM winning condition."
+implementation_patterns:
+  - slug: on-premise-enterprise-hcm-platform
+    source: Wikipedia / Oracle acquisition filings
+    notes: Canonical instantiation of on-premise enterprise HCM. Acquired Oracle 2005 $10.3B.
+problems:
+  - slug: wage-compliance
+    source: PeopleSoft product scope
+timeline:
+  - year: 1987
+    event_type: founding
+    implementation_pattern: on-premise-enterprise-hcm-platform
+    problem: wage-compliance
+    description: "Founded Dave Duffield Ken Morris Walnut Creek CA. Initial product: HRMS for graphical client-server architecture."
+    source: Wikipedia
+  - year: 1987
+    event_type: founding
+    implementation_pattern: on-premise-enterprise-hcm-platform
+    problem: wage-compliance
+    description: "Founded Dave Duffield Ken Morris Walnut Creek CA. Initial product: HRMS for graphical client-server architecture."
+    source: Wikipedia
+  - year: 1992
+    event_type: funding
+    implementation_pattern: on-premise-enterprise-hcm-platform
+    description: IPO Nasdaq PSFT. Dominant in enterprise HRMS. Growing on perpetual licence plus maintenance model.
+    source: Wikipedia
+  - year: 1992
+    event_type: funding
+    implementation_pattern: on-premise-enterprise-hcm-platform
+    description: IPO Nasdaq PSFT. Dominant in enterprise HRMS. Growing on perpetual licence plus maintenance model.
+    source: Wikipedia
+  - year: 2005
+    event_type: acquisition
+    implementation_pattern: on-premise-enterprise-hcm-platform
+    description: "Acquired Oracle hostile takeover $10.3B December 2005. Duffield and Bhusri founded Workday same year.
+      Failure: on-premise delivery prevented cloud transition without cannibalising maintenance revenue."
+    source: NYT / Oracle press release / Wikipedia
+  - year: 2005
+    event_type: acquisition
+    implementation_pattern: on-premise-enterprise-hcm-platform
+    description: "Acquired Oracle hostile takeover $10.3B December 2005. Duffield and Bhusri founded Workday same year.
+      Failure: on-premise delivery prevented cloud transition without cannibalising maintenance revenue."
+    source: NYT / Oracle press release / Wikipedia

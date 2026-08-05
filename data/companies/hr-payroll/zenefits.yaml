@@ -1,0 +1,52 @@
+slug: zenefits
+name: Zenefits (acquired by TriNet)
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2013
+country: USA
+status: acquired
+stage: series_c
+funding_history: $598M total across 4 rounds. Series A led by a16z (largest a16z investment at the time). Series C $500M
+  at $4.5B valuation (Fidelity, TPG lead). 2015 peak.
+revenue_signal: <10M
+profitability_signal: known_unprofitable
+evidence_weight: disconfirming
+signal_confidence: high
+notable_facts: "DISCONFIRMING CASE. Founded by Parker Conrad and Laks Srini. Grew to 10,000+ businesses in 2 years.
+  Fatal failure: selling insurance without licences in multiple states — discovered at scale in 2016. Parker Conrad
+  resigned. Mass layoffs. $598M raised, $4.5B peak valuation, complete value destruction. Parker Conrad then founded
+  Rippling as the corrected implementation. Acquired by TriNet ~2023. Most thoroughly post-mortemed failure in SMB HR
+  SaaS."
+implementation_patterns:
+  - slug: compliance-led-free-hr-saas
+    source: Contrary Research
+    notes: DISCONFIRMING. Zenefits is the only known instantiation of IP-004. Pattern recorded as dead.
+problems:
+  - slug: wage-compliance
+  - slug: employee-benefits
+timeline:
+  - year: 2013
+    event_type: founding
+    implementation_pattern: compliance-led-free-hr-saas
+    problem: wage-compliance
+    description: Founded by Parker Conrad and Laks Srini. Free HR software funded by insurance broker commissions. Immediate
+      hypergrowth — model attracted employers who paid nothing for software.
+    source: Contrary Research / Fox News
+  - year: 2015
+    event_type: funding
+    implementation_pattern: compliance-led-free-hr-saas
+    description: Series C $500M at $4.5B valuation (Fidelity, TPG lead). 10,000+ businesses across 48 states. 1,000
+      employees. a16z's largest investment at the time.
+    source: Fox News / Entrepreneur
+  - year: 2016
+    event_type: pivot
+    implementation_pattern: compliance-led-free-hr-saas
+    description: "FAILURE EVENT. Regulatory investigation revealed Zenefits was selling insurance without broker licences in
+      multiple states. Parker Conrad resigned. Mass layoffs. Demonstrates structural failure of IP-004: broker revenue
+      requires state-by-state licences that cannot scale at venture speed."
+    source: Contrary Research / Tracxn
+  - year: 2023
+    event_type: acquisition
+    implementation_pattern: compliance-led-free-hr-saas
+    description: Acquired by TriNet. End of independent operation. $598M raised, $4.5B peak valuation — complete value destruction.
+    source: Tracxn

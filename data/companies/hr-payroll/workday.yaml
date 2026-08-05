@@ -1,0 +1,49 @@
+slug: workday
+name: Workday, Inc.
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2005
+country: USA
+status: operating
+stage: public
+funding_history: "Greylock Partners (initial VC). IPO October 2012 at ~$9.5B valuation (Nasdaq: WDAY)."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: "FY2026 revenue $9.55B, net income $693M (public filing). Founded by David Duffield and Aneel Bhusri
+  after Oracle acquired PeopleSoft. Serves 10,000+ organizations including 50%+ of Fortune 500. Key structural decision:
+  one-version cloud model (single codebase, no upgrade cycles). 9.8% global HCM market share."
+implementation_patterns:
+  - slug: cloud-enterprise-hcm-platform
+    source: companieshistory.com / SEC filings
+problems:
+  - slug: wage-compliance
+timeline:
+  - year: 2005
+    event_type: founding
+    implementation_pattern: cloud-enterprise-hcm-platform
+    problem: wage-compliance
+    description: "Founded by David Duffield and Aneel Bhusri after Oracle acquired PeopleSoft. Thesis: rebuild enterprise HR
+      and finance on cloud with single-version delivery model."
+    source: companieshistory.com
+  - year: 2012
+    event_type: funding
+    implementation_pattern: cloud-enterprise-hcm-platform
+    description: "IPO (Nasdaq: WDAY) at ~$9.5B valuation. Greylock Partners was initial investor."
+    source: companieshistory.com / Forbes
+  - year: 2018
+    event_type: acquisition
+    problem: wage-compliance
+    capability_deployed: Enterprise customer relationships and unified workforce data model — enabled natural extension into
+      financial planning.
+    capability_acquired: Enterprise performance management and financial planning (EPM) technology via Adaptive Insights.
+    description: Acquired Adaptive Insights for $1.55B — added enterprise financial planning and analytics. First major move
+      into finance beyond HR.
+    source: companieshistory.com
+  - year: 2025
+    event_type: product_launch
+    implementation_pattern: cloud-enterprise-hcm-platform
+    description: "AI platform repositioning: rebranded as AI platform for managing people, money, and agents. 8.5% workforce
+      reduction to fund AI investment. Acquired Paradox (conversational AI recruiting)."
+    source: companieshistory.com / SEC filings

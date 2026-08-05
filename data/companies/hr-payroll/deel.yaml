@@ -1,0 +1,61 @@
+slug: deel
+name: Deel (formerly Lifeslice)
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 2019
+country: USA
+status: operating
+stage: unicorn
+funding_history: YC 2019. Total $980M+ across 7 rounds. Series E $300M October 2025 (Ribbit Capital, Coatue, a16z) at $17.3B valuation.
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+notable_facts: "Category leader in global payroll/EOR as of 2025. Entity-ownership model: owns legal entities in each
+  country. Founded by Alex Bouaziz, Shuo Wang, Ofer Simon. Only company to follow customers from contractors to EOR to
+  global payroll to full HR suite while competitors remained point solutions. Key acquisitions: Playgroup (HCM), Capbase
+  (equity management), Safeguard Global enterprise payroll division 2025. Launched US payroll 2024, entering Gusto's
+  core market."
+implementation_patterns:
+  - slug: global-payroll-eor-platform
+    source: Sacra / Contrary Research
+problems:
+  - slug: cross-border-employment
+  - slug: wage-compliance
+    confidence: medium
+    notes: US payroll launched 2024.
+timeline:
+  - year: 2019
+    event_type: founding
+    implementation_pattern: global-payroll-eor-platform
+    problem: cross-border-employment
+    description: "Founded as Lifeslice by Alex Bouaziz, Shuo Wang, Ofer Simon. Accepted into YC 2019. Initial product:
+      contractor payment for international workers only."
+    source: Contrary Research
+  - year: 2021
+    event_type: product_launch
+    implementation_pattern: global-payroll-eor-platform
+    capability: payroll-compliance-infrastructure
+    capability_deployed: Early entity-ownership infrastructure and contractor payment rails — enabled natural expansion to
+      EOR and then payroll for the same customers.
+    description: "Expanded from contractor payments to EOR to global payroll as early YC company customers grew.
+      COVID-driven remote work demand. Became category leader. Entity-ownership model: owns legal entities in each
+      country."
+    source: Sacra / Contrary Research
+  - year: 2024
+    event_type: market_entry
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    capability: global-compliance-and-entity-infrastructure
+    capability_deployed: Global payroll compliance engine and employer-of-record infrastructure — US payroll is simpler than
+      multi-country, making it a tractable expansion.
+    description: Launched US payroll — first in-house US payroll engine. Direct competition with Gusto and Rippling in
+      domestic market. Expansion from global-first to domestic.
+    source: Contrary Research
+  - year: 2025
+    event_type: acquisition
+    implementation_pattern: global-payroll-eor-platform
+    capability_acquired: Enterprise payroll customer relationships and contracts via Safeguard Global division.
+    description: Acquired Safeguard Global's enterprise payroll division (effective March 2025). Series E $300M at $17.3B
+      valuation (Ribbit Capital, Coatue, a16z).
+    source: Sacra / employborderless.com

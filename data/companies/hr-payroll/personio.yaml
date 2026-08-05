@@ -1,0 +1,80 @@
+slug: personio
+name: Personio SE and Co KG
+domain: hr-payroll
+founded: 2015
+country: Germany
+status: operating
+stage: series_e
+funding_history: Series A-E 2017-2022. Total $720M across 7 rounds. Series E $200M 2022 at $8.5B valuation (Accel
+  Lightspeed Index Northzone GFC).
+revenue_signal: ">100M"
+profitability_signal: unknown
+evidence_weight: weak_validator
+signal_confidence: low
+research_queue_source: GEOGRAPHIC_WHITESPACE:cloud-native-smb-payroll-saas:Germany
+notable_facts: "Founded 2015 Hanno Renner Roman Schumacher Arseniy Vershinin Ignaz Forstmeier Munich. All met at Center
+  for Digital Technology and Management (CDTM) Munich. $435M ARR 2024 (Latka). 15000+ customers 70 countries. 2000
+  employees 8 offices. Target: European SMEs 10-2000 employees. Germany primary market but UK Ireland expanding. First
+  European HR tech unicorn (2021 $1.7B). Third most valuable German startup. 2022: launched Personio Payroll (German
+  payroll second most complex in world after France). 2024: opened New York office. Positioned as Workday for European
+  SMEs. 70% of European SMEs still use Excel for HR at time of founding — same status quo Gusto attacked in US."
+implementation_patterns:
+  - slug: cloud-native-smb-payroll-saas
+    source: Wikipedia / Contrary Research
+    notes: European SME HR SaaS. Same IP-002 structural pattern as Gusto applied to German/European market.
+problems:
+  - slug: wage-compliance
+    source: Personio product scope
+timeline:
+  - year: 2015
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Founded Munich Germany Hanno Renner Roman Schumacher Arseniy Vershinin Ignaz Forstmeier (all CDTM alumni).
+      Cloud HR for European SMEs. Status quo: 70% of European SMEs used Excel for HR."
+    source: Wikipedia / Sifted / Contrary Research
+  - year: 2015
+    event_type: founding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Founded Munich Germany Hanno Renner Roman Schumacher Arseniy Vershinin Ignaz Forstmeier (all CDTM alumni).
+      Cloud HR for European SMEs. Status quo: 70% of European SMEs used Excel for HR."
+    source: Wikipedia / Sifted / Contrary Research
+  - year: 2021
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series D $175M $1.7B valuation. First European HR tech unicorn. Series E $200M 2022 $8.5B valuation. Total
+      $720M raised.
+    source: Forbes / TechCrunch
+  - year: 2021
+    event_type: funding
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Series D $175M $1.7B valuation. First European HR tech unicorn. Series E $200M 2022 $8.5B valuation. Total
+      $720M raised.
+    source: Forbes / TechCrunch
+  - year: 2022
+    event_type: product_launch
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Launched Personio Payroll for Germany — second most complex payroll in world after France. Key milestone:
+      full HR plus payroll in one platform for European market."
+    source: Sifted Dec 2025
+  - year: 2022
+    event_type: product_launch
+    implementation_pattern: cloud-native-smb-payroll-saas
+    problem: wage-compliance
+    description: "Launched Personio Payroll for Germany — second most complex payroll in world after France. Key milestone:
+      full HR plus payroll in one platform for European market."
+    source: Sifted Dec 2025
+  - year: 2024
+    event_type: market_entry
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Opened New York office. 12000+ customers 70 countries. 2000 employees 8 offices. US market entry marks move
+      beyond European SME focus.
+    source: Grokipedia / Radyant
+  - year: 2024
+    event_type: market_entry
+    implementation_pattern: cloud-native-smb-payroll-saas
+    description: Opened New York office. 12000+ customers 70 countries. 2000 employees 8 offices. US market entry marks move
+      beyond European SME focus.
+    source: Grokipedia / Radyant

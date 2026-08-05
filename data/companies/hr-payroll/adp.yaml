@@ -1,0 +1,52 @@
+slug: adp
+name: Automatic Data Processing (ADP)
+domain: hr-payroll
+research_queue_source: "OFF_QUEUE:foundation-record"
+founded: 1949
+country: USA
+status: operating
+stage: public
+funding_history: "Self-funded from founding. IPO September 1961 at $3/share (~$419k revenue at time). Nasdaq: ADP."
+revenue_signal: ">1B"
+profitability_signal: known_profitable
+evidence_weight: strong_validator
+signal_confidence: high
+notable_facts: FY2025 revenue $20.6B, net income $4.08B (public filing). Processes payroll for ~1 in 6 US employees. 75
+  years operating, fully self-sustaining. Founded by Henry Taub with $6,000 initial investment. Founder visited a
+  company where employees were not paid on time due to one clerk's illness — identified reliability as the core value
+  proposition.
+implementation_patterns:
+  - slug: manual-payroll-bureau
+    source: Wikipedia / companieshistory.com
+problems:
+  - slug: wage-compliance
+  - slug: cross-border-employment
+timeline:
+  - year: 1949
+    event_type: founding
+    implementation_pattern: manual-payroll-bureau
+    problem: wage-compliance
+    description: "Founded as Automatic Payrolls, Inc. by Henry Taub. Manual payroll processing for local NJ businesses.
+      Initial capital: $6,000. First client: one company."
+    source: FundingUniverse company history
+  - year: 1957
+    event_type: product_launch
+    implementation_pattern: manual-payroll-bureau
+    description: Renamed to Automatic Data Processing. Adopted punch-card machines and mainframe computers. Revenue grown to
+      $150,000 by fiscal year end.
+    source: TrendSpider / company history
+  - year: 1961
+    event_type: funding
+    implementation_pattern: manual-payroll-bureau
+    description: IPO at $3/share. ~200 payroll clients at listing. $419k revenue, $25k net profit. Grew from operational
+      scale, not capital.
+    source: FundingUniverse company history
+  - year: 1990
+    event_type: market_entry
+    implementation_pattern: manual-payroll-bureau
+    problem: cross-border-employment
+    capability: payroll-compliance-infrastructure
+    capability_deployed: Payroll compliance expertise and regulatory relationships built across 40+ years of US operations —
+      transferred to international compliance.
+    description: Launched Employer Services International division. Began global expansion. Now operates in 140+ countries.
+    source: TrendSpider / companieshistory.com
