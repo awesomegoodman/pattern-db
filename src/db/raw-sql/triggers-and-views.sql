@@ -70,9 +70,12 @@ CREATE TRIGGER trg_guard_capability_deployment
 BEFORE INSERT OR UPDATE ON company_timeline
 FOR EACH ROW EXECUTE FUNCTION guard_capability_deployment();
 
--- ── VIEW TEARDOWN (dependency order) ────────────────────────────────────────
+-- ── VIEW TEARDOWN (dependency order) ─────────────────────────────────────────
 -- Required for idempotency. CREATE OR REPLACE VIEW cannot replace a view
 -- when a dependent view exists. Drop in reverse dependency order first.
+-- research_queue depends on all gap_* views, so it drops first.
+-- DROP IF EXISTS is safe on a fresh database — it does nothing.
+-- Run this entire file whenever any view definition changes.
 
 DROP VIEW IF EXISTS research_queue            CASCADE;
 DROP VIEW IF EXISTS gap_failure_case          CASCADE;
@@ -135,18 +138,24 @@ HAVING COUNT(DISTINCT c.id) FILTER (WHERE c.evidence_weight='strong_validator')>
    AND COUNT(DISTINCT c.id) FILTER (WHERE c.evidence_weight='disconfirming')=0;
 
 CREATE OR REPLACE VIEW gap_geographic_whitespace AS
-SELECT DISTINCT ip.id AS pattern_id, ip.name AS pattern_name,
-  c_has.country AS proven_in, c_all.country AS missing_in
+SELECT DISTINCT
+  ip.id         AS pattern_id,
+  ip.name       AS pattern_name,
+  c_all.country AS missing_in
 FROM implementation_patterns ip
-JOIN company_implementation_patterns cip_has ON cip_has.implementation_pattern_id=ip.id
-JOIN companies c_has ON c_has.id=cip_has.company_id
-  AND c_has.evidence_weight='strong_validator' AND c_has.country IS NOT NULL
 CROSS JOIN (SELECT DISTINCT country FROM companies WHERE country IS NOT NULL) c_all
-WHERE c_all.country!=c_has.country
+WHERE ip.status != 'dead'
+  AND EXISTS (
+    SELECT 1 FROM company_implementation_patterns cip
+    JOIN companies c ON c.id = cip.company_id
+    WHERE cip.implementation_pattern_id = ip.id
+      AND c.evidence_weight = 'strong_validator'
+  )
   AND NOT EXISTS (
     SELECT 1 FROM company_implementation_patterns cip2
-    JOIN companies c2 ON c2.id=cip2.company_id
-    WHERE cip2.implementation_pattern_id=ip.id AND c2.country=c_all.country
+    JOIN companies c2 ON c2.id = cip2.company_id
+    WHERE cip2.implementation_pattern_id = ip.id
+      AND c2.country = c_all.country
   );
 
 CREATE OR REPLACE VIEW research_queue AS
@@ -167,7 +176,7 @@ WITH scored AS (
   FROM gap_pattern_promotion WHERE observations_needed>0
   UNION ALL
   SELECT 'GEOGRAPHIC_WHITESPACE', pattern_id, pattern_name, 12,
-    'Strong validators in ['||proven_in||'], zero in ['||missing_in||'].',
+    'No coverage in ['||missing_in||']. Strong validator exists in another geography.',
     'Find a company in ['||missing_in||'] using ['||pattern_name||'].'
   FROM gap_geographic_whitespace
   UNION ALL
