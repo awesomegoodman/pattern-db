@@ -71,22 +71,18 @@ BEFORE INSERT OR UPDATE ON company_timeline
 FOR EACH ROW EXECUTE FUNCTION guard_capability_deployment();
 
 -- ── VIEW TEARDOWN (dependency order) ─────────────────────────────────────────
--- Required for idempotency. CREATE OR REPLACE VIEW cannot replace a view
--- when a dependent view exists. Drop in reverse dependency order first.
--- research_queue depends on all gap_* views, so it drops first.
--- DROP IF EXISTS is safe on a fresh database — it does nothing.
--- Run this entire file whenever any view definition changes.
+-- research_queue depends on all gap_* views — drop it first.
+-- gap_contradictory_evidence is a new dependency of research_queue — drop it too.
 
-DROP VIEW IF EXISTS research_queue            CASCADE;
-DROP VIEW IF EXISTS gap_failure_case          CASCADE;
-DROP VIEW IF EXISTS gap_strong_validator      CASCADE;
-DROP VIEW IF EXISTS gap_pattern_promotion     CASCADE;
-DROP VIEW IF EXISTS gap_implementation_fill   CASCADE;
-DROP VIEW IF EXISTS gap_geographic_whitespace CASCADE;
+DROP VIEW IF EXISTS research_queue              CASCADE;
+DROP VIEW IF EXISTS gap_contradictory_evidence  CASCADE;
+DROP VIEW IF EXISTS gap_failure_case            CASCADE;
+DROP VIEW IF EXISTS gap_strong_validator        CASCADE;
+DROP VIEW IF EXISTS gap_pattern_promotion       CASCADE;
+DROP VIEW IF EXISTS gap_implementation_fill     CASCADE;
+DROP VIEW IF EXISTS gap_geographic_whitespace   CASCADE;
 
 -- ── RESEARCH QUEUE VIEWS ──────────────────────────────────────────────────────
--- Scoring weights documented in docs/candidate-selection.md.
--- Do not change weights without updating that document.
 
 CREATE OR REPLACE VIEW gap_pattern_promotion AS
 SELECT
@@ -158,12 +154,41 @@ WHERE ip.status != 'dead'
       AND c2.country = c_all.country
   );
 
+-- ── NEW: gap_contradictory_evidence ──────────────────────────────────────────
+-- Fires when a solution pattern has an established/proposed winning condition
+-- with > 5 observations and no researcher has yet attempted to falsify it.
+-- Suppressed once any company carries research_queue_source =
+-- 'CONTRADICTORY_EVIDENCE_NEEDED:<pattern-slug>'.
+
+CREATE OR REPLACE VIEW gap_contradictory_evidence AS
+SELECT
+  sp.id                               AS pattern_id,
+  sp.name                             AS pattern_name,
+  sp.slug                             AS pattern_slug,
+  sp.winning_condition,
+  sp.winning_condition_maturity::text AS maturity,
+  sp.evidence_count
+FROM solution_patterns sp
+WHERE sp.winning_condition IS NOT NULL
+  AND sp.failure_condition IS NOT NULL
+  AND sp.winning_condition_maturity IN ('proposed', 'established')
+  AND sp.evidence_count > 5
+  AND NOT EXISTS (
+    SELECT 1 FROM companies c
+    WHERE c.research_queue_source = 'CONTRADICTORY_EVIDENCE_NEEDED:' || sp.slug
+  );
+
 CREATE OR REPLACE VIEW research_queue AS
 WITH scored AS (
   SELECT 'FAILURE_CASE_NEEDED' AS quest_type, pattern_id, pattern_name, 25 AS score,
     successes||' successes, zero failures. Failure condition unvalidated. Survivor bias active.' AS brief,
     'Find a company that attempted ['||pattern_name||'] and failed. Search: Crunchbase shutdowns, TechCrunch graveyard, YC dark.' AS search_directive
   FROM gap_failure_case
+  UNION ALL
+  SELECT 'CONTRADICTORY_EVIDENCE_NEEDED', pattern_id, pattern_name, 22,
+    'Conditions at ['||maturity||'] with '||evidence_count||' observations and no counterexample on record. Uniform evidence may reflect a genuinely robust condition or undetected selection bias. Search required to distinguish.',
+    'Find a company that SUCCEEDED while apparently violating: '||LEFT(winning_condition,300)||' — OR confirm via exhaustive search that no such company exists.'
+  FROM gap_contradictory_evidence
   UNION ALL
   SELECT 'STRONG_VALIDATOR_NEEDED', pattern_id, pattern_name, 20,
     total_companies||' companies, zero with known profitability. Economics unconfirmed.',
